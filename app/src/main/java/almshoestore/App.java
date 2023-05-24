@@ -4,9 +4,12 @@
 package almshoestore;
 
 import javafx.application.Application;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class App extends Application {
@@ -16,7 +19,11 @@ public class App extends Application {
         String javaVersion = System.getProperty("java.version");
         String javafxVersion = System.getProperty("javafx.version");
         Label l = new Label("Hello, JavaFX " + javafxVersion + ", running on Java " + javaVersion + ".");
-        Scene scene = new Scene(new StackPane(l), 640, 480);
+
+        Button btn = new Button("Login");
+        VBox vBox = new VBox(l,btn);
+        vBox.setAlignment(Pos.CENTER);
+        Scene scene = new Scene(vBox, 640, 480);
         stage.setScene(scene);
         stage.show();
     }
