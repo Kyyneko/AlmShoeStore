@@ -9,6 +9,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
@@ -40,18 +42,18 @@ public class App extends Application {
         VBox vbox2 = new VBox(10,label4,label3);
         vbox2.setAlignment(Pos.TOP_CENTER);
 
-        TextField textfield = new TextField();
-        textfield.setStyle("-fx-padding: 1px 32px;-fx-text-fill:BLACK;-fx-font-size: 15px;-fx-background-color: #777777; -fx-border-color: black; -fx-border-width: 1px; -fx-border-radius: 3;");
-        textfield.setPromptText("Username...");
+        TextField usernameField = new TextField();
+        usernameField.setStyle("-fx-padding: 1px 32px;-fx-text-fill:BLACK;-fx-font-size: 15px;-fx-background-color: #777777; -fx-border-color: black; -fx-border-width: 1px; -fx-border-radius: 3;");
+        usernameField.setPromptText("Username...");
 
-        TextField textfield2 = new TextField();
-        textfield2.setStyle("-fx-padding: 1px 32px;-fx-text-fill:BLACK;-fx-font-size: 15px;-fx-background-color: #777777; -fx-border-color: black; -fx-border-width: 1px; -fx-border-radius: 3;");
-        textfield2.setPromptText("Password...");
+        TextField passwordField = new TextField();
+        passwordField.setStyle("-fx-padding: 1px 32px;-fx-text-fill:BLACK;-fx-font-size: 15px;-fx-background-color: #777777; -fx-border-color: black; -fx-border-width: 1px; -fx-border-radius: 3;");
+        passwordField.setPromptText("Password...");
 
-        HBox hbox1 = new HBox(textfield);
+        HBox hbox1 = new HBox(usernameField);
         hbox1.setAlignment(Pos.CENTER);
         
-        HBox hbox2 = new HBox(textfield2);
+        HBox hbox2 = new HBox(passwordField);
         hbox2.setAlignment(Pos.CENTER);
 
         Button button1 = new Button("SIGN IN");
@@ -82,15 +84,55 @@ public class App extends Application {
         button1.setOnAction(a->{SceneToko();});
         button2.setOnAction(a->{SceneRegister();});
         button3.setOnAction(a->{SceneExit();});
-
-
-
-
     }
+
     public void SceneKedua(){}
-    public void SceneRegister(){}
-    public void SceneExit(){
+
+    public void SceneRegister() {
+        Label registerLabel = new Label("Register");
+        registerLabel.setStyle("-fx-font-size: 30px; -fx-font-family: 'Times New Roman'; -fx-text-fill: BLACK;");
+    
+        TextField usernameField = new TextField();
+        usernameField.setStyle("-fx-padding: 1px 32px;-fx-text-fill:BLACK;-fx-font-size: 15px;-fx-background-color: #777777; -fx-border-color: black; -fx-border-width: 1px; -fx-border-radius: 3;");
+        usernameField.setPromptText("Username...");
+    
+        TextField passwordField = new TextField();
+        passwordField.setStyle("-fx-padding: 1px 32px;-fx-text-fill:BLACK;-fx-font-size: 15px;-fx-background-color: #777777; -fx-border-color: black; -fx-border-width: 1px; -fx-border-radius: 3;");
+        passwordField.setPromptText("Password...");
+    
+        Button registerButton = new Button("REGISTER");
+        registerButton.setStyle("-fx-font-family: 'Berlin Sans FB';-fx-text-fill:BLACK;-fx-font-size: 15px;-fx-background-color: BLUE; -fx-border-color: black; -fx-border-width: 1px; -fx-border-radius: 2;");
+    
+        Button backButton = new Button("BACK");
+        backButton.setStyle("-fx-font-family: 'Berlin Sans FB';-fx-text-fill:BLACK;-fx-font-size: 15px;-fx-background-color: RED; -fx-border-color: black; -fx-border-width: 1px; -fx-border-radius: 2;");
+    
+        GridPane gridPane = new GridPane();
+        gridPane.setAlignment(Pos.CENTER);
+        gridPane.setVgap(10);
+        gridPane.setHgap(10);
+        gridPane.add(registerLabel, 0, 0, 2, 1);
+        gridPane.add(usernameField, 0, 1);
+        gridPane.add(passwordField, 0, 2);
+        gridPane.add(registerButton, 0, 3);
+        gridPane.add(backButton, 1, 3);
+    
+        BorderPane borderPane = new BorderPane();
+        borderPane.setCenter(gridPane);
+        borderPane.setStyle("-fx-background-color:#0f6049;");
+    
+        Scene registerScene = new Scene(borderPane, 500, 500);
+        stage.setScene(registerScene);
+    
+        backButton.setOnAction(a -> {
+            SceneAwal();
+        });
+    }
+    
+    
+    
+    
+    private void SceneExit(){
         stage.close();
     }
-    public void SceneToko(){}
+    private void SceneToko(){}
 }
