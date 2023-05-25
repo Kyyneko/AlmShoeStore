@@ -1,7 +1,7 @@
 /* Gaya untuk elemen Button */
 .button {
-    -fx-background-color: #348ca7; /* Warna latar belakang */
-    -fx-text-fill: #020202; /* Warna teks */
+    -fx-background-color: #ff9900; /* Warna latar belakang */
+    -fx-text-fill: #ffffff; /* Warna teks */
     -fx-font-size: 20px; /* Ukuran font */
     -fx-padding: 16px 32px; /* Padding */
 }
@@ -10,7 +10,7 @@
 .label {
     -fx-font-size: 16px; /* Ukuran font */
     -fx-font-weight: bold; /* Ketebalan font */
-    -fx-text-fill: #333333; /* Warna teks */
+    -fx-text-fill: #000000; /* Warna teks */
 }
 
 /* Gaya untuk elemen TextField */
