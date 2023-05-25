@@ -89,6 +89,8 @@ public class App extends Application {
     }
     public void SceneKedua(){}
     public void SceneRegister(){}
-    public void SceneExit(){}
+    public void SceneExit(){
+        stage.close();
+    }
     public void SceneToko(){}
 }
