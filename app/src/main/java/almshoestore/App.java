@@ -1,6 +1,9 @@
 
 package almshoestore;
 
+import javafx.animation.KeyFrame;
+import javafx.animation.PauseTransition;
+import javafx.animation.Timeline;
 import javafx.application.Application;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -16,6 +19,7 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 public class App extends Application {
     private Stage stage;
@@ -81,6 +85,8 @@ public class App extends Application {
         stage.setTitle("AlmShoeStore");
         stage.setScene(scene1);
 
+        passwordField.setOnAction(event -> button1.fire());
+
         button1.setOnAction(a->{SceneToko();});
         button2.setOnAction(a->{SceneRegister();});
         button3.setOnAction(a->{SceneExit();});
@@ -89,7 +95,7 @@ public class App extends Application {
     public void SceneKedua(){}
 
     public void SceneRegister() {
-        Label registerLabel = new Label("Register");
+        Label registerLabel = new Label("REGISTER");
         registerLabel.setStyle("-fx-font-size: 30px; -fx-font-family: 'Times New Roman'; -fx-text-fill: BLACK;");
     
         TextField usernameField = new TextField();
@@ -115,6 +121,53 @@ public class App extends Application {
         gridPane.add(passwordField, 0, 2);
         gridPane.add(registerButton, 0, 3);
         gridPane.add(backButton, 1, 3);
+
+        registerButton.setOnAction(a -> {
+            String username = usernameField.getText();
+            String password = passwordField.getText();
+        
+            if (!username.isEmpty() && !password.isEmpty()) {
+                if (password.matches("^(?=.*[a-zA-Z])(?=.*\\d).{8}$")) {
+                    // Password memenuhi persyaratan
+        
+                    // Simpan logika untuk register di sini
+        
+                    // Tampilkan pesan register berhasil
+                    Label successLabel = new Label("Registration Successful!");
+                    successLabel.setStyle("-fx-font-size: 20px; -fx-text-fill: GREEN;");
+                    gridPane.add(successLabel, 0, 4, 2, 1);
+        
+                    // Kembali ke scene awal setelah beberapa waktu
+                    PauseTransition pause = new PauseTransition(Duration.seconds(2));
+                    pause.setOnFinished(event -> SceneAwal());
+                    pause.play();
+                } else {
+                    // Password tidak memenuhi persyaratan
+                    Label errorLabel = new Label("Password must contain at least 1 letter, 1 digit, and have a length of 8 characters!");
+                    errorLabel.setStyle("-fx-font-size: 15px; -fx-text-fill: RED;");
+                    gridPane.add(errorLabel, 0, 4, 2, 1);
+        
+                    // Hilangkan pesan error setelah 5 detik
+                    Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(5), event -> {
+                        gridPane.getChildren().remove(errorLabel);
+                    }));
+                    timeline.play();
+                }
+            } else {
+                // Tampilkan pesan kesalahan jika username atau password kosong
+                Label errorLabel = new Label("Please fill in both Username and Password fields!");
+                errorLabel.setStyle("-fx-font-size: 15px; -fx-text-fill: RED;");
+                gridPane.add(errorLabel, 0, 4, 2, 1);
+        
+                // Hilangkan pesan error setelah 5 detik
+                Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(5), event -> {
+                    gridPane.getChildren().remove(errorLabel);
+                }));
+                timeline.play();
+            }
+        });
+        
+        
     
         BorderPane borderPane = new BorderPane();
         borderPane.setCenter(gridPane);
@@ -122,6 +175,8 @@ public class App extends Application {
     
         Scene registerScene = new Scene(borderPane, 500, 500);
         stage.setScene(registerScene);
+
+        passwordField.setOnAction(event -> registerButton.fire());
     
         backButton.setOnAction(a -> {
             SceneAwal();
