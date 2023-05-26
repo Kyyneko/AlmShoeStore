@@ -96,7 +96,10 @@ public class App extends Application {
     private void SceneRegister() {
         Label registerLabel = new Label("REGISTER");
         registerLabel.setStyle("-fx-font-size: 30px; -fx-font-family: 'Times New Roman'; -fx-text-fill: BLACK;");
-    
+        
+        HBox hbox = new HBox(registerLabel);
+        hbox.setAlignment(Pos.CENTER);
+
         TextField usernameField = new TextField();
         usernameField.setStyle("-fx-padding: 1px 32px;-fx-text-fill:BLACK;-fx-font-size: 15px;-fx-background-color: #777777; -fx-border-color: black; -fx-border-width: 1px; -fx-border-radius: 3;");
         usernameField.setPromptText("Username...");
@@ -104,23 +107,30 @@ public class App extends Application {
         TextField passwordField = new TextField();
         passwordField.setStyle("-fx-padding: 1px 32px;-fx-text-fill:BLACK;-fx-font-size: 15px;-fx-background-color: #777777; -fx-border-color: black; -fx-border-width: 1px; -fx-border-radius: 3;");
         passwordField.setPromptText("Password...");
+
+        HBox hbox5 = new HBox(5,usernameField);
+        hbox5.setAlignment(Pos.CENTER);
+
+        HBox hbox6 = new HBox(5,passwordField);
+        hbox6.setAlignment(Pos.CENTER);
     
         Button registerButton = new Button("REGISTER");
         registerButton.setStyle("-fx-font-family: 'Berlin Sans FB';-fx-text-fill:BLACK;-fx-font-size: 15px;-fx-background-color: BLUE; -fx-border-color: black; -fx-border-width: 1px; -fx-border-radius: 2;");
     
         Button backButton = new Button("BACK");
         backButton.setStyle("-fx-font-family: 'Berlin Sans FB';-fx-text-fill:BLACK;-fx-font-size: 15px;-fx-background-color: RED; -fx-border-color: black; -fx-border-width: 1px; -fx-border-radius: 2;");
-    
-        GridPane gridPane = new GridPane();
-        gridPane.setAlignment(Pos.CENTER);
-        gridPane.setVgap(10);
-        gridPane.setHgap(10);
-        gridPane.add(registerLabel, 0, 0, 2, 1);
-        gridPane.add(usernameField, 0, 1);
-        gridPane.add(passwordField, 0, 2);
-        gridPane.add(registerButton, 0, 3);
-        gridPane.add(backButton, 1, 3);
+      
+        Label labelerror= new Label("");
+        labelerror.setStyle("-fx-font-size: 10px; -fx-text-fill: RED;-fx-font-family: 'Berlin Sans FB';");
+        labelerror.setAlignment(Pos.CENTER);
 
+        HBox hbox2 = new HBox(5, registerButton,backButton);
+        hbox2.setAlignment(Pos.CENTER);
+
+        VBox vboxasli = new VBox(5,hbox,hbox5,hbox6,labelerror,hbox2);
+        vboxasli.setAlignment(Pos.CENTER);
+        vboxasli.setStyle("-fx-background-color:#DCDCDC;");
+        
         registerButton.setOnAction(a -> {
             String username = usernameField.getText();
             String password = passwordField.getText();
@@ -132,9 +142,7 @@ public class App extends Application {
                     // Simpan logika untuk register di sini
         
                     // Tampilkan pesan register berhasil
-                    Label successLabel = new Label("Registration Successful!");
-                    successLabel.setStyle("-fx-font-size: 20px; -fx-text-fill: GREEN;");
-                    gridPane.add(successLabel, 0, 4, 2, 1);
+                    labelerror.setText("Registration Successful!");
         
                     // Kembali ke scene awal setelah beberapa waktu
                     PauseTransition pause = new PauseTransition(Duration.seconds(2));
@@ -142,25 +150,21 @@ public class App extends Application {
                     pause.play();
                 } else {
                     // Password tidak memenuhi persyaratan
-                    Label errorLabel = new Label("Password must contain at least 1 letter, 1 digit, and have a length of 8 characters!");
-                    errorLabel.setStyle("-fx-font-size: 15px; -fx-text-fill: RED;");
-                    gridPane.add(errorLabel, 0, 4, 2, 1);
+                    labelerror.setText("Password must contain at least 1 letter, 1 digit, and have a length of 8 characters!");
         
                     // Hilangkan pesan error setelah 5 detik
-                    Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(5), event -> {
-                        gridPane.getChildren().remove(errorLabel);
+                    Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(3), event -> {
+                        labelerror.setText("");
                     }));
                     timeline.play();
                 }
             } else {
                 // Tampilkan pesan kesalahan jika username atau password kosong
-                Label errorLabel = new Label("Please fill in both Username and Password fields!");
-                errorLabel.setStyle("-fx-font-size: 15px; -fx-text-fill: RED;");
-                gridPane.add(errorLabel, 0, 4, 2, 1);
+                labelerror.setText("Please fill in both Username and Password fields!");
         
                 // Hilangkan pesan error setelah 5 detik
-                Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(5), event -> {
-                    gridPane.getChildren().remove(errorLabel);
+                Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(3), event -> {
+                    labelerror.setText("");
                 }));
                 timeline.play();
             }
@@ -168,11 +172,7 @@ public class App extends Application {
         
         
     
-        BorderPane borderPane = new BorderPane();
-        borderPane.setCenter(gridPane);
-        borderPane.setStyle("-fx-background-color:#0f6049;");
-    
-        Scene registerScene = new Scene(borderPane, 500, 500);
+        Scene registerScene = new Scene(vboxasli, 500, 500);
         stage.setScene(registerScene);
 
         passwordField.setOnAction(event -> registerButton.fire());
@@ -181,6 +181,7 @@ public class App extends Application {
             SceneAwal();
         });
     }
+    
     
     
     
