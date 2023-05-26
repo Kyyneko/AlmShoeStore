@@ -12,6 +12,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.Background;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -205,13 +206,13 @@ public class App extends Application {
         Label titleLabel = new Label("AlmShoeStore");
         titleLabel.setStyle("-fx-font-size: 30px; -fx-font-family: 'Times New Roman'; -fx-text-fill: BLACK;");
 
-        ImageView sepatu1ImageView = new ImageView(new Image("Sepatu2.jpeg")); 
+        ImageView sepatu1ImageView = new ImageView(new Image("images/Sepatu2.jpeg")); 
         sepatu1ImageView.setFitHeight(200);
         sepatu1ImageView.setFitWidth(250);
         Label sepatu1Label = new Label("Sepatu 1");
         sepatu1Label.setStyle("-fx-font-size: 15px; -fx-text-fill: BLACK;");
 
-        ImageView sepatu2ImageView = new ImageView(new Image("Sepatu1.jpeg")); 
+        ImageView sepatu2ImageView = new ImageView(new Image("images/Sepatu1.jpeg")); 
         sepatu2ImageView.setFitWidth(250);
         sepatu2ImageView.setFitHeight(200);
         Label sepatu2Label = new Label("Sepatu 2");
@@ -233,7 +234,7 @@ public class App extends Application {
 
         // Tambahkan VBox untuk sepatu lainnya sesuai kebutuhan
 
-        VBox centerVBox = new VBox(20, titleLabel, sepatu1VBox, sepatu2VBox); // Tambahkan VBox untuk sepatu lainnya sesuai kebutuhan
+        VBox centerVBox = new VBox(10, titleLabel, sepatu1VBox, sepatu2VBox); // Tambahkan VBox untuk sepatu lainnya sesuai kebutuhan
         centerVBox.setAlignment(Pos.CENTER);
 
         HBox bottomHBox = new HBox(10, keranjangButton, backButton);
@@ -243,7 +244,7 @@ public class App extends Application {
         borderPane.setTop(titleLabel);
         borderPane.setCenter(centerVBox);
         borderPane.setBottom(bottomHBox);
-        borderPane.setStyle("-fx-background-color:#0f6049;");
+        borderPane.setStyle("-fx-background-color:#DCDCDC ;");
 
         Scene tokoScene = new Scene(borderPane, 620, 620);
         stage.setScene(tokoScene);
