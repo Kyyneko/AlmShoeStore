@@ -37,6 +37,16 @@ public class App extends Application {
 
         VBox vbox1 =new VBox(label,label2);
         vbox1.setAlignment(Pos.TOP_CENTER);
+
+        ImageView fotoikon = new ImageView();
+        String foto3 = "almarhum.jpg";
+        Image image3 = new Image(foto3);
+        fotoikon.setImage(image3);
+        fotoikon.setFitHeight(150);
+        fotoikon.setFitWidth(150);
+
+        VBox foto = new VBox(0,fotoikon);
+        foto.setAlignment(Pos.CENTER);
         
         Label label3 = new Label("Login Member");
         label3.setStyle("-fx-padding: 5px 25px;-fx-font-size: 30px; -fx-font-family: 'Times New Roman'; -fx-text-fill: BLACK;-fx-background-color: #FAEBD7; -fx-border-color: WHITE; -fx-border-width: 1px; -fx-border-radius: 5;");
@@ -74,12 +84,12 @@ public class App extends Application {
         HBox hbox3 = new HBox(5,button2,button3);
         hbox3.setAlignment(Pos.CENTER);
 
-        VBox asli = new VBox(10,vbox1,vbox2,hbox1,hbox2,button1,button4,hbox3);
+        VBox asli = new VBox(10,vbox1,foto,vbox2,hbox1,hbox2,button1,button4,hbox3);
         asli.setAlignment(Pos.CENTER);
         asli.setStyle("-fx-background-color:#DCDCDC;");
         // asli.getChildren().addAll(vbox1,vbox2,vbox3);
         
-        Scene scene1 = new Scene(asli,500,500);
+        Scene scene1 = new Scene(asli,620,620);
         stage.setTitle("AlmShoeStore");
         stage.setScene(scene1);
 
@@ -175,7 +185,7 @@ public class App extends Application {
         
         
     
-        Scene registerScene = new Scene(vboxasli, 500, 500);
+        Scene registerScene = new Scene(vboxasli, 620, 620);
         stage.setScene(registerScene);
 
         passwordField.setOnAction(event -> registerButton.fire());
@@ -237,7 +247,7 @@ public class App extends Application {
         borderPane.setBottom(bottomHBox);
         borderPane.setStyle("-fx-background-color:#0f6049;");
 
-        Scene tokoScene = new Scene(borderPane, 500, 500);
+        Scene tokoScene = new Scene(borderPane, 620, 620);
         stage.setScene(tokoScene);
 
         backButton.setOnAction(a -> {
