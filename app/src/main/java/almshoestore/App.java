@@ -5,6 +5,7 @@ import javafx.animation.KeyFrame;
 import javafx.animation.PauseTransition;
 import javafx.animation.Timeline;
 import javafx.application.Application;
+import javafx.css.Style;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -23,7 +24,7 @@ public class App extends Application {
     private Stage stage;
     public void start(Stage primaryStage) throws Exception{
         
-        stage = primaryStage;      
+        stage = primaryStage;     
         SceneAwal();
         stage.show();
         stage.getIcons().add(new Image("images/LogoAlm.png"));
@@ -56,11 +57,11 @@ public class App extends Application {
         vbox2.setAlignment(Pos.TOP_CENTER);
 
         TextField usernameField = new TextField();
-        usernameField.setStyle("-fx-padding: 1px 32px;-fx-text-fill:BLACK;-fx-font-size: 15px;-fx-background-color: #777777; -fx-border-color: #FAEBD7; -fx-border-width: 1px; -fx-border-radius: 3;");
+        usernameField.setStyle("-fx-padding: 1px 32px;-fx-text-fill:#DCDCDC;-fx-font-size: 15px;-fx-background-color: WHITE; -fx-border-color: #000000; -fx-border-width: 1px; -fx-border-radius: 3;");
         usernameField.setPromptText("Username...");
 
         TextField passwordField = new TextField();
-        passwordField.setStyle("-fx-padding: 1px 32px;-fx-text-fill:BLACK;-fx-font-size: 15px;-fx-background-color: #777777; -fx-border-color: #FAEBD7; -fx-border-width: 1px; -fx-border-radius: 3;");
+        passwordField.setStyle("-fx-padding: 1px 32px;-fx-text-fill:#DCDCDC;-fx-font-size: 15px;-fx-background-color: WHITE; -fx-border-color: #000000; -fx-border-width: 1px; -fx-border-radius: 3;");
         passwordField.setPromptText("Password...");
 
         HBox hbox1 = new HBox(usernameField);
@@ -117,11 +118,11 @@ public class App extends Application {
         hbox.setAlignment(Pos.CENTER);
 
         TextField usernameField = new TextField();
-        usernameField.setStyle("-fx-padding: 1px 32px;-fx-text-fill:BLACK;-fx-font-size: 15px;-fx-background-color: #777777; -fx-border-color: black; -fx-border-width: 1px; -fx-border-radius: 3;");
+        usernameField.setStyle("-fx-padding: 1px 32px;-fx-text-fill:#DCDCDC;-fx-font-size: 15px;-fx-background-color: WHITE; -fx-border-color: #000000; -fx-border-width: 1px; -fx-border-radius: 3;");
         usernameField.setPromptText("Username...");
     
         TextField passwordField = new TextField();
-        passwordField.setStyle("-fx-padding: 1px 32px;-fx-text-fill:BLACK;-fx-font-size: 15px;-fx-background-color: #777777; -fx-border-color: black; -fx-border-width: 1px; -fx-border-radius: 3;");
+        passwordField.setStyle("-fx-padding: 1px 32px;-fx-text-fill:#DCDCDC;-fx-font-size: 15px;-fx-background-color: WHITE; -fx-border-color: #000000; -fx-border-width: 1px; -fx-border-radius: 3;");
         passwordField.setPromptText("Password...");
 
         HBox hbox5 = new HBox(5,usernameField);
@@ -204,54 +205,60 @@ public class App extends Application {
 
     private void SceneToko() {
         Label titleLabel = new Label("AlmShoeStore");
-        titleLabel.setStyle("-fx-font-size: 30px; -fx-font-family: 'Times New Roman'; -fx-text-fill: BLACK;");
-
+        titleLabel.setAlignment(Pos.TOP_CENTER);
+        titleLabel.setStyle("-fx-font-size: 25px; -fx-font-family: 'CAMBRIA'; -fx-text-fill: BLACK; -fx-background-color : #0000");
+    
         ImageView sepatu1ImageView = new ImageView(new Image("images/Sepatu2.jpeg")); 
         sepatu1ImageView.setFitHeight(200);
         sepatu1ImageView.setFitWidth(250);
         Label sepatu1Label = new Label("Sepatu 1");
         sepatu1Label.setStyle("-fx-font-size: 15px; -fx-text-fill: BLACK;");
-
+    
         ImageView sepatu2ImageView = new ImageView(new Image("images/Sepatu1.jpeg")); 
         sepatu2ImageView.setFitWidth(250);
         sepatu2ImageView.setFitHeight(200);
         Label sepatu2Label = new Label("Sepatu 2");
         sepatu2Label.setStyle("-fx-font-size: 15px; -fx-text-fill: BLACK;");
-
+    
         // Tambahkan ImageView dan Label untuk sepatu lainnya sesuai kebutuhan
-
+    
         Button keranjangButton = new Button("Keranjang");
         keranjangButton.setStyle("-fx-font-family: 'Berlin Sans FB'; -fx-text-fill: BLACK; -fx-font-size: 15px; -fx-background-color: YELLOW; -fx-border-color: black; -fx-border-width: 1px; -fx-border-radius: 2;");
-
+    
         Button backButton = new Button("BACK");
         backButton.setStyle("-fx-font-family: 'Berlin Sans FB'; -fx-text-fill: BLACK; -fx-font-size: 15px; -fx-background-color: RED; -fx-border-color: black; -fx-border-width: 1px; -fx-border-radius: 2;");
-
-        VBox sepatu1VBox = new VBox(10, sepatu1ImageView, sepatu1Label);
-        sepatu1VBox.setAlignment(Pos.CENTER);
-
-        VBox sepatu2VBox = new VBox(10, sepatu2ImageView, sepatu2Label);
-        sepatu2VBox.setAlignment(Pos.CENTER);
-
+    
+        HBox titleHBox = new HBox(titleLabel);
+        titleHBox.setAlignment(Pos.TOP_CENTER);
+    
+        HBox sepatu1HBox = new HBox(10, sepatu1ImageView, sepatu1Label);
+        sepatu1HBox.setAlignment(Pos.CENTER_LEFT);
+    
+        HBox sepatu2HBox = new HBox(10, sepatu2ImageView, sepatu2Label);
+        sepatu2HBox.setAlignment(Pos.CENTER_LEFT);
+    
+    
         // Tambahkan VBox untuk sepatu lainnya sesuai kebutuhan
-
-        VBox centerVBox = new VBox(10, titleLabel, sepatu1VBox, sepatu2VBox); // Tambahkan VBox untuk sepatu lainnya sesuai kebutuhan
+    
+        VBox centerVBox = new VBox(10, sepatu1HBox, sepatu2HBox); // Tambahkan VBox untuk sepatu lainnya sesuai kebutuhan
         centerVBox.setAlignment(Pos.CENTER);
-
+    
         HBox bottomHBox = new HBox(10, keranjangButton, backButton);
         bottomHBox.setAlignment(Pos.CENTER);
-
+    
         BorderPane borderPane = new BorderPane();
-        borderPane.setTop(titleLabel);
+        borderPane.setTop(titleHBox);
         borderPane.setCenter(centerVBox);
         borderPane.setBottom(bottomHBox);
         borderPane.setStyle("-fx-background-color:#DCDCDC ;");
-
+    
         Scene tokoScene = new Scene(borderPane, 620, 620);
         stage.setScene(tokoScene);
-
+    
         backButton.setOnAction(a -> {
             SceneAwal();
         });
     }
+    
 
 }

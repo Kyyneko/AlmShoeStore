@@ -1,0 +1,13 @@
+/* stylesToko.css */
+.label {
+    -fx-font-weight: bold;
+}
+
+.button {
+    -fx-padding: 10px 20px;
+}
+
+.button:hover {
+    -fx-background-color: #E0E0E0;
+}
+
