@@ -13,7 +13,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -27,7 +26,6 @@ public class App extends Application {
         SceneAwal();
         stage.show();
         stage.getIcons().add(new Image("images/LogoAlm.png"));
-
     }
 
 
@@ -103,7 +101,9 @@ public class App extends Application {
         button4.setOnAction(a->{SceneRegister();});
     }
 
-    public void SceneKedua(){}
+    public void SceneKedua(){
+
+    }
 
     private void SceneRegister() {
         Label registerLabel = new Label("REGISTER");
@@ -197,10 +197,6 @@ public class App extends Application {
         });
     }
     
-    
-    
-    
-    
     private void SceneExit(){
         stage.close();
     }
@@ -255,6 +251,6 @@ public class App extends Application {
         backButton.setOnAction(a -> {
             SceneAwal();
         });
-}
+    }
 
 }
