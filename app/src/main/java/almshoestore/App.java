@@ -96,6 +96,9 @@ public class App extends Application {
     private void SceneRegister() {
         Label registerLabel = new Label("REGISTER");
         registerLabel.setStyle("-fx-font-size: 30px; -fx-font-family: 'Times New Roman'; -fx-text-fill: BLACK;");
+
+        Label kosong = new Label("");
+        kosong.setAlignment(Pos.CENTER);
         
         HBox hbox = new HBox(registerLabel);
         hbox.setAlignment(Pos.CENTER);
@@ -127,7 +130,7 @@ public class App extends Application {
         HBox hbox2 = new HBox(5, registerButton,backButton);
         hbox2.setAlignment(Pos.CENTER);
 
-        VBox vboxasli = new VBox(5,hbox,hbox5,hbox6,labelerror,hbox2);
+        VBox vboxasli = new VBox(5,hbox,kosong,hbox5,hbox6,labelerror,hbox2);
         vboxasli.setAlignment(Pos.CENTER);
         vboxasli.setStyle("-fx-background-color:#DCDCDC;");
         
@@ -154,7 +157,7 @@ public class App extends Application {
         
                     // Hilangkan pesan error setelah 5 detik
                     Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(3), event -> {
-                        labelerror.setText("");
+                        labelerror.setText(" ");
                     }));
                     timeline.play();
                 }
@@ -164,7 +167,7 @@ public class App extends Application {
         
                 // Hilangkan pesan error setelah 5 detik
                 Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(3), event -> {
-                    labelerror.setText("");
+                    labelerror.setText(" ");
                 }));
                 timeline.play();
             }
