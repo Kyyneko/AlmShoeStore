@@ -15,9 +15,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
-import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -33,25 +31,25 @@ public class App extends Application {
 
     private void SceneAwal(){
         Label label = new Label("  Welcome To");
-        label.setStyle("-fx-font-family: 'Berlin Sans FB'; -fx-font-size: 25px; -fx-text-fill: white;");
+        label.setStyle("-fx-font-family: 'Berlin Sans FB'; -fx-font-size: 25px; -fx-text-color: #000000;");
         Label label2 = new Label("AlmShoeStore");
-        label2.setStyle("-fx-font-family: 'Berlin Sans FB'; -fx-font-size: 35px; -fx-text-fill: white;");
+        label2.setStyle("-fx-font-family: 'Berlin Sans FB'; -fx-font-size: 35px; -fx-text-color: #000000;");
 
         VBox vbox1 =new VBox(label,label2);
         vbox1.setAlignment(Pos.TOP_CENTER);
         
         Label label3 = new Label("Login Member");
-        label3.setStyle("-fx-padding: 5px 25px;-fx-font-size: 30px; -fx-font-family: 'Times New Roman'; -fx-text-fill: BLACK;-fx-background-color: #348ca7; -fx-border-color: WHITE; -fx-border-width: 1px; -fx-border-radius: 5;");
+        label3.setStyle("-fx-padding: 5px 25px;-fx-font-size: 30px; -fx-font-family: 'Times New Roman'; -fx-text-fill: BLACK;-fx-background-color: #FAEBD7; -fx-border-color: WHITE; -fx-border-width: 1px; -fx-border-radius: 5;");
         Label label4= new Label();
         VBox vbox2 = new VBox(10,label4,label3);
         vbox2.setAlignment(Pos.TOP_CENTER);
 
         TextField usernameField = new TextField();
-        usernameField.setStyle("-fx-padding: 1px 32px;-fx-text-fill:BLACK;-fx-font-size: 15px;-fx-background-color: #777777; -fx-border-color: black; -fx-border-width: 1px; -fx-border-radius: 3;");
+        usernameField.setStyle("-fx-padding: 1px 32px;-fx-text-fill:BLACK;-fx-font-size: 15px;-fx-background-color: #777777; -fx-border-color: #FAEBD7; -fx-border-width: 1px; -fx-border-radius: 3;");
         usernameField.setPromptText("Username...");
 
         TextField passwordField = new TextField();
-        passwordField.setStyle("-fx-padding: 1px 32px;-fx-text-fill:BLACK;-fx-font-size: 15px;-fx-background-color: #777777; -fx-border-color: black; -fx-border-width: 1px; -fx-border-radius: 3;");
+        passwordField.setStyle("-fx-padding: 1px 32px;-fx-text-fill:BLACK;-fx-font-size: 15px;-fx-background-color: #777777; -fx-border-color: #FAEBD7; -fx-border-width: 1px; -fx-border-radius: 3;");
         passwordField.setPromptText("Password...");
 
         HBox hbox1 = new HBox(usernameField);
@@ -61,24 +59,24 @@ public class App extends Application {
         hbox2.setAlignment(Pos.CENTER);
 
         Button button1 = new Button("SIGN IN");
-        button1.setStyle("-fx-font-family: 'Berlin Sans FB';-fx-padding: 10px 95px;-fx-text-fill:BLACK;-fx-font-size: 15px;-fx-background-color: GREEN; -fx-border-color: black; -fx-border-width: 1px; -fx-border-radius: 2;");
+        button1.setStyle("-fx-font-family: 'Berlin Sans FB';-fx-padding: 10px 95px;-fx-text-fill:#FAEBD7;-fx-font-size: 15px;-fx-background-color: #006400; -fx-border-color: black; -fx-border-width: 1px; -fx-border-radius: 2;");
 
 
-        Label label5 = new Label("Not Have Account?");
-        label5.setStyle("-fx-font-size: 10px; -fx-font-family: 'Times New Roman'; -fx-text-fill: BLACK;");
+        Button button4 = new Button("Not Have Account?");
+        button4.setStyle("-fx-font-size: 10px; -fx-font-family: 'Times New Roman'; -fx-text-fill: BLACK;");
 
         Button button2 = new Button("REGISTER");
-        button2.setStyle("-fx-font-family: 'Berlin Sans FB';-fx-text-fill:BLACK;-fx-font-size: 15px;-fx-background-color: BLUE; -fx-border-color: black; -fx-border-width: 1px; -fx-border-radius: 2;");
+        button2.setStyle("-fx-font-family: 'Berlin Sans FB';-fx-text-fill:BLACK;-fx-font-size: 15px;-fx-background-color: #FAEBD7; -fx-border-color: #FAEBD7; -fx-border-width: 1px; -fx-border-radius: 2;");
 
         Button button3 = new Button("EXIT");
-        button3.setStyle("-fx-font-family: 'Berlin Sans FB';-fx-text-fill:BLACK;-fx-font-size: 15px;-fx-background-color: RED; -fx-border-color: black; -fx-border-width: 1px; -fx-border-radius: 2;");
+        button3.setStyle("-fx-font-family: 'Berlin Sans FB';-fx-text-fill:RED;-fx-font-size: 15px;-fx-background-color: #FAEBD7; -fx-border-color: #FAEBD7; -fx-border-width: 1px; -fx-border-radius: 2;");
 
         HBox hbox3 = new HBox(5,button2,button3);
         hbox3.setAlignment(Pos.CENTER);
 
-        VBox asli = new VBox(10,vbox1,vbox2,hbox1,hbox2,button1,label5,hbox3);
+        VBox asli = new VBox(10,vbox1,vbox2,hbox1,hbox2,button1,button4,hbox3);
         asli.setAlignment(Pos.CENTER);
-        asli.setStyle("-fx-background-color:#0f6049;");
+        asli.setStyle("-fx-background-color:#DCDCDC;");
         // asli.getChildren().addAll(vbox1,vbox2,vbox3);
         
         Scene scene1 = new Scene(asli,500,500);
@@ -90,6 +88,7 @@ public class App extends Application {
         button1.setOnAction(a->{SceneToko();});
         button2.setOnAction(a->{SceneRegister();});
         button3.setOnAction(a->{SceneExit();});
+        button4.setOnAction(a->{SceneRegister();});
     }
 
     public void SceneKedua(){}
