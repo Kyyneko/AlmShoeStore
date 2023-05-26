@@ -31,9 +31,9 @@ public class App extends Application {
 
     private void SceneAwal(){
         Label label = new Label("  Welcome To");
-        label.setStyle("-fx-font-family: 'Berlin Sans FB'; -fx-font-size: 25px; -fx-text-color: #000000;");
+        label.setStyle("-fx-font-family: 'Cambria'; -fx-font-size: 25px; -fx-text-color: #000000;");
         Label label2 = new Label("AlmShoeStore");
-        label2.setStyle("-fx-font-family: 'Berlin Sans FB'; -fx-font-size: 35px; -fx-text-color: #000000;");
+        label2.setStyle("-fx-font-family: 'Cambria'; -fx-font-size: 35px; -fx-text-color: #000000;");
 
         VBox vbox1 =new VBox(label,label2);
         vbox1.setAlignment(Pos.TOP_CENTER);
@@ -59,17 +59,17 @@ public class App extends Application {
         hbox2.setAlignment(Pos.CENTER);
 
         Button button1 = new Button("SIGN IN");
-        button1.setStyle("-fx-font-family: 'Berlin Sans FB';-fx-padding: 10px 95px;-fx-text-fill:#FAEBD7;-fx-font-size: 15px;-fx-background-color: #006400; -fx-border-color: black; -fx-border-width: 1px; -fx-border-radius: 2;");
+        button1.setStyle("-fx-font-family: 'Cambria';-fx-padding: 10px 95px;-fx-text-fill:#FAEBD7;-fx-font-size: 15px;-fx-background-color: #006400; -fx-border-color: WHITE; -fx-border-width: 1px; -fx-border-radius: 2;");
 
 
         Button button4 = new Button("Not Have Account?");
         button4.setStyle("-fx-font-size: 10px; -fx-font-family: 'Times New Roman'; -fx-text-fill: BLACK;");
 
         Button button2 = new Button("REGISTER");
-        button2.setStyle("-fx-font-family: 'Berlin Sans FB';-fx-text-fill:BLACK;-fx-font-size: 15px;-fx-background-color: #FAEBD7; -fx-border-color: #FAEBD7; -fx-border-width: 1px; -fx-border-radius: 2;");
+        button2.setStyle("-fx-font-family: 'Cambria';-fx-text-fill:BLACK;-fx-font-size: 15px;-fx-background-color: #FAEBD7; -fx-border-color: #FAEBD7; -fx-border-width: 1px; -fx-border-radius: 2;");
 
         Button button3 = new Button("EXIT");
-        button3.setStyle("-fx-font-family: 'Berlin Sans FB';-fx-text-fill:RED;-fx-font-size: 15px;-fx-background-color: #FAEBD7; -fx-border-color: #FAEBD7; -fx-border-width: 1px; -fx-border-radius: 2;");
+        button3.setStyle("-fx-font-family: 'Cambria';-fx-text-fill:RED;-fx-font-size: 15px;-fx-background-color: #FAEBD7; -fx-border-color: #FAEBD7; -fx-border-width: 1px; -fx-border-radius: 2;");
 
         HBox hbox3 = new HBox(5,button2,button3);
         hbox3.setAlignment(Pos.CENTER);
