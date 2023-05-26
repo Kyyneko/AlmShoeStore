@@ -26,7 +26,7 @@ public class App extends Application {
         stage = primaryStage;      
         SceneAwal();
         stage.show();
-        stage.getIcons().add(new Image("LogoAlm.png"));
+        stage.getIcons().add(new Image("images/LogoAlm.png"));
 
     }
 
@@ -41,7 +41,7 @@ public class App extends Application {
         vbox1.setAlignment(Pos.TOP_CENTER);
 
         ImageView fotoikon = new ImageView();
-        String foto3 = "LogoAlm.png";
+        String foto3 = "images/LogoAlm.png";
         Image image3 = new Image(foto3);
         fotoikon.setImage(image3);
         fotoikon.setFitHeight(150);
@@ -130,10 +130,10 @@ public class App extends Application {
         hbox6.setAlignment(Pos.CENTER);
     
         Button registerButton = new Button("REGISTER");
-        registerButton.setStyle("-fx-font-family: 'Berlin Sans FB';-fx-text-fill:WHITE;-fx-font-size: 15px;-fx-background-color: #006400; -fx-border-color: WHITE; -fx-border-width: 1px; -fx-border-radius: 2;");
+        registerButton.setStyle("-fx-font-family: 'Cambria';-fx-text-fill:WHITE;-fx-font-size: 15px;-fx-background-color: #006400; -fx-border-color: WHITE; -fx-border-width: 1px; -fx-border-radius: 2;");
     
         Button backButton = new Button("BACK");
-        backButton.setStyle("-fx-font-family: 'Berlin Sans FB';-fx-text-fill:RED;-fx-font-size: 15px;-fx-background-color: #FAEBD7; -fx-border-color: WHITE; -fx-border-width: 1px; -fx-border-radius: 2;");
+        backButton.setStyle("-fx-font-family: 'Cambria';-fx-text-fill:RED;-fx-font-size: 15px;-fx-background-color: #FAEBD7; -fx-border-color: WHITE; -fx-border-width: 1px; -fx-border-radius: 2;");
     
         Label labelerror= new Label("");
         labelerror.setStyle("-fx-font-size: 10px; -fx-text-fill: RED;-fx-font-family: 'Berlin Sans FB';");
