@@ -26,7 +26,8 @@ public class App extends Application {
         stage = primaryStage;      
         SceneAwal();
         stage.show();
-        stage.getIcons().add(new Image("almarhum.jpg"));
+        stage.getIcons().add(new Image("LogoAlm.png"));
+
     }
 
 
@@ -40,7 +41,7 @@ public class App extends Application {
         vbox1.setAlignment(Pos.TOP_CENTER);
 
         ImageView fotoikon = new ImageView();
-        String foto3 = "almarhum.jpg";
+        String foto3 = "LogoAlm.png";
         Image image3 = new Image(foto3);
         fotoikon.setImage(image3);
         fotoikon.setFitHeight(150);
