@@ -83,6 +83,32 @@ public class SepatuFutsal extends Scene {
         hbox2.getChildren().add(vbox2);
         root.getChildren().add(hbox2);
 
+        /* Shoes 3 */
+        HBox hbox3 = new HBox();
+        hbox3.setSpacing(10);
+        
+        VBox vbox3 = new VBox();
+        vbox3.setSpacing(10);
+
+        ImageView shoeImage3 = CreateImageView("images/scenetoko/ShoeFutsal/Futsal3.jpg");
+        hbox3.getChildren().add(shoeImage3);
+
+        Button label3 = new Button("Nike Phantom Gt2 Academy Tf");
+        label3.setStyle("-fx-text-fill : #000000; -fx-font-size : 20px; -fx-background-color : transparent");
+        vbox3.getChildren().add(label3);
+
+        Label description3 = new Label("Detail | Colorway : Black | Article : (DC0803-001) | Brand New in Box (BNIB) / Tag (BNWT) | Material | For Use On Shorter, Synthetic Surfaces | Non-marking Sole");
+        description3.setStyle("-fx-text-fill : #808080; -fx-font-size : 14px");
+        description3.setWrapText(true);
+        vbox3.getChildren().add(description3);
+
+        Label price3 = new Label("IDR 999.000");
+        price3.setStyle("-fx-text-fill : #008000; -fx-font-size : 16px");
+        vbox3.getChildren().add(price3);
+
+        hbox3.getChildren().add(vbox3);
+        root.getChildren().add(hbox3);
+
 
         /* Scroll Pane */
         ScrollPane scroll = new ScrollPane(root);
