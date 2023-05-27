@@ -206,6 +206,7 @@ public class App extends Application {
     judul.setStyle("-fx-font-size: 20px; -fx-font-family: 'CAMBRIA'; -fx-text-fill: BLACK; -fx-background-color : #0000");
     VBox vboxjudul = new VBox(0, judul);
     vboxjudul.setAlignment(Pos.CENTER);
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     Label label1 = new Label("Sepatu Sneakers");
     label1.setStyle("-fx-padding: 5px 25px;-fx-font-size: 30px; -fx-font-family: 'Times New Roman'; -fx-text-fill: BLACK;-fx-background-color: #23c7f0; -fx-border-color: WHITE; -fx-border-width: 1px; -fx-border-radius: 5;");
@@ -222,9 +223,26 @@ public class App extends Application {
 
     VBox vbox1 = new VBox(5,label1,sepatu1ImageView,label11,button1);
     vbox1.setAlignment(Pos.CENTER);
-    vbox1.setStyle("-fx-background-color: #dcdcdca5;-fx-padding: 3px 10px;");
+    vbox1.setStyle("-fx-background-color: #dcdcdca5;-fx-padding: 10px 10px;");
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    Label label2 = new Label("  Sepatu Formal  ");
+    label2.setStyle("-fx-padding: 5px 20px;-fx-font-size: 30px; -fx-font-family: 'Times New Roman'; -fx-text-fill: BLACK;-fx-background-color: #23c7f0; -fx-border-color: WHITE; -fx-border-width: 1px; -fx-border-radius: 5;");
+    
+    ImageView sepatu2ImageView = new ImageView(new Image("images/scenetoko/Formal.jpg")); 
+    sepatu2ImageView.setFitHeight(200);
+    sepatu2ImageView.setFitWidth(250);    Label label12 = new Label("Sepatu yang dipakai dalam acara-acara formal\nterbuat dari bahan kulit dengan desain elegan");
+    label12.setStyle("-fx-font-size: 12px; -fx-font-family: 'Times New Roman'; -fx-text-fill: BLACK;");
 
-    HBox hbox1 = new HBox(15, vbox1);
+    Button button2 = new Button("CHECK");
+    button2.setStyle("-fx-padding: 3px 25px;-fx-font-family: 'Cambria';-fx-text-fill:BLACK;-fx-font-size: 10px;-fx-background-color: #f89a0c; -fx-border-color: #FAEBD7; -fx-border-width: 1px; -fx-border-radius: 2;");
+
+    VBox vbox2 = new VBox(5,label2,sepatu2ImageView,label12,button2);
+    vbox2.setAlignment(Pos.CENTER);
+    vbox2.setStyle("-fx-background-color: #dcdcdca5;-fx-padding: 10px 10px;");
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+    HBox hbox1 = new HBox(15, vbox1,vbox2);
     hbox1.setAlignment(Pos.CENTER);
 
     VBox utama = new VBox(10, vboxjudul,hbox1);
