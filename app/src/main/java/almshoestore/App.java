@@ -10,6 +10,7 @@ import javafx.animation.PauseTransition;
 import javafx.animation.Timeline;
 import javafx.application.Application;
 import javafx.geometry.Pos;
+import javafx.scene.Cursor;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -298,22 +299,53 @@ public class App extends Application {
         Stage stage = (Stage) button1.getScene().getWindow(); 
         stage.setScene(sceneSepatuSneakers); 
     });
+    button1.setOnMouseEntered(event -> {
+        stage.getScene().setCursor(Cursor.HAND);
+    });
+    
+    button1.setOnMouseExited(event -> {
+        stage.getScene().setCursor(Cursor.DEFAULT);
+    });
+
     button2.setOnAction(event -> {
         SepatuFormal sceneSepatuFormal = new SepatuFormal(utama, 620, 620);
         Stage stage = (Stage) button2.getScene().getWindow(); 
         stage.setScene(sceneSepatuFormal); 
     });
+    button2.setOnMouseEntered(event -> {
+        stage.getScene().setCursor(Cursor.HAND);
+    });
+    
+    button2.setOnMouseExited(event -> {
+        stage.getScene().setCursor(Cursor.DEFAULT);
+    });
+
     button3.setOnAction(event -> {
         SepatuLari scenSepatuLari = new SepatuLari(utama, 620, 620);
         Stage stage = (Stage) button3.getScene().getWindow();
         stage.setScene(scenSepatuLari);
     });
+    button3.setOnMouseEntered(event -> {
+        stage.getScene().setCursor(Cursor.HAND);
+    });
+    
+    button3.setOnMouseExited(event -> {
+        stage.getScene().setCursor(Cursor.DEFAULT);
+    });
+
     button4.setOnAction(event -> {
         SepatuFutsal sceneSepatuFutsal = new SepatuFutsal(utama, 620, 620);
         Stage stage = (Stage) button4.getScene().getWindow(); 
         stage.setScene(sceneSepatuFutsal); 
     });
+    button4.setOnMouseEntered(event -> {
+        stage.getScene().setCursor(Cursor.HAND);
+    });
     
+    button4.setOnMouseExited(event -> {
+        stage.getScene().setCursor(Cursor.DEFAULT);
+    });
+
     return tokoScene;
 
     

@@ -1,5 +1,6 @@
 package almshoestore.SceneToko;
 
+import javafx.scene.Cursor;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import almshoestore.App;
@@ -24,6 +25,7 @@ public class SepatuFormal extends Scene {
         root.setPadding(new Insets(10));
         root.setSpacing(10);
 
+        /* ============================================================ BACK BUTTON ============================================================ */
         Button backButton = new Button("BACK");
         backButton.setStyle("-fx-background-color: #ffffff; -fx-text-fill: #000000; -fx-font-size : 16px");
         backButton.setOnAction(e -> {
@@ -32,9 +34,17 @@ public class SepatuFormal extends Scene {
             Scene sceneTokoAwal = app.SceneTokoAwal(); // Panggil metode createSceneTokoAwal() dari objek App
             stage.setScene(sceneTokoAwal);
         });
+        backButton.setOnMouseEntered(event -> {
+            backButton.setCursor(Cursor.HAND);
+        });
+        
+        backButton.setOnMouseExited(event -> {
+            backButton.setCursor(Cursor.DEFAULT);
+        });
+        
         root.getChildren().add(backButton);
 
-        // shoes 1
+        /* ============================================================ SHOES 1 ============================================================ */
         HBox hbox1 = new HBox();
         hbox1.setSpacing(10);
 
@@ -62,7 +72,7 @@ public class SepatuFormal extends Scene {
         hbox1.getChildren().add(vbox1);
         root.getChildren().add(hbox1);
 
-        // shoes 2
+        /* ============================================================ SHOES 2 ============================================================ */
         HBox hbox2 = new HBox();
         hbox2.setSpacing(10);
 
@@ -91,7 +101,7 @@ public class SepatuFormal extends Scene {
         hbox2.getChildren().add(vbox2);
         root.getChildren().add(hbox2);
 
-        // shoes 3
+        /* ============================================================ SHOES 3 ============================================================ */
         HBox hbox3 = new HBox();
         hbox3.setSpacing(10);
 
@@ -119,7 +129,7 @@ public class SepatuFormal extends Scene {
         hbox3.getChildren().add(vbox3);
         root.getChildren().add(hbox3);
 
-        // scrool pane
+        /* ============================================================ SCROLL PANE ============================================================ */
         ScrollPane scroll = new ScrollPane(root);
         scroll.setFitToWidth(true);
         scroll.setFitToHeight(true);
@@ -127,6 +137,7 @@ public class SepatuFormal extends Scene {
         return scroll;
     }
 
+    /* ============================================================ IMAGE VIEW ============================================================ */
     private static ImageView CreateImageView(String ImagePath) {
         Image image = new Image(ImagePath);
         ImageView imageView = new ImageView(image);

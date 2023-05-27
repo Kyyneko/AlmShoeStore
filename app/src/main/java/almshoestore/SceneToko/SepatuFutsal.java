@@ -25,6 +25,7 @@ public class SepatuFutsal extends Scene {
         root.setPadding(new Insets(10));
         root.setSpacing(10);
 
+        /* ============================================================ BACK BUTTON ============================================================ */
         Button backButton = new Button("BACK");
         backButton.setStyle("-fx-background-color: #ffffff; -fx-text-fill: #000000; -fx-font-size : 16px");
         backButton.setOnAction(e -> {
@@ -36,7 +37,7 @@ public class SepatuFutsal extends Scene {
         
         root.getChildren().add(backButton);
 
-        /* Shoes 1 */
+        /* ============================================================ Shoes 1 ============================================================ */
         HBox hbox1 = new HBox();
         hbox1.setSpacing(10);
 
@@ -64,7 +65,7 @@ public class SepatuFutsal extends Scene {
         hbox1.getChildren().add(vbox1);
         root.getChildren().add(hbox1);
 
-        /* Shoes 2 */
+        /* ============================================================ Shoes 2 ============================================================ */
         HBox hbox2 = new HBox();
         hbox2.setSpacing(10);
 
@@ -93,7 +94,7 @@ public class SepatuFutsal extends Scene {
         hbox2.getChildren().add(vbox2);
         root.getChildren().add(hbox2);
 
-        /* Shoes 3 */
+        /* ============================================================ Shoes 3 ============================================================ */
         HBox hbox3 = new HBox();
         hbox3.setSpacing(10);
         
@@ -121,7 +122,7 @@ public class SepatuFutsal extends Scene {
         hbox3.getChildren().add(vbox3);
         root.getChildren().add(hbox3);
 
-        /* Shoes 4 */
+        /* ============================================================ Shoes 4 ============================================================ */
         HBox hbox4 = new HBox();
         hbox4.setSpacing(10);
 
@@ -149,7 +150,7 @@ public class SepatuFutsal extends Scene {
         hbox4.getChildren().add(vBox4);
         root.getChildren().add(hbox4);
 
-        /* Scroll Pane */
+        /* ============================================================ Scroll Pane ============================================================ */
         ScrollPane scroll = new ScrollPane(root);
         scroll.setFitToWidth(true);
         scroll.setFitToHeight(true);
@@ -158,6 +159,7 @@ public class SepatuFutsal extends Scene {
 
         }
 
+        /* ============================================================ Image View ============================================================ */
         private static ImageView CreateImageView(String ImagePath) {
             Image image = new Image(ImagePath);
             ImageView imageView = new ImageView(image);

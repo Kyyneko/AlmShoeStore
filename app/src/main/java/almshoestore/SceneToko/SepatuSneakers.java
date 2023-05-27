@@ -24,6 +24,7 @@ public class SepatuSneakers extends Scene {
                 root.setPadding(new Insets(10));
                 root.setSpacing(10);
 
+                /* ============================================================ BACK BUTTON ============================================================ */
                 Button backButton = new Button("BACK");
                 backButton.setStyle("-fx-background-color: #ffffff; -fx-text-fill: #000000; -fx-font-size: 16px;");
                 backButton.setOnAction(e -> {
@@ -34,7 +35,7 @@ public class SepatuSneakers extends Scene {
                 });
                 root.getChildren().add(backButton);
 
-                /* Shoes 1 */
+                /* ============================================================ Shoes 1 ============================================================ */
                 HBox hbox1 = new HBox();
                 hbox1.setSpacing(10);
 
@@ -62,7 +63,7 @@ public class SepatuSneakers extends Scene {
                 hbox1.getChildren().add(vbox1);
                 root.getChildren().add(hbox1);
 
-                /* Shoes 2 */
+                /* ============================================================ Shoes 2 ============================================================ */
                 HBox hbox2 = new HBox();
                 hbox2.setSpacing(10);
 
@@ -90,7 +91,7 @@ public class SepatuSneakers extends Scene {
                 hbox2.getChildren().add(vbox2);
                 root.getChildren().add(hbox2);
 
-                /* Shoes 3 */
+                /* ============================================================ Shoes 3 ============================================================ */
                 HBox hbox3 = new HBox();
                 hbox3.setSpacing(10);
 
@@ -118,7 +119,7 @@ public class SepatuSneakers extends Scene {
                 hbox3.getChildren().add(vbox3);
                 root.getChildren().add(hbox3);
 
-                /* Shoes 4 */
+                /* ============================================================ Shoes 4 ============================================================ */
                 HBox hbox4 = new HBox();
                 hbox4.setSpacing(10);
 
@@ -151,7 +152,7 @@ public class SepatuSneakers extends Scene {
                 });
                 
 
-                /* Shoes 5 */
+                /* ============================================================ Shoes 5 ============================================================ */
                 HBox hbox5 = new HBox();
                 hbox5.setSpacing(10);
 
@@ -179,7 +180,7 @@ public class SepatuSneakers extends Scene {
                 hbox5.getChildren().add(vbox5);
                 root.getChildren().add(hbox5);
 
-                // Membungkus VBox di dalam ScrollPane
+                /* ============================================================ Scroll Pane ============================================================ */
                 ScrollPane scrollPane = new ScrollPane(root);
                 scrollPane.setFitToWidth(true);
                 scrollPane.setFitToHeight(true);
@@ -188,6 +189,7 @@ public class SepatuSneakers extends Scene {
                 }
 
 
+        /* ============================================================ Image View ============================================================ */        
         private static ImageView createShoeImageView(String imagePath) {
                 // Membuat ImageView dengan gambar sepatu
                 Image image = new Image(imagePath);
