@@ -1,11 +1,11 @@
 
 package almshoestore;
 
+import almshoestore.SceneToko.SceneSepatuSneakers;
 import javafx.animation.KeyFrame;
 import javafx.animation.PauseTransition;
 import javafx.animation.Timeline;
 import javafx.application.Application;
-import javafx.css.Style;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -13,8 +13,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -274,6 +272,7 @@ public class App extends Application {
     vbox4.setAlignment(Pos.CENTER);
     vbox4.setStyle("-fx-background-color: #dcdcdca5;-fx-padding: 10px 10px;");
 
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     HBox hbox1 = new HBox(15, vbox1,vbox2);
     hbox1.setAlignment(Pos.CENTER);
     
@@ -285,8 +284,24 @@ public class App extends Application {
     
     Scene tokoScene = new Scene(utama, 620, 620);
     stage.setScene(tokoScene);
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+button1.setOnAction(event -> {
+    SceneSepatuSneakers sceneSepatuSneakers = new SceneSepatuSneakers();
+    Stage stage = (Stage) button1.getScene().getWindow(); 
+    stage.setScene(sceneSepatuSneakers); 
+});
+    button2.setOnAction(a -> { SceneSepatuFormal(); } );
+    button3.setOnAction(a -> { SceneSepatuLari(); } );
+    button4.setOnAction(a -> { SceneSepatuFutsal(); } );
 
     }
+
+
+
+    private void SceneSepatuFormal() {}
+    private void SceneSepatuLari() {}
+    private void SceneSepatuFutsal() {}
     
 
 }
