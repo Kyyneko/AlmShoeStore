@@ -14,6 +14,7 @@ import javafx.scene.Cursor;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -59,12 +60,14 @@ public class App extends Application {
         vbox2.setAlignment(Pos.TOP_CENTER);
 
         TextField usernameField = new TextField();
-        usernameField.setStyle("-fx-padding: 1px 32px;-fx-text-fill:#DCDCDC;-fx-font-size: 15px;-fx-background-color: WHITE; -fx-border-color: #000000; -fx-border-width: 1px; -fx-border-radius: 3;");
+        usernameField.setStyle("-fx-padding: 1px 32px;-fx-text-fill:#000000;-fx-font-size: 15px;-fx-background-color: WHITE; -fx-border-color: #000000; -fx-border-width: 1px; -fx-border-radius: 3;");
         usernameField.setPromptText("Username...");
+        usernameField.setAlignment(Pos.CENTER);
 
-        TextField passwordField = new TextField();
-        passwordField.setStyle("-fx-padding: 1px 32px;-fx-text-fill:#DCDCDC;-fx-font-size: 15px;-fx-background-color: WHITE; -fx-border-color: #000000; -fx-border-width: 1px; -fx-border-radius: 3;");
+        PasswordField passwordField = new PasswordField();
+        passwordField.setStyle("-fx-padding: 1px 32px;-fx-text-fill:#000000;-fx-font-size: 15px;-fx-background-color: WHITE; -fx-border-color: #000000; -fx-border-width: 1px; -fx-border-radius: 3;");
         passwordField.setPromptText("Password...");
+        passwordField.setAlignment(Pos.CENTER);
 
         HBox hbox1 = new HBox(usernameField);
         hbox1.setAlignment(Pos.CENTER);
@@ -118,12 +121,14 @@ public class App extends Application {
         hbox.setAlignment(Pos.CENTER);
 
         TextField usernameField = new TextField();
-        usernameField.setStyle("-fx-padding: 1px 32px;-fx-text-fill:#DCDCDC;-fx-font-size: 15px;-fx-background-color: WHITE; -fx-border-color: #000000; -fx-border-width: 1px; -fx-border-radius: 3;");
+        usernameField.setStyle("-fx-padding: 1px 32px;-fx-text-fill:#000000;-fx-font-size: 15px;-fx-background-color: WHITE; -fx-border-color: #000000; -fx-border-width: 1px; -fx-border-radius: 3;");
         usernameField.setPromptText("Username...");
+        usernameField.setAlignment(Pos.CENTER);
     
-        TextField passwordField = new TextField();
-        passwordField.setStyle("-fx-padding: 1px 32px;-fx-text-fill:#DCDCDC;-fx-font-size: 15px;-fx-background-color: WHITE; -fx-border-color: #000000; -fx-border-width: 1px; -fx-border-radius: 3;");
+        PasswordField passwordField = new PasswordField();
+        passwordField.setStyle("-fx-padding: 1px 32px;-fx-text-fill:#000000;-fx-font-size: 15px;-fx-background-color: WHITE; -fx-border-color: #000000; -fx-border-width: 1px; -fx-border-radius: 3;");
         passwordField.setPromptText("Password...");
+        passwordField.setAlignment(Pos.CENTER);
 
         HBox hbox5 = new HBox(5,usernameField);
         hbox5.setAlignment(Pos.CENTER);
@@ -153,8 +158,8 @@ public class App extends Application {
             String password = passwordField.getText();
         
             if (!username.isEmpty() && !password.isEmpty()) {
-                if (password.matches("^(?=.*[a-zA-Z])(?=.*\\d).{8}$")) {
-                    // Password memenuhi persyaratan
+                if (username.matches("^(?=.*[a-zA-Z])(?=.*\\d).+$") && password.matches("^(?=.*[a-zA-Z])(?=.*\\d).{8}$")) {
+                    // Username dan password memenuhi persyaratan
         
                     // Simpan logika untuk register di sini
         
@@ -166,8 +171,8 @@ public class App extends Application {
                     pause.setOnFinished(event -> SceneAwal());
                     pause.play();
                 } else {
-                    // Password tidak memenuhi persyaratan
-                    labelerror.setText("Password must contain at least 1 letter, 1 digit, and have a length of 8 characters!");
+                    // Username atau password tidak memenuhi persyaratan
+                    labelerror.setText("Username and password must contain at least 1 letter and 1 digit!");
         
                     // Hilangkan pesan error setelah 5 detik
                     Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(3), event -> {
@@ -186,6 +191,7 @@ public class App extends Application {
                 timeline.play();
             }
         });
+        
         
         
     
