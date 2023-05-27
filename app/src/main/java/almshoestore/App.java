@@ -1,7 +1,9 @@
 
 package almshoestore;
 
+import almshoestore.SceneToko.SepatuFormal;
 import almshoestore.SceneToko.SepatuFutsal;
+import almshoestore.SceneToko.SepatuLari;
 import almshoestore.SceneToko.SepatuSneakers;
 import javafx.animation.KeyFrame;
 import javafx.animation.PauseTransition;
@@ -200,7 +202,7 @@ public class App extends Application {
         stage.close();
     }
 
-    public void SceneTokoAwal() {
+    public Scene SceneTokoAwal() {
     Label judul = new Label("What Type Of Shoes Are You Looking For ?");
     judul.setStyle("-fx-font-size: 20px; -fx-font-family: 'CAMBRIA'; -fx-text-fill: BLACK; -fx-background-color : #0000");
     VBox vboxjudul = new VBox(0, judul);
@@ -294,14 +296,23 @@ public class App extends Application {
     });
 
     button2.setOnAction(event -> {
+        SepatuFormal sceneSepatuFormal = new SepatuFormal(utama, 620, 620);
+        Stage stage = (Stage) button2.getScene().getWindow(); 
+        stage.setScene(sceneSepatuFormal); 
+    });
 
-    } );
+    button3.setOnAction(event -> {
+        SepatuLari scenSepatuLari = new SepatuLari(utama, 620, 620);
+        Stage stage = (Stage) button3.getScene().getWindow();
+        stage.setScene(scenSepatuLari);
+    });
 
     button4.setOnAction(event -> {
         SepatuFutsal sceneSepatuFutsal = new SepatuFutsal(utama, 620, 620);
         Stage stage = (Stage) button4.getScene().getWindow(); 
         stage.setScene(sceneSepatuFutsal); 
     });
+    return tokoScene;
 
     
 }

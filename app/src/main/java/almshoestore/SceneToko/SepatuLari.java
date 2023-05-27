@@ -2,6 +2,7 @@ package almshoestore.SceneToko;
 
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import almshoestore.App;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
@@ -9,12 +10,13 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 import javafx.scene.layout.HBox;
 
 public class SepatuLari extends Scene {
 
     public SepatuLari(Parent root, double width, double height) {
-        super(root, width, height);
+        super(root(), width, height);
         
     }
     
@@ -25,6 +27,12 @@ public class SepatuLari extends Scene {
 
         Button backButton = new Button("BACK");
         backButton.setStyle("-fx-background-color: #ffffff; -fx-text-fill: #000000; -fx-font-size : 16px");
+        backButton.setOnAction(e -> {
+            Stage stage = (Stage) backButton.getScene().getWindow();
+            App app = new App(); // Buat objek dari kelas App
+            Scene sceneTokoAwal = app.SceneTokoAwal(); // Panggil metode createSceneTokoAwal() dari objek App
+            stage.setScene(sceneTokoAwal);
+        });
         root.getChildren().add(backButton);
 
         // shoes 1
