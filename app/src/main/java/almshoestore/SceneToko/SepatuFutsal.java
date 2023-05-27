@@ -56,19 +56,17 @@ public class SepatuFutsal extends Scene {
 
         Button label1 = new Button("Nike Mercurial Superfly 8 Club Tf");
         label1.setStyle("-fx-text-fill: #000000; -fx-font-size: 20px; -fx-font-family: 'Cambria'; -fx-background-color: transparent");
-        vbox1.getChildren().add(label1);
 
         Label description1 = new Label("Detail | Colorway : Black | Article : (CV0955-004) | Brand New in Box (BNIB) / Tag (BNWT) | Material The Nike Mercurial Superfly 8 Club Tf Combines Breathable And Flexible Materials For A Perfect Fit. The Rubber Outsole Provides Optimal Grip On Synthetic Surfaces.");
         description1.setStyle("-fx-text-fill : #808080; -fx-font-size : 14px");
         description1.setWrapText(true);
         VBox.setMargin(description1, new Insets(0, 0, 0, 15));
-        vbox1.getChildren().add(description1);
 
         Label price1 = new Label("IDR 899.000");
         price1.setStyle("-fx-text-fill : #008000; -fx-font-size : 16px");
         VBox.setMargin(price1, new Insets(0, 0, 0, 15));
-        vbox1.getChildren().add(price1);
 
+        vbox1.getChildren().addAll(label1, description1, price1);
         hbox1.getChildren().add(vbox1);
         root.getChildren().add(hbox1);
 
@@ -85,19 +83,17 @@ public class SepatuFutsal extends Scene {
 
         Button label2 = new Button("Nike Phantom Gt2 Academy Ic Indoor");
         label2.setStyle("-fx-text-fill : #000000; -fx-font-size : 20px; -fx-font-family : 'Cambria'; -fx-background-color : transparent");
-        vbox2.getChildren().add(label2);
 
         Label description2 = new Label("Detail | Colorway : Blue | Article : (DC0765-407) | Brand New in Box (BNIB) / Tag (BNWT) | Material Smooth Surface: Off-center Lacing Creates A Larger Sweet Spot For Powerful Strikes. Durable Design: Synthetic Leather Is Durable And Easy To Clean.");
         description2.setStyle("-fx-text-fill : #808080; -fx-font-size : 14px");
         description2.setWrapText(true);
         VBox.setMargin(description2, new Insets(0, 0, 0, 15));
-        vbox2.getChildren().add(description2);
 
         Label price2 = new Label("IDR 1.199.000");
         price2.setStyle("-fx-text-fill : #008000; -fx-font-size : 16px");
         VBox.setMargin(price2, new Insets(0, 0, 0, 15));
-        vbox2.getChildren().add(price2);
 
+        vbox2.getChildren().addAll(label2, description2, price2);
         hbox2.getChildren().add(vbox2);
         root.getChildren().add(hbox2);
 
@@ -113,19 +109,17 @@ public class SepatuFutsal extends Scene {
 
         Button label3 = new Button("Nike Phantom Gt2 Academy Tf");
         label3.setStyle("-fx-text-fill : #000000; -fx-font-size : 20px; -fx-background-color : transparent");
-        vbox3.getChildren().add(label3);
 
         Label description3 = new Label("Detail | Colorway : Black | Article : (DC0803-001) | Brand New in Box (BNIB) / Tag (BNWT) | Material | For Use On Shorter, Synthetic Surfaces | Non-marking Sole");
         description3.setStyle("-fx-text-fill : #808080; -fx-font-size : 14px");
         description3.setWrapText(true);
         VBox.setMargin(description3, new Insets(0, 0, 0, 15));
-        vbox3.getChildren().add(description3);
 
         Label price3 = new Label("IDR 999.000");
         price3.setStyle("-fx-text-fill : #008000; -fx-font-size : 16px");
         VBox.setMargin(price3, new Insets(0, 0, 0, 15));
-        vbox3.getChildren().add(price3);
 
+        vbox3.getChildren().addAll(label3, description3, price3);
         hbox3.getChildren().add(vbox3);
         root.getChildren().add(hbox3);
 
@@ -141,22 +135,37 @@ public class SepatuFutsal extends Scene {
 
         Button label4 = new Button("Nike Zoom Vapor 15 Academy Kylian Mbappe Tf");
         label4.setStyle("-fx-text-fill : #000000; -fx-font-size : 20px; -fx-background-color : transparent");
-        vBox4.getChildren().add(label4);
 
         Label description4 = new Label("Detail | Colorway : Dark Red | Article : (DV0708-694) | Brand New in Box (BNIB) / Tag (BNWT) | Material | Kylian Mbappé's Explosiveness, Plus His Twitchy Change Of Direction, Puts Him Firmly In The World Class Of Finishers. With Nods To His Heritage, This Cleat Is Made To Help You Play Just Like Km—with Blinding Pace And Purpose.");
         description4.setStyle("-fx-text-fill : #808080; -fx-fot-size : 14px");
         description4.setWrapText(true);
         VBox.setMargin(description4, new Insets(0, 0, 0, 15));
-        vBox4.getChildren().add(description4);
 
         Label price4 = new Label("IDR 1.299.000");
         price4.setStyle("-fx-text-fill : #008000; -fx-font-size : 16px");
         VBox.setMargin(price4, new Insets(0, 0, 0, 15));
-        vBox4.getChildren().add(price4);
 
+        vBox4.getChildren().addAll(label4, description4, price4);
         hbox4.getChildren().add(vBox4);
         root.getChildren().add(hbox4);
 
+        /* ============================================================ Button Payment ============================================================ */
+        label1.setOnAction(event -> {
+            Pembayaran1();
+        });
+
+        label2.setOnAction(event -> {
+            Pembayaran2();
+        });
+
+        label3.setOnAction(event -> {
+            Pembayaran3();
+        });
+
+        label4.setOnAction(event -> {
+            Pembayaran4();
+        });
+        
         /* ============================================================ Scroll Pane ============================================================ */
         ScrollPane scroll = new ScrollPane(root);
         scroll.setFitToWidth(true);
@@ -165,6 +174,20 @@ public class SepatuFutsal extends Scene {
         return scroll;
 
         }
+
+    /* ============================================================ Scene Pembayaran ============================================================ */
+
+        private static void Pembayaran4() {
+    }
+
+        private static void Pembayaran3() {
+    }
+
+        private static void Pembayaran2() {
+    }
+
+        private static void Pembayaran1() {
+    }
 
         /* ============================================================ Image View ============================================================ */
         private static ImageView CreateImageView(String ImagePath) {

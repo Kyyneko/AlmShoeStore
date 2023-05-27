@@ -55,19 +55,17 @@ public class SepatuLari extends Scene {
 
         Button label1 = new Button("Hoka One One Kawana");
         label1.setStyle("-fx-text-fill: #000000; -fx-font-size: 20px; -fx-font-family: 'Cambria'; -fx-background-color: transparent");
-        vbox1.getChildren().add(label1);
 
         Label description1 = new Label("Detail | Colorway : Lunar Rock | Article : (HKE1123163BL) | Brand New in Box (BNIB) / Tag (BNWT) | Material : Pushing The Boundaries On The Traditional Hoka Geometries, The Hoka Kawana Helps Runners Break New Ground. This Neutral Running Shoe Features A Modified Crash Pad With Swallowtail™ Geometry To Provide Smooth Heel Strikes.");
         description1.setStyle("-fx-text-fill : #808080; -fx-font-size : 14px");
         description1.setWrapText(true);
         VBox.setMargin(description1, new Insets(0, 0, 0, 15));
-        vbox1.getChildren().add(description1);
 
         Label price1 = new Label("IDR 2.099.000");
         price1.setStyle("-fx-text-fill : #008000; -fx-font-size : 16px");
         VBox.setMargin(price1, new Insets(0, 0, 0, 15));
-        vbox1.getChildren().add(price1);
 
+        vbox1.getChildren().addAll(label1, description1, price1);
         hbox1.getChildren().add(vbox1);
         root.getChildren().add(hbox1);
 
@@ -84,19 +82,17 @@ public class SepatuLari extends Scene {
 
         Button label2 = new Button("Adidas Ultraboost Light");
         label2.setStyle("-fx-text-fill : #000000; -fx-font-size : 20px; -fx-font-family : 'Cambria'; -fx-background-color : transparent");
-        vbox2.getChildren().add(label2);
 
         Label description2 = new Label("Detail | Colorway : Cloud White | Article : (HQ6352) | Brand New in Box (BNIB) / Tag (BNWT) | Material : Experience Epic Energy With The New Ultraboost Light, Our Lightest Ultraboost Ever. The Magic Lies In The Light Boost Midsole, A New Generation Of Adidas Boost. Its Unique Molecule Design Achieves The Lightest Boost Foam To Date.");
         description2.setStyle("-fx-text-fill : #808080; -fx-font-size : 14px");
         description2.setWrapText(true);
         VBox.setMargin(description2, new Insets(0, 0, 0, 15));
-        vbox2.getChildren().add(description2);
 
         Label price2 = new Label("IDR 2.799.000");
         price2.setStyle("-fx-text-fill : #008000; -fx-font-size : 16px");
         VBox.setMargin(price2, new Insets(0, 0, 0, 15));
-        vbox2.getChildren().add(price2);
 
+        vbox2.getChildren().addAll(label2, description2, price2);
         hbox2.getChildren().add(vbox2);
         root.getChildren().add(hbox2);
 
@@ -112,19 +108,17 @@ public class SepatuLari extends Scene {
 
         Button label3 = new Button("Nike Zoomx Streakfly Prm");
         label3.setStyle("-fx-text-fill : #000000; -fx-font-size : 20px; -fx-background-color : transparent");
-        vbox3.getChildren().add(label3);
 
         Label description3 = new Label("Detail | Colorway : White | Article : (DX1626-100) | Brand New in Box (BNIB) / Tag (BNWT) | Material : When Pitted Against The Clock, You Want Shoes That Feel Like Butterflies On Your Feet. The Streakfly Is Our Lightest Racing Shoe, Allowing It To Essentially Disappear On Your Foot. We Left Out All The Unnecessary Frills And Weight");
         description3.setStyle("-fx-text-fill : #808080; -fx-font-size : 14px");
         description3.setWrapText(true);
         VBox.setMargin(description3, new Insets(0, 0, 0, 15));
-        vbox3.getChildren().add(description3);
 
         Label price3 = new Label("IDR 2.799.000");
         price3.setStyle("-fx-text-fill : #008000; -fx-font-size : 16px");
         VBox.setMargin(price3, new Insets(0, 0, 0, 15));
-        vbox3.getChildren().add(price3);
 
+        vbox3.getChildren().addAll(label3, description3, price3);
         hbox3.getChildren().add(vbox3);
         root.getChildren().add(hbox3);
 
@@ -141,21 +135,36 @@ public class SepatuLari extends Scene {
 
         Button label4 = new Button("Adidas Ultraboost 22");
         label4.setStyle("-fx-text-fill : #000000; -fx-font-size : 20px; -fx-background-color : transparent");
-        vbox4.getChildren().add(label4);
 
         Label description4 = new Label("Detail | Colorway : Lucid Blue | Article : (HQ8593) | Brand New in Box (BNIB) / Tag (BNWT) | Material : Yarn In Upper Contains At Least 50% Parley Ocean Plastic  and 50% Recycled Polyester, Regular Fit, Lace Closure, Soft Heel Fit, and Boost Midsole");
         description4.setStyle("-fx-text-fill : #808080; -fx-font-size : 14px");
         description4.setWrapText(true);
         VBox.setMargin(description4, new Insets(0, 0, 0, 15));
-        vbox4.getChildren().add(description4);
 
         Label price4 = new Label("IDR 3.300.000");
         price4.setStyle("-fx-text-fill : #008000; -fx-font-size : 16px");
         VBox.setMargin(price4, new Insets(0, 0, 0, 15));
-        vbox4.getChildren().add(price4);
 
+        vbox4.getChildren().addAll(label4,description4, price4);
         hbox4.getChildren().add(vbox4);
         root.getChildren().add(hbox4);
+
+        /* ============================================================ Button Payment ============================================================ */
+        label1.setOnAction(event -> {
+            Pembayaran1();
+        });
+
+        label2.setOnAction(event -> {
+            Pembayaran2();
+        });
+
+        label3.setOnAction(event -> {
+            Pembayaran3();
+        });
+
+        label4.setOnAction(event -> {
+            Pembayaran4();
+        });
 
         /* ============================================================ SCROLL PANE ============================================================ */
         ScrollPane scroll = new ScrollPane(root);
@@ -163,6 +172,21 @@ public class SepatuLari extends Scene {
         scroll.setFitToHeight(true);
 
         return scroll;
+    }
+    
+    /* ============================================================ Scene Pembayaran ============================================================ */
+    
+
+    private static void Pembayaran4() {
+    }
+
+    private static void Pembayaran3() {
+    }
+
+    private static void Pembayaran2() {
+    }
+
+    private static void Pembayaran1() {
     }
 
     /* ============================================================ IMAGE VIEW ============================================================ */
