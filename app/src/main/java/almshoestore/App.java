@@ -9,6 +9,7 @@ import javafx.animation.KeyFrame;
 import javafx.animation.PauseTransition;
 import javafx.animation.Timeline;
 import javafx.application.Application;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Cursor;
 import javafx.scene.Scene;
@@ -286,13 +287,21 @@ public class App extends Application {
         vbox4.setStyle("-fx-background-color: #dcdcdca5;-fx-padding: 10px 10px;");
 
         /* ============================================================ LAYOUT ============================================================ */
+        VBox vbox5 = new VBox();
+        vbox5.setAlignment(Pos.CENTER);
+
+        Button button5 = new Button("EXIT");
+        button5.setStyle("-fx-padding: 3px 25px;-fx-font-family: 'Cambria';-fx-text-fill:RED;-fx-font-size: 10px;-fx-background-color: #f89a0c; -fx-border-color: #FAEBD7; -fx-border-width: 2px; -fx-border-radius: 2;");
+        vbox5.getChildren().add(button5);
+        VBox.setMargin(button5, new Insets(0, 10, 0, 0));
+        
         HBox hbox1 = new HBox(15, vbox1,vbox2);
         hbox1.setAlignment(Pos.CENTER);
         
         HBox hbox2 = new HBox(15, vbox3,vbox4);
         hbox2.setAlignment(Pos.CENTER);
 
-        VBox utama = new VBox(10, vboxjudul,hbox1,hbox2);
+        VBox utama = new VBox(10, vboxjudul,hbox1,hbox2,vbox5);
         // utama.setStyle("-fx-background-color:#DCDCDC;");
         
         Scene tokoScene = new Scene(utama, 620, 620);
@@ -349,6 +358,17 @@ public class App extends Application {
     });
     
     button4.setOnMouseExited(event -> {
+        stage.getScene().setCursor(Cursor.DEFAULT);
+    });
+
+    button5.setOnAction(event -> {
+        stage.close();
+    });
+    button5.setOnMouseEntered(event -> {
+        stage.getScene().setCursor(Cursor.HAND);
+    });
+    
+    button5.setOnMouseExited(event -> {
         stage.getScene().setCursor(Cursor.DEFAULT);
     });
 
