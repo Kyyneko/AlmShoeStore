@@ -37,17 +37,17 @@ public class SepatuFutsal extends Scene {
         ImageView shoeImage1 =  CreateImageView("images/scenetoko/ShoeFutsal/Futsal1.jpg");
         hbox1.getChildren().add(shoeImage1);
 
-        Button label1 = new Button("MILLS Sepatu Futsal Herzone IN JR Red / Navy / Cyan 9800101");
+        Button label1 = new Button("Nike Mercurial Superfly 8 Club Tf");
         label1.setStyle("-fx-text-fill: #000000; -fx-font-size: 20px; -fx-font-family: 'Cambria'; -fx-background-color: transparent");
         vbox1.getChildren().add(label1);
 
-        Label description1 = new Label("Mills Aeromesh adalah teknologi upper yang menggunakan material mesh berbahan dasar polyester yang dikomputerisasi dengan tingkat gramasi yang sudah disesuaikan sehingga menciptkan material yang ringan, kuat dan memiliki sirkulasi udara yang sangat baik.");
+        Label description1 = new Label("Detail | Colorway : Black | Article : (CV0955-004) | Brand New in Box (BNIB) / Tag (BNWT) | Material The Nike Mercurial Superfly 8 Club Tf Combines Breathable And Flexible Materials For A Perfect Fit. The Rubber Outsole Provides Optimal Grip On Synthetic Surfaces.");
         description1.setStyle("-fx-text-fill : #808080; -fx-font-size : 14px");
         description1.setWrapText(true);
         VBox.setMargin(description1, new Insets(0, 0, 0, 15));
         vbox1.getChildren().add(description1);
 
-        Label price1 = new Label("IDR 329.000");
+        Label price1 = new Label("IDR 899.000");
         price1.setStyle("-fx-text-fill : #008000; -fx-font-size : 16px");
         VBox.setMargin(price1, new Insets(0, 0, 0, 15));
         vbox1.getChildren().add(price1);
@@ -65,17 +65,17 @@ public class SepatuFutsal extends Scene {
         ImageView shoeImage2 = CreateImageView("images/scenetoko/ShoeFutsal/Futsal2.jpg");
         hbox2.getChildren().add(shoeImage2);
 
-        Button label2 = new Button("MILLS Sepatu Futsal Herzone IN JR Yellow / Orange / Navy 9800102");
+        Button label2 = new Button("Nike Phantom Gt2 Academy Ic Indoor");
         label2.setStyle("-fx-text-fill : #000000; -fx-font-size : 20px; -fx-font-family : 'Cambria'; -fx-background-color : transparent");
         vbox2.getChildren().add(label2);
 
-        Label description2 = new Label("MILLS HDT-R / High Density Traction Rubber adalah teknologi outsole berbahan campuran karet murni dan bahan kimia sehingga menghasilkan outsole yang dapat mencengram dengan, memiliki abrasi yang baik dan non marking / tidak meninggalkan bekas.");
+        Label description2 = new Label("Detail | Colorway : Blue | Article : (DC0765-407) | Brand New in Box (BNIB) / Tag (BNWT) | Material Smooth Surface: Off-center Lacing Creates A Larger Sweet Spot For Powerful Strikes. Durable Design: Synthetic Leather Is Durable And Easy To Clean.");
         description2.setStyle("-fx-text-fill : #808080; -fx-font-size : 14px");
         description2.setWrapText(true);
         VBox.setMargin(description2, new Insets(0, 0, 0, 15));
         vbox2.getChildren().add(description2);
 
-        Label price2 = new Label("IDR 329.000");
+        Label price2 = new Label("IDR 1.199.000");
         price2.setStyle("-fx-text-fill : #008000; -fx-font-size : 16px");
         VBox.setMargin(price2, new Insets(0, 0, 0, 15));
         vbox2.getChildren().add(price2);
