@@ -209,11 +209,11 @@ public class App extends Application {
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     Label label1 = new Label("Sepatu Sneakers");
-    label1.setStyle("-fx-padding: 5px 25px;-fx-font-size: 30px; -fx-font-family: 'Times New Roman'; -fx-text-fill: BLACK;-fx-background-color: #23c7f0; -fx-border-color: WHITE; -fx-border-width: 1px; -fx-border-radius: 5;");
+    label1.setStyle("-fx-padding: 5px 25px;-fx-font-size: 20px; -fx-font-family: 'Times New Roman'; -fx-text-fill: BLACK;-fx-background-color: #23c7f0; -fx-border-color: WHITE; -fx-border-width: 1px; -fx-border-radius: 5;");
     
     ImageView sepatu1ImageView = new ImageView(new Image("images/scenetoko/Sneakers.jpg")); 
-    sepatu1ImageView.setFitHeight(200);
-    sepatu1ImageView.setFitWidth(250);
+    sepatu1ImageView.setFitHeight(140);
+    sepatu1ImageView.setFitWidth(175);
 
     Label label11 = new Label("Sepatu yang nyaman digunakan sehari-hari\nmemiliki desain yang sporty dan kasual");
     label11.setStyle("-fx-font-size: 12px; -fx-font-family: 'Times New Roman'; -fx-text-fill: BLACK;");
@@ -226,11 +226,11 @@ public class App extends Application {
     vbox1.setStyle("-fx-background-color: #dcdcdca5;-fx-padding: 10px 10px;");
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     Label label2 = new Label("  Sepatu Formal  ");
-    label2.setStyle("-fx-padding: 5px 20px;-fx-font-size: 30px; -fx-font-family: 'Times New Roman'; -fx-text-fill: BLACK;-fx-background-color: #23c7f0; -fx-border-color: WHITE; -fx-border-width: 1px; -fx-border-radius: 5;");
+    label2.setStyle("-fx-padding: 5px 20px;-fx-font-size: 20px; -fx-font-family: 'Times New Roman'; -fx-text-fill: BLACK;-fx-background-color: #23c7f0; -fx-border-color: WHITE; -fx-border-width: 2px; -fx-border-radius: 5;");
     
     ImageView sepatu2ImageView = new ImageView(new Image("images/scenetoko/Formal.jpg")); 
-    sepatu2ImageView.setFitHeight(200);
-    sepatu2ImageView.setFitWidth(250);    Label label12 = new Label("Sepatu yang dipakai dalam acara-acara formal\nterbuat dari bahan kulit dengan desain elegan");
+    sepatu2ImageView.setFitHeight(140);
+    sepatu2ImageView.setFitWidth(175);    Label label12 = new Label("Sepatu yang dipakai dalam acara-acara formal\nterbuat dari bahan kulit dengan desain elegan");
     label12.setStyle("-fx-font-size: 12px; -fx-font-family: 'Times New Roman'; -fx-text-fill: BLACK;");
 
     Button button2 = new Button("CHECK");
@@ -240,12 +240,31 @@ public class App extends Application {
     vbox2.setAlignment(Pos.CENTER);
     vbox2.setStyle("-fx-background-color: #dcdcdca5;-fx-padding: 10px 10px;");
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    Label label3 = new Label("Sepatu Lari");
+    label3.setStyle("-fx-padding: 5px 25px;-fx-font-size: 20px; -fx-font-family: 'Times New Roman'; -fx-text-fill: BLACK;-fx-background-color: #23c7f0; -fx-border-color: WHITE; -fx-border-width: 2px; -fx-border-radius: 5;");
+    
+    ImageView sepatu3ImageView = new ImageView(new Image("images/scenetoko/Lari.jpg")); 
+    sepatu3ImageView.setFitHeight(140);
+    sepatu3ImageView.setFitWidth(175);
 
+    Label label13 = new Label("Dirancang khusus untuk aktivitas lari\nmemiliki desain ringan dan fleksibel");
+    label13.setStyle("-fx-font-size: 12px; -fx-font-family: 'Times New Roman'; -fx-text-fill: BLACK;");
+
+    Button button3 = new Button("CHECK");
+    button3.setStyle("-fx-padding: 3px 25px;-fx-font-family: 'Cambria';-fx-text-fill:BLACK;-fx-font-size: 10px;-fx-background-color: #f89a0c; -fx-border-color: #FAEBD7; -fx-border-width: 2px; -fx-border-radius: 2;");
+
+    VBox vbox3 = new VBox(5,label3,sepatu3ImageView,label13,button3);
+    vbox3.setAlignment(Pos.CENTER);
+    vbox3.setStyle("-fx-background-color: #dcdcdca5;-fx-padding: 10px 10px;");
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     HBox hbox1 = new HBox(15, vbox1,vbox2);
     hbox1.setAlignment(Pos.CENTER);
+    
+    HBox hbox2 = new HBox(15, vbox3);
+    hbox2.setAlignment(Pos.CENTER);
 
-    VBox utama = new VBox(10, vboxjudul,hbox1);
+    VBox utama = new VBox(10, vboxjudul,hbox1,hbox2);
     
     Scene tokoScene = new Scene(utama, 620, 620);
     stage.setScene(tokoScene);
@@ -259,13 +278,13 @@ public class App extends Application {
 // titleLabel.setStyle("-fx-font-size: 25px; -fx-font-family: 'CAMBRIA'; -fx-text-fill: BLACK; -fx-background-color : #0000");
 
 // ImageView sepatu1ImageView = new ImageView(new Image("images/Sepatu2.jpeg")); 
-// sepatu1ImageView.setFitHeight(200);
-// sepatu1ImageView.setFitWidth(250);
+// sepatu1ImageView.setFitHeight(140);
+// sepatu1ImageView.setFitWidth(175);
 // Label sepatu1Label = new Label("Sepatu 1");
 // sepatu1Label.setStyle("-fx-font-size: 15px; -fx-text-fill: BLACK;");
 
 // ImageView sepatu2ImageView = new ImageView(new Image("images/Sepatu1.jpeg")); 
-// sepatu2ImageView.setFitWidth(250);
+// sepatu2ImageView.setFitWidth(200);
 // sepatu2ImageView.setFitHeight(200);
 // Label sepatu2Label = new Label("Sepatu 2");
 // sepatu2Label.setStyle("-fx-font-size: 15px; -fx-text-fill: BLACK;");
