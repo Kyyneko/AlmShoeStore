@@ -1,7 +1,7 @@
 
 package almshoestore;
 
-import almshoestore.SceneToko.SceneSepatuSneakers;
+import almshoestore.SceneToko.SepatuSneakers;
 import javafx.animation.KeyFrame;
 import javafx.animation.PauseTransition;
 import javafx.animation.Timeline;
@@ -19,7 +19,7 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 
 public class App extends Application {
-    private Stage stage;
+    private static Stage stage;
     public void start(Stage primaryStage) throws Exception{
         
         stage = primaryStage;     
@@ -199,7 +199,7 @@ public class App extends Application {
         stage.close();
     }
 
-    private void SceneTokoAwal() {
+    public void SceneTokoAwal() {
     Label judul = new Label("What Type Of Shoes Are You Looking For ?");
     judul.setStyle("-fx-font-size: 20px; -fx-font-family: 'CAMBRIA'; -fx-text-fill: BLACK; -fx-background-color : #0000");
     VBox vboxjudul = new VBox(0, judul);
@@ -286,21 +286,20 @@ public class App extends Application {
     stage.setScene(tokoScene);
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-button1.setOnAction(event -> {
-    SceneSepatuSneakers sceneSepatuSneakers = new SceneSepatuSneakers();
-    Stage stage = (Stage) button1.getScene().getWindow(); 
-    stage.setScene(sceneSepatuSneakers); 
-});
-    button2.setOnAction(a -> { SceneSepatuFormal(); } );
-    button3.setOnAction(a -> { SceneSepatuLari(); } );
+    button1.setOnAction(event -> {
+        SepatuSneakers sceneSepatuSneakers = new SepatuSneakers(utama, 620, 620);
+        Stage stage = (Stage) button1.getScene().getWindow(); 
+        stage.setScene(sceneSepatuSneakers); 
+    });
+
+    button2.setOnAction(event -> {
+
+    } );
+
     button4.setOnAction(a -> { SceneSepatuFutsal(); } );
 
     }
 
-
-
-    private void SceneSepatuFormal() {}
-    private void SceneSepatuLari() {}
     private void SceneSepatuFutsal() {}
     
 
