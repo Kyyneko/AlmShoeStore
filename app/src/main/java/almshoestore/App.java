@@ -1,6 +1,7 @@
 
 package almshoestore;
 
+import almshoestore.SceneToko.SepatuFutsal;
 import almshoestore.SceneToko.SepatuSneakers;
 import javafx.animation.KeyFrame;
 import javafx.animation.PauseTransition;
@@ -296,14 +297,14 @@ public class App extends Application {
 
     } );
 
-    button4.setOnAction(a -> { SceneSepatuFutsal(); } );
-
-    }
-
-    private void SceneSepatuFutsal() {}
-    
-
+    button4.setOnAction(event -> {
+        SepatuFutsal sceneSepatuFutsal = new SepatuFutsal(utama, 620, 620);
+        Stage stage = (Stage) button4.getScene().getWindow(); 
+        stage.setScene(sceneSepatuFutsal); 
+    });
 }
+}
+
 // Label titleLabel = new Label("AlmShoeStore");
 // titleLabel.setAlignment(Pos.TOP_CENTER);
 // titleLabel.setStyle("-fx-font-size: 25px; -fx-font-family: 'CAMBRIA'; -fx-text-fill: BLACK; -fx-background-color : #0000");
