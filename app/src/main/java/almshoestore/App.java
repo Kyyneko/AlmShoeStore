@@ -203,27 +203,31 @@ public class App extends Application {
 
     private void SceneTokoAwal() {
     Label judul = new Label("What Type Of Shoes Are You Looking For ?");
-    judul.setStyle("-fx-font-size: 25px; -fx-font-family: 'CAMBRIA'; -fx-text-fill: BLACK; -fx-background-color : #0000");
+    judul.setStyle("-fx-font-size: 20px; -fx-font-family: 'CAMBRIA'; -fx-text-fill: BLACK; -fx-background-color : #0000");
     VBox vboxjudul = new VBox(0, judul);
     vboxjudul.setAlignment(Pos.CENTER);
 
     Label label1 = new Label("Sepatu Sneakers");
-    label1.setStyle("-fx-padding: 5px 25px;-fx-font-size: 30px; -fx-font-family: 'Times New Roman'; -fx-text-fill: BLACK;-fx-background-color: #FAEBD7; -fx-border-color: WHITE; -fx-border-width: 1px; -fx-border-radius: 5;");
+    label1.setStyle("-fx-padding: 5px 25px;-fx-font-size: 30px; -fx-font-family: 'Times New Roman'; -fx-text-fill: BLACK;-fx-background-color: #23c7f0; -fx-border-color: WHITE; -fx-border-width: 1px; -fx-border-radius: 5;");
+    
     ImageView sepatu1ImageView = new ImageView(new Image("images/scenetoko/Sneakers.jpg")); 
     sepatu1ImageView.setFitHeight(200);
     sepatu1ImageView.setFitWidth(250);
-    Label label11 = new Label("Sepatu yang nyamandigunakan sehari-hari, memiliki desain yang sporty dan kasual");
-    label11.setStyle("-fx-font-size: 10px; -fx-font-family: 'Times New Roman'; -fx-text-fill: BLACK;");
+
+    Label label11 = new Label("Sepatu yang nyaman digunakan sehari-hari\nmemiliki desain yang sporty dan kasual");
+    label11.setStyle("-fx-font-size: 12px; -fx-font-family: 'Times New Roman'; -fx-text-fill: BLACK;");
 
     Button button1 = new Button("CHECK");
-    button1.setStyle("-fx-font-family: 'Cambria';-fx-text-fill:BLACK;-fx-font-size: 10px;-fx-background-color: #FAEBD7; -fx-border-color: #FAEBD7; -fx-border-width: 1px; -fx-border-radius: 2;");
-
-
+    button1.setStyle("-fx-padding: 3px 25px;-fx-font-family: 'Cambria';-fx-text-fill:BLACK;-fx-font-size: 10px;-fx-background-color: #f89a0c; -fx-border-color: #FAEBD7; -fx-border-width: 1px; -fx-border-radius: 2;");
 
     VBox vbox1 = new VBox(5,label1,sepatu1ImageView,label11,button1);
     vbox1.setAlignment(Pos.CENTER);
+    vbox1.setStyle("-fx-background-color: #dcdcdca5;-fx-padding: 3px 10px;");
 
-    VBox utama = new VBox(10, vboxjudul,vbox1);
+    HBox hbox1 = new HBox(15, vbox1);
+    hbox1.setAlignment(Pos.CENTER);
+
+    VBox utama = new VBox(10, vboxjudul,hbox1);
     
     Scene tokoScene = new Scene(utama, 620, 620);
     stage.setScene(tokoScene);
