@@ -2,6 +2,7 @@ package almshoestore.SceneToko;
 
 import almshoestore.App;
 import javafx.geometry.Insets;
+import javafx.scene.Cursor;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -32,6 +33,12 @@ public class SepatuSneakers extends Scene {
                         App app = new App(); // Buat objek dari kelas App
                         Scene sceneTokoAwal = app.SceneTokoAwal(); // Panggil metode createSceneTokoAwal() dari objek App
                         stage.setScene(sceneTokoAwal);
+                });
+                backButton.setOnMouseEntered(event -> {
+                        backButton.setCursor(Cursor.HAND);
+                });
+                backButton.setOnMouseExited(event -> {
+                        backButton.setCursor(Cursor.DEFAULT);
                 });
                 root.getChildren().add(backButton);
 

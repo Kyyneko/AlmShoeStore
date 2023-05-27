@@ -37,7 +37,6 @@ public class SepatuFormal extends Scene {
         backButton.setOnMouseEntered(event -> {
             backButton.setCursor(Cursor.HAND);
         });
-        
         backButton.setOnMouseExited(event -> {
             backButton.setCursor(Cursor.DEFAULT);
         });
