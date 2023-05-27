@@ -302,7 +302,10 @@ public class App extends Application {
         Stage stage = (Stage) button4.getScene().getWindow(); 
         stage.setScene(sceneSepatuFutsal); 
     });
+
+    
 }
+
 }
 
 // Label titleLabel = new Label("AlmShoeStore");
