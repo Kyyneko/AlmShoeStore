@@ -1,6 +1,6 @@
 /* Gaya untuk elemen Button */
 .button {
-    -fx-background-color: #dcdcdca5; /* Warna latar belakang */
+    -fx-background-color: #dcdcdc75; /* Warna latar belakang */
     -fx-text-fill: #ffffff; /* Warna teks */
     -fx-font-size: 20px; /* Ukuran font */
     -fx-padding: 16px 32px; /* Padding */

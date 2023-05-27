@@ -240,7 +240,7 @@ public class App extends Application {
     vbox2.setAlignment(Pos.CENTER);
     vbox2.setStyle("-fx-background-color: #dcdcdca5;-fx-padding: 10px 10px;");
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    Label label3 = new Label("Sepatu Lari");
+    Label label3 = new Label("   Sepatu Lari   ");
     label3.setStyle("-fx-padding: 5px 25px;-fx-font-size: 20px; -fx-font-family: 'Times New Roman'; -fx-text-fill: BLACK;-fx-background-color: #23c7f0; -fx-border-color: WHITE; -fx-border-width: 2px; -fx-border-radius: 5;");
     
     ImageView sepatu3ImageView = new ImageView(new Image("images/scenetoko/Lari.jpg")); 
@@ -257,14 +257,31 @@ public class App extends Application {
     vbox3.setAlignment(Pos.CENTER);
     vbox3.setStyle("-fx-background-color: #dcdcdca5;-fx-padding: 10px 10px;");
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    Label label4 = new Label("   Sepatu Futsal   ");
+    label4.setStyle("-fx-padding: 5px 25px;-fx-font-size: 20px; -fx-font-family: 'Times New Roman'; -fx-text-fill: BLACK;-fx-background-color: #23c7f0; -fx-border-color: WHITE; -fx-border-width: 2px; -fx-border-radius: 5;");
+    
+    ImageView sepatu4ImageView = new ImageView(new Image("images/scenetoko/Futsal.jpg")); 
+    sepatu4ImageView.setFitHeight(140);
+    sepatu4ImageView.setFitWidth(175);
+
+    Label label14 = new Label("Sepatu khusus untuk bermain futsal\nmemiliki sol yang datar dan tipis");
+    label14.setStyle("-fx-font-size: 12px; -fx-font-family: 'Times New Roman'; -fx-text-fill: BLACK;");
+
+    Button button4 = new Button("CHECK");
+    button4.setStyle("-fx-padding: 3px 25px;-fx-font-family: 'Cambria';-fx-text-fill:BLACK;-fx-font-size: 10px;-fx-background-color: #f89a0c; -fx-border-color: #FAEBD7; -fx-border-width: 2px; -fx-border-radius: 2;");
+
+    VBox vbox4 = new VBox(5,label4,sepatu4ImageView,label14,button4);
+    vbox4.setAlignment(Pos.CENTER);
+    vbox4.setStyle("-fx-background-color: #dcdcdca5;-fx-padding: 10px 10px;");
 
     HBox hbox1 = new HBox(15, vbox1,vbox2);
     hbox1.setAlignment(Pos.CENTER);
     
-    HBox hbox2 = new HBox(15, vbox3);
+    HBox hbox2 = new HBox(15, vbox3,vbox4);
     hbox2.setAlignment(Pos.CENTER);
 
     VBox utama = new VBox(10, vboxjudul,hbox1,hbox2);
+    // utama.setStyle("-fx-background-color:#DCDCDC;");
     
     Scene tokoScene = new Scene(utama, 620, 620);
     stage.setScene(tokoScene);
