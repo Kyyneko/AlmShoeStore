@@ -63,6 +63,7 @@ public class SepatuFutsal extends Scene {
         vbox2.setSpacing(10);
 
         ImageView shoeImage2 = CreateImageView("images/scenetoko/ShoeFutsal/Futsal2.jpg");
+        shoeImage2.setStyle("-fx-background-color : transparent");
         hbox2.getChildren().add(shoeImage2);
 
         Button label2 = new Button("Nike Phantom Gt2 Academy Ic Indoor");
@@ -100,15 +101,44 @@ public class SepatuFutsal extends Scene {
         Label description3 = new Label("Detail | Colorway : Black | Article : (DC0803-001) | Brand New in Box (BNIB) / Tag (BNWT) | Material | For Use On Shorter, Synthetic Surfaces | Non-marking Sole");
         description3.setStyle("-fx-text-fill : #808080; -fx-font-size : 14px");
         description3.setWrapText(true);
+        VBox.setMargin(description3, new Insets(0, 0, 0, 15));
         vbox3.getChildren().add(description3);
 
         Label price3 = new Label("IDR 999.000");
         price3.setStyle("-fx-text-fill : #008000; -fx-font-size : 16px");
+        VBox.setMargin(price3, new Insets(0, 0, 0, 15));
         vbox3.getChildren().add(price3);
 
         hbox3.getChildren().add(vbox3);
         root.getChildren().add(hbox3);
 
+        /* Shoes 4 */
+        HBox hbox4 = new HBox();
+        hbox4.setSpacing(10);
+
+        VBox vBox4 = new VBox();
+        vBox4.setSpacing(10);
+
+        ImageView shoeImage4 = CreateImageView("images/scenetoko/ShoeFutsal/Futsal4.jpg");
+        hbox4.getChildren().add(shoeImage4);
+
+        Button label4 = new Button("Nike Zoom Vapor 15 Academy Kylian Mbappe Tf");
+        label4.setStyle("-fx-text-fill : #000000; -fx-font-size : 20px; -fx-background-color : transparent");
+        vBox4.getChildren().add(label4);
+
+        Label description4 = new Label("Detail | Colorway : Dark Red | Article : (DV0708-694) | Brand New in Box (BNIB) / Tag (BNWT) | Material | Kylian Mbappé's Explosiveness, Plus His Twitchy Change Of Direction, Puts Him Firmly In The World Class Of Finishers. With Nods To His Heritage, This Cleat Is Made To Help You Play Just Like Km—with Blinding Pace And Purpose.");
+        description4.setStyle("-fx-text-fill : #808080; -fx-fot-size : 14px");
+        description4.setWrapText(true);
+        VBox.setMargin(description4, new Insets(0, 0, 0, 15));
+        vBox4.getChildren().add(description4);
+
+        Label price4 = new Label("IDR 1.299.000");
+        price4.setStyle("-fx-text-fill : #008000; -fx-font-size : 16px");
+        VBox.setMargin(price4, new Insets(0, 0, 0, 15));
+        vBox4.getChildren().add(price4);
+
+        hbox4.getChildren().add(vBox4);
+        root.getChildren().add(hbox4);
 
         /* Scroll Pane */
         ScrollPane scroll = new ScrollPane(root);
