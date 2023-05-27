@@ -97,15 +97,13 @@ public class App extends Application {
 
         passwordField.setOnAction(event -> button1.fire());
 
-        button1.setOnAction(a->{SceneToko();});
+        button1.setOnAction(a->{SceneTokoAwal();});
         button2.setOnAction(a->{SceneRegister();});
         button3.setOnAction(a->{SceneExit();});
         button4.setOnAction(a->{SceneRegister();});
     }
 
-    public void SceneKedua(){
-
-    }
+    public void SceneKedua(){}
 
     private void SceneRegister() {
         Label registerLabel = new Label("REGISTER");
@@ -203,62 +201,88 @@ public class App extends Application {
         stage.close();
     }
 
-    private void SceneToko() {
-        Label titleLabel = new Label("AlmShoeStore");
-        titleLabel.setAlignment(Pos.TOP_CENTER);
-        titleLabel.setStyle("-fx-font-size: 25px; -fx-font-family: 'CAMBRIA'; -fx-text-fill: BLACK; -fx-background-color : #0000");
+    private void SceneTokoAwal() {
+    Label judul = new Label("What Type Of Shoes Are You Looking For ?");
+    judul.setStyle("-fx-font-size: 25px; -fx-font-family: 'CAMBRIA'; -fx-text-fill: BLACK; -fx-background-color : #0000");
+    VBox vboxjudul = new VBox(0, judul);
+    vboxjudul.setAlignment(Pos.CENTER);
+
+    Label label1 = new Label("Sepatu Sneakers");
+    label1.setStyle("-fx-padding: 5px 25px;-fx-font-size: 30px; -fx-font-family: 'Times New Roman'; -fx-text-fill: BLACK;-fx-background-color: #FAEBD7; -fx-border-color: WHITE; -fx-border-width: 1px; -fx-border-radius: 5;");
+    ImageView sepatu1ImageView = new ImageView(new Image("images/scenetoko/Sneakers.jpg")); 
+    sepatu1ImageView.setFitHeight(200);
+    sepatu1ImageView.setFitWidth(250);
+    Label label11 = new Label("Sepatu yang nyamandigunakan sehari-hari, memiliki desain yang sporty dan kasual");
+    label11.setStyle("-fx-font-size: 10px; -fx-font-family: 'Times New Roman'; -fx-text-fill: BLACK;");
+
+    Button button1 = new Button("CHECK");
+    button1.setStyle("-fx-font-family: 'Cambria';-fx-text-fill:BLACK;-fx-font-size: 10px;-fx-background-color: #FAEBD7; -fx-border-color: #FAEBD7; -fx-border-width: 1px; -fx-border-radius: 2;");
+
+
+
+    VBox vbox1 = new VBox(5,label1,sepatu1ImageView,label11,button1);
+    vbox1.setAlignment(Pos.CENTER);
+
+    VBox utama = new VBox(10, vboxjudul,vbox1);
     
-        ImageView sepatu1ImageView = new ImageView(new Image("images/Sepatu2.jpeg")); 
-        sepatu1ImageView.setFitHeight(200);
-        sepatu1ImageView.setFitWidth(250);
-        Label sepatu1Label = new Label("Sepatu 1");
-        sepatu1Label.setStyle("-fx-font-size: 15px; -fx-text-fill: BLACK;");
-    
-        ImageView sepatu2ImageView = new ImageView(new Image("images/Sepatu1.jpeg")); 
-        sepatu2ImageView.setFitWidth(250);
-        sepatu2ImageView.setFitHeight(200);
-        Label sepatu2Label = new Label("Sepatu 2");
-        sepatu2Label.setStyle("-fx-font-size: 15px; -fx-text-fill: BLACK;");
-    
-        // Tambahkan ImageView dan Label untuk sepatu lainnya sesuai kebutuhan
-    
-        Button keranjangButton = new Button("Keranjang");
-        keranjangButton.setStyle("-fx-font-family: 'Berlin Sans FB'; -fx-text-fill: BLACK; -fx-font-size: 15px; -fx-background-color: YELLOW; -fx-border-color: black; -fx-border-width: 1px; -fx-border-radius: 2;");
-    
-        Button backButton = new Button("BACK");
-        backButton.setStyle("-fx-font-family: 'Berlin Sans FB'; -fx-text-fill: BLACK; -fx-font-size: 15px; -fx-background-color: RED; -fx-border-color: black; -fx-border-width: 1px; -fx-border-radius: 2;");
-    
-        HBox titleHBox = new HBox(titleLabel);
-        titleHBox.setAlignment(Pos.TOP_CENTER);
-    
-        HBox sepatu1HBox = new HBox(10, sepatu1ImageView, sepatu1Label);
-        sepatu1HBox.setAlignment(Pos.CENTER_LEFT);
-    
-        HBox sepatu2HBox = new HBox(10, sepatu2ImageView, sepatu2Label);
-        sepatu2HBox.setAlignment(Pos.CENTER_LEFT);
-    
-    
-        // Tambahkan VBox untuk sepatu lainnya sesuai kebutuhan
-    
-        VBox centerVBox = new VBox(10, sepatu1HBox, sepatu2HBox); // Tambahkan VBox untuk sepatu lainnya sesuai kebutuhan
-        centerVBox.setAlignment(Pos.CENTER);
-    
-        HBox bottomHBox = new HBox(10, keranjangButton, backButton);
-        bottomHBox.setAlignment(Pos.CENTER);
-    
-        BorderPane borderPane = new BorderPane();
-        borderPane.setTop(titleHBox);
-        borderPane.setCenter(centerVBox);
-        borderPane.setBottom(bottomHBox);
-        borderPane.setStyle("-fx-background-color:#DCDCDC ;");
-    
-        Scene tokoScene = new Scene(borderPane, 620, 620);
-        stage.setScene(tokoScene);
-    
-        backButton.setOnAction(a -> {
-            SceneAwal();
-        });
+    Scene tokoScene = new Scene(utama, 620, 620);
+    stage.setScene(tokoScene);
+
     }
     
 
 }
+// Label titleLabel = new Label("AlmShoeStore");
+// titleLabel.setAlignment(Pos.TOP_CENTER);
+// titleLabel.setStyle("-fx-font-size: 25px; -fx-font-family: 'CAMBRIA'; -fx-text-fill: BLACK; -fx-background-color : #0000");
+
+// ImageView sepatu1ImageView = new ImageView(new Image("images/Sepatu2.jpeg")); 
+// sepatu1ImageView.setFitHeight(200);
+// sepatu1ImageView.setFitWidth(250);
+// Label sepatu1Label = new Label("Sepatu 1");
+// sepatu1Label.setStyle("-fx-font-size: 15px; -fx-text-fill: BLACK;");
+
+// ImageView sepatu2ImageView = new ImageView(new Image("images/Sepatu1.jpeg")); 
+// sepatu2ImageView.setFitWidth(250);
+// sepatu2ImageView.setFitHeight(200);
+// Label sepatu2Label = new Label("Sepatu 2");
+// sepatu2Label.setStyle("-fx-font-size: 15px; -fx-text-fill: BLACK;");
+
+// // Tambahkan ImageView dan Label untuk sepatu lainnya sesuai kebutuhan
+
+// Button keranjangButton = new Button("Keranjang");
+// keranjangButton.setStyle("-fx-font-family: 'Berlin Sans FB'; -fx-text-fill: BLACK; -fx-font-size: 15px; -fx-background-color: YELLOW; -fx-border-color: black; -fx-border-width: 1px; -fx-border-radius: 2;");
+
+// Button backButton = new Button("BACK");
+// backButton.setStyle("-fx-font-family: 'Berlin Sans FB'; -fx-text-fill: BLACK; -fx-font-size: 15px; -fx-background-color: RED; -fx-border-color: black; -fx-border-width: 1px; -fx-border-radius: 2;");
+
+// HBox titleHBox = new HBox(titleLabel);
+// titleHBox.setAlignment(Pos.TOP_CENTER);
+
+// HBox sepatu1HBox = new HBox(10, sepatu1ImageView, sepatu1Label);
+// sepatu1HBox.setAlignment(Pos.CENTER_LEFT);
+
+// HBox sepatu2HBox = new HBox(10, sepatu2ImageView, sepatu2Label);
+// sepatu2HBox.setAlignment(Pos.CENTER_LEFT);
+
+
+// // Tambahkan VBox untuk sepatu lainnya sesuai kebutuhan
+
+// VBox centerVBox = new VBox(10, sepatu1HBox, sepatu2HBox); // Tambahkan VBox untuk sepatu lainnya sesuai kebutuhan
+// centerVBox.setAlignment(Pos.CENTER);
+
+// HBox bottomHBox = new HBox(10, keranjangButton, backButton);
+// bottomHBox.setAlignment(Pos.CENTER);
+
+// BorderPane borderPane = new BorderPane();
+// borderPane.setTop(titleHBox);
+// borderPane.setCenter(centerVBox);
+// borderPane.setBottom(bottomHBox);
+// borderPane.setStyle("-fx-background-color:#DCDCDC ;");
+
+// Scene tokoScene = new Scene(borderPane, 620, 620);
+// stage.setScene(tokoScene);
+
+// backButton.setOnAction(a -> {
+//     SceneAwal();
+// });
