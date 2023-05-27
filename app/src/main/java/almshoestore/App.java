@@ -242,7 +242,7 @@ public class App extends Application {
     Label label3 = new Label("   Sepatu Lari   ");
     label3.setStyle("-fx-padding: 5px 25px;-fx-font-size: 20px; -fx-font-family: 'Times New Roman'; -fx-text-fill: BLACK;-fx-background-color: #23c7f0; -fx-border-color: WHITE; -fx-border-width: 2px; -fx-border-radius: 5;");
     
-    ImageView sepatu3ImageView = new ImageView(new Image("images/scenetoko/Lari.jpg")); 
+    ImageView sepatu3ImageView = new ImageView(new Image("images/scenetoko/Lari1.jpg")); 
     sepatu3ImageView.setFitHeight(140);
     sepatu3ImageView.setFitWidth(175);
 
