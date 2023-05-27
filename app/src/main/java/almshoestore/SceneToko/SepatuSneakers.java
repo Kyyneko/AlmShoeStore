@@ -179,6 +179,7 @@ public class SepatuSneakers extends Scene {
                 return scrollPane;
                 }
 
+
         private static ImageView createShoeImageView(String imagePath) {
                 // Membuat ImageView dengan gambar sepatu
                 Image image = new Image(imagePath);
