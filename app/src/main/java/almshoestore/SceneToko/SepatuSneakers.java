@@ -25,7 +25,9 @@ public class SepatuSneakers extends Scene {
         Button backButton = new Button("BACK");
         backButton.setStyle("-fx-background-color: #ffffff; -fx-text-fill: #000000; -fx-font-size: 16px;");
         sneakersPane.getChildren().add(backButton);
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
+
         // Membuat HBox untuk menampilkan label, deskripsi, dan harga secara horizontal
         HBox hbox1 = new HBox();
         hbox1.setSpacing(10);
@@ -58,7 +60,9 @@ public class SepatuSneakers extends Scene {
 
         // Menambahkan hbox1 ke sneakersPane
         sneakersPane.getChildren().add(hbox1);
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
+
         // Menambahkan gambar sepatu ke sneakersPane
         // Membuat HBox untuk menampilkan image2, label2, description2, dan price2 secara horizontal
         HBox hbox2 = new HBox();
@@ -92,7 +96,9 @@ public class SepatuSneakers extends Scene {
 
         // Menambahkan hbox2 ke sneakersPane
         sneakersPane.getChildren().add(hbox2);
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
+
         HBox hbox3 = new HBox();
         hbox3.setSpacing(10);
 
