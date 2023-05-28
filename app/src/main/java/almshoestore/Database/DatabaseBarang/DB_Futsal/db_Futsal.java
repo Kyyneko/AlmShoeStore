@@ -5,6 +5,6 @@ public class db_Futsal {
         // myConfigFutsal.connection();
         // myConfigFutsal.getDatabase();
         // myConfigFutsal.deleteData();
-        // myConfigFutsal.addData(null, null, null, null);
+        // myConfigFutsal.addData(04, "Nike Zoom Vapor 15 Academy Kylian Mbappe Tf", 1_299_000, 20);
     }
 }

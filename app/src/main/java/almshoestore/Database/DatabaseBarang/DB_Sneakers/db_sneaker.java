@@ -5,6 +5,6 @@ public class db_sneaker {
         // myConfigSneakers.connection();
         // myConfigSneakers.getDatabase();
         // myConfigSneakers.deleteData();
-        // myConfigSneakers.addData(01, "Converse Low Black", 199_000, 15);
+        // myConfigSneakers.addData(05, "Converse Chuck Taylor All Star Seasonal Color Unisex Sneakers - Orange", 999_000, 20);
     }
 }
