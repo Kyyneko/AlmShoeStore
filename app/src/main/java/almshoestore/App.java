@@ -143,6 +143,9 @@ public class App extends Application {
                     } else {
                         // Jika hasil query tidak mengembalikan data, tampilkan pesan login gagal
                         label4.setText("Invalid username or password.");
+                        PauseTransition pause2 = new PauseTransition(Duration.seconds(2));
+                        pause2.setOnFinished(event -> label4.setText(""));
+                        pause2.play();
                     }
         
                     // Tutup koneksi, pernyataan, dan hasil query
@@ -152,7 +155,7 @@ public class App extends Application {
                 } catch (SQLException e) {
                     // Tangani exception jika terjadi kesalahan koneksi atau eksekusi SQL
                     e.printStackTrace();
-                    label4.setText("Error: Failed to connect to database.");
+                    label4.setText("Error: System Maintenance.");
                 }
             } else {
                 // Tampilkan pesan jika username atau password kosong

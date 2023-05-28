@@ -41,4 +41,22 @@ public class MyConfig {
             e.printStackTrace();
         }
     }
+
+    /* DELETE */
+    public static void deleteData() {
+        connection();
+        try {
+            String query = "DELETE FROM `tb_account`";
+            statement = connect.createStatement();
+            statement.executeUpdate(query);
+            
+            System.out.println("Data berhasil dihapus.");
+            
+            statement.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    
+    
 }
