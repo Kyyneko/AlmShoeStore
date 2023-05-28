@@ -2,6 +2,7 @@ package almshoestore.Database.DatabaseBarang.DB_Formal;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -20,7 +21,7 @@ import java.sql.Statement;
         public static void connection() {
             try {
                 connect = DriverManager.getConnection(DB_URL, DB_USER, DB_PASS);
-                System.out.println("Connect Anjayy Awww");
+                System.out.println("Connected To DB");
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -29,14 +30,17 @@ import java.sql.Statement;
         /* Create */
         public static void getDatabase() {
             connection();
+            System.out.println();
             try { String query = "SELECT * FROM `tb_sepatuformal`";
                 statement = connect.createStatement();
                 resultSet = statement.executeQuery(query);
                 
                 while (resultSet.next()) {
-                    System.out.println("Nama Akun > " + resultSet.getString("Username"));
-                    System.out.println("Pass Akun > " + resultSet.getString("Password"));
-                    System.out.println();
+                    System.out.println("ID Barang       > " + resultSet.getInt("ID"));
+                    System.out.println("NAMA Barang     > " + resultSet.getString("NAMA"));
+                    System.out.println("HARGA Barang    > " + resultSet.getInt("HARGA"));
+                    System.out.println("STOK Barang     > " + resultSet.getInt("STOK"));
+                    System.out.println();;
                 }
                 statement.close();
             } catch (SQLException e) {
@@ -54,6 +58,24 @@ import java.sql.Statement;
                 
                 System.out.println("Data berhasil dihapus.");
                 
+                statement.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+
+        /* ADD DATA */
+        public static void addData(Integer idBarang, String namaBarang, Integer hargaBarang, Integer stok) {
+            connection();
+            try {
+                String query = "INSERT INTO tb_sepatuformal (ID, NAMA, HARGA, STOK) VALUES (?, ?, ?, ?)";
+                PreparedStatement statement = connect.prepareStatement(query);
+                statement.setInt(1, idBarang);
+                statement.setString(2, namaBarang);
+                statement.setInt(3, hargaBarang);
+                statement.setInt(4, stok);
+                statement.executeUpdate();
+                System.out.println("Data barang berhasil ditambahkan.");
                 statement.close();
             } catch (SQLException e) {
                 e.printStackTrace();
