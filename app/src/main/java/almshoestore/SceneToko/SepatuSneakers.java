@@ -1,229 +1,161 @@
-package almshoestore.SceneToko;
+        package almshoestore.SceneToko;
 
-import almshoestore.App;
-import javafx.geometry.Insets;
-import javafx.scene.Cursor;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ScrollPane;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
+        import almshoestore.App;
+        import javafx.geometry.Insets;
+        import javafx.scene.Cursor;
+        import javafx.scene.Parent;
+        import javafx.scene.Scene;
+        import javafx.scene.control.Button;
+        import javafx.scene.control.Label;
+        import javafx.scene.control.ScrollPane;
+        import javafx.scene.image.Image;
+        import javafx.scene.image.ImageView;
+        import javafx.scene.layout.HBox;
+        import javafx.scene.layout.VBox;
+        import javafx.stage.Stage;
 
-public class SepatuSneakers extends Scene {
+        public class SepatuSneakers extends Scene {
 
         public SepatuSneakers(Parent root, double width, double height) {
-                super(createMainPane(), width, height);
+                super(root(), width, height);
         }
 
-        private static Parent createMainPane() {
+        private static Parent root() {
                 VBox root = new VBox();
                 root.setPadding(new Insets(10));
                 root.setSpacing(10);
 
-                /* ============================================================ BACK BUTTON ============================================================ */
-                Button backButton = new Button("BACK");
-                backButton.setStyle("-fx-background-color: #ffffff; -fx-text-fill: #000000; -fx-font-size: 16px;");
-                backButton.setOnAction(e -> {
-                        Stage stage = (Stage) backButton.getScene().getWindow();
-                        App app = new App(); // Buat objek dari kelas App
-                        Scene sceneTokoAwal = app.SceneTokoAwal(); // Panggil metode createSceneTokoAwal() dari objek App
-                        stage.setScene(sceneTokoAwal);
-                });
-                backButton.setOnMouseEntered(event -> {
-                        backButton.setCursor(Cursor.HAND);
-                });
-                backButton.setOnMouseExited(event -> {
-                        backButton.setCursor(Cursor.DEFAULT);
-                });
+                Button backButton = createBackButton();
                 root.getChildren().add(backButton);
 
-                /* ============================================================ Shoes 1 ============================================================ */
-                HBox hbox1 = new HBox();
-                hbox1.setSpacing(10);
+                for (int i = 1; i <= 4; i++) {
+                HBox hbox = new HBox();
+                hbox.setSpacing(10);
 
-                VBox vbox1 = new VBox();
-                vbox1.setSpacing(5);
+                VBox vbox = new VBox();
+                vbox.setSpacing(10);
 
-                ImageView shoeImage1 = createShoeImageView("images/scenetoko/Sneakers/Sneakers1.jpg");
-                hbox1.getChildren().add(shoeImage1);
+                ImageView shoeImage = CreateImageView("images/scenetoko/Sneakers/Sneakers" + i + ".jpg");
+                hbox.getChildren().add(shoeImage);
 
-                Button label1 = new Button("Converse Star Player 76 Premium Canvas Men's Sneakers - Black");
-                label1.setStyle("-fx-text-fill: #000000; -fx-font-size: 20px; -fx-font-family: 'Cambria'; -fx-background-color: transparent");
+                Button label = new Button();
+                Label description = new Label();
+                Label price = new Label();
 
-                Label description1 = new Label("Terinspirasi oleh energi pemuda, Converse Chuck Taylor All Flux Flux Sneaker menggunakan prinsip-prinsip desain dinamis untuk menangkap sikap pemuda yang selalu berubah. Detail yang terinspirasi oleh Sport seperti kulit imitasi dan jala atas, outsole Eva yang ringan, dan klip tumit karet membawa getaran atletik. Pita gore elastis di lidah memudahkan dan mematikan, sementara sockliner busa memori membantu tetap nyaman bagi mereka yang sedang bepergian.Sepatu tengah dengan mesh dan bagian atas sintetis Bootie internal untuk pas snugger Tarik loop pada tumit dan lidah agar mudah dan mati Sol outsol karet cetakan injeksi menawarkan traksi yang tahan lama Bantalan ortolit untuk kenyamanan");
-                description1.setStyle("-fx-text-fill: #808080; -fx-font-size: 14px;");
-                description1.setWrapText(true);
-                VBox.setMargin(description1, new Insets(0, 0, 0, 15));
+                setShoeDetails(i, label, description, price);
 
-                Label price1 = new Label("$99.99");
-                VBox.setMargin(price1, new Insets(0, 0, 0, 15));
-                price1.setStyle("-fx-text-fill: #008000; -fx-font-size: 16px;");
+                label.setStyle("-fx-text-fill: #000000; -fx-font-size: 20px; -fx-background-color: transparent");
+                description.setStyle("-fx-text-fill: #808080; -fx-font-size: 14px");
+                description.setWrapText(true);
+                VBox.setMargin(description, new Insets(0, 0, 0, 15));
+                price.setStyle("-fx-text-fill: #008000; -fx-font-size: 16px");
+                VBox.setMargin(price, new Insets(0, 0, 0, 15));
 
-                vbox1.getChildren().addAll(label1, description1, price1);
-                hbox1.getChildren().add(vbox1);
-                root.getChildren().add(hbox1);
+                vbox.getChildren().addAll(label, description, price);
+                hbox.getChildren().add(vbox);
+                hbox.setStyle("-fx-background-color: #FFFFFF; -fx-border-color: #000000; -fx-border-width: 1px; -fx-padding: 10px;");
+                root.getChildren().add(hbox);
 
-                /* ============================================================ Shoes 2 ============================================================ */
-                HBox hbox2 = new HBox();
-                hbox2.setSpacing(10);
-
-                VBox vbox2 = new VBox();
-                vbox2.setSpacing(5);
-
-                ImageView shoeImage2 = createShoeImageView("images/scenetoko/Sneakers/Sneakers2.jpg");
-                hbox2.getChildren().add(shoeImage2);
-
-                Button label2 = new Button("Converse Low Top Chucks - Black");
-                label2.setStyle("-fx-text-fill: #000000; -fx-font-size: 20px; -fx-font-family: 'Cambria';-fx-background-color: transparent");
-
-                Label description2 = new Label("Started when we cut the material for the original High Top Chucks, turning it into low-top basketball shoes. Then this sneaker moved from the court to the streets, cementing its status as an everyday icon. What happens next with the Low Top Chucks? It's up to you. This shoe is versatile, classic, and entirely yours wherever you go, whatever you want, and whenever. We just make the shoes. You make the story.");
-                description2.setWrapText(true);
-                description2.setStyle("-fx-text-fill: #808080; -fx-font-size: 14px;");
-                VBox.setMargin(description2, new Insets(0, 0, 0, 15));
-
-                Label price2 = new Label("$99.99");
-                price2.setStyle("-fx-text-fill: #008000; -fx-font-size: 16px;");
-                VBox.setMargin(price2, new Insets(0, 0, 0, 15));
-
-                vbox2.getChildren().addAll(label2, description2, price2);
-                hbox2.getChildren().add(vbox2);
-                root.getChildren().add(hbox2);
-
-                /* ============================================================ Shoes 3 ============================================================ */
-                HBox hbox3 = new HBox();
-                hbox3.setSpacing(10);
-
-                VBox vbox3 = new VBox();
-                vbox3.setSpacing(5);
-
-                ImageView shoeImage3 = createShoeImageView("images/scenetoko/Sneakers/Sneakers3.jpg");
-                hbox3.getChildren().add(shoeImage3);
-
-                Button label3 = new Button("Converse Star Player 76 Premium Canvas Men's Sneakers - White");
-                label3.setStyle("-fx-text-fill: #000000; -fx-font-size: 20px; -fx-font-family: 'Cambria';-fx-background-color: transparent");
-
-                Label description3 = new Label("Terinspirasi oleh energi pemuda, Converse Chuck Taylor All Flux Flux Sneaker menggunakan prinsip-prinsip desain dinamis untuk menangkap sikap pemuda yang selalu berubah. Detail yang terinspirasi oleh Sport seperti kulit imitasi dan jala atas, outsole Eva yang ringan, dan klip tumit karet membawa getaran atletik. Pita gore elastis di lidah memudahkan dan mematikan, sementara sockliner busa memori membantu tetap nyaman bagi mereka yang sedang bepergian.Sepatu tengah dengan mesh dan bagian atas sintetis Bootie internal untuk pas snugger Tarik loop pada tumit dan lidah agar mudah dan mati Sol outsol karet cetakan injeksi menawarkan traksi yang tahan lama Bantalan ortolit untuk kenyamanan");
-                description3.setWrapText(true);
-                description3.setStyle("-fx-text-fill: #808080; -fx-font-size: 14px;");
-                VBox.setMargin(description3, new Insets(0, 0, 0, 15));
-
-                Label price3 = new Label("$99.99");
-                VBox.setMargin(price3, new Insets(0, 0, 0, 15));
-                price3.setStyle("-fx-text-fill: #008000; -fx-font-size: 16px;");
-
-                vbox3.getChildren().addAll(label3, description3, price3);
-                hbox3.getChildren().add(vbox3);
-                root.getChildren().add(hbox3);
-
-                /* ============================================================ Shoes 4 ============================================================ */
-                HBox hbox4 = new HBox();
-                hbox4.setSpacing(10);
-
-                VBox vbox4 = new VBox();
-                vbox4.setSpacing(5);
-
-                ImageView shoeImage4 = createShoeImageView("images/scenetoko/Sneakers/Sneakers4.jpg");
-                hbox4.getChildren().add(shoeImage4);
-
-                Button label4 = new Button("Converse Chuck 70 Spring Color Unisex Sneakers - Green");
-                label4.setStyle("-fx-text-fill: #000000; -fx-font-size: 20px; -fx-font-family: 'Cambria';-fx-background-color: transparent");
-
-                Label description4 = new Label("Musim kanvas Chuck 70 merayakan warisan itu dengan menyatukan detail yang terinspirasi arsip dengan pembaruan kenyamanan modern. Versi ini diperbarui dalam warna musim semi tren pada kanvas poli daur ulang premium. Bantalan insole eko-ortolit yang diperbarui yang terbuat dari sekitar 20% konten daur ulang memberi Anda dukungan sepanjang hari yang dapat Anda rasakan. Sebuah patch pergelangan kaki yang mengkilap, midsole dan star vintage mengeluarkan gaya ikon sepatu.Sepatu tengah dengan mesh dan bagian atas sintetis Bootie internal untuk pas snugger Tarik loop pada tumit dan lidah agar mudah dan mati Sol outsol karet cetakan injeksi menawarkan traksi yang tahan lama Bantalan ortolit untuk kenyamanan");
-                VBox.setMargin(description4, new Insets(0, 0, 0, 15));
-                description4.setWrapText(true);
-                description4.setStyle("-fx-text-fill: #808080; -fx-font-size: 14px;");
-
-                Label price4 = new Label("$99.99");
-                VBox.setMargin(price4, new Insets(0, 0, 0, 15));
-                price4.setStyle("-fx-text-fill: #008000; -fx-font-size: 16px;");
-
-                vbox4.getChildren().addAll(label4, description4, price4);
-                hbox4.getChildren().add(vbox4);
-                root.getChildren().add(hbox4);
-
-                /* ============================================================ Shoes 5 ============================================================ */
-                HBox hbox5 = new HBox();
-                hbox5.setSpacing(10);
-
-                VBox vbox5 = new VBox();
-                vbox5.setSpacing(10);
-
-                ImageView shoeImage5 = createShoeImageView("images/scenetoko/Sneakers/Sneakers5.jpg");
-                hbox5.getChildren().add(shoeImage5);
-
-                Button label5 = new Button("Converse Chuck Taylor All Star Seasonal Color Unisex Sneakers - Orange");
-                label5.setStyle("-fx-text-fill : #000000; -fx-font-size : 20px; -fx-background-color : transparent");
-
-                Label description5 = new Label("Musim kanvas Star Chuck Taylor All terus menata kembali dirinya sendiri, dengan warna musim semi yang tren dan kanvas yang berpikiran maju. Anda sudah tahu detail yang dimulai di lapangan basket - outsole pola berlian dan tambalan pergelangan kaki bintang klasik. Cushioning Eco-Ortolite baru yang terbuat dari sekitar 20% konten daur ulang memberi Anda kenyamanan sepanjang hari yang bisa Anda rasakan. Gaya klasik dilengkapi dengan elemen desain warisan, seperti bumper kaki karet dan patch pergelangan kaki ikonik.Sepatu tengah dengan mesh dan bagian atas sintetis Bootie internal untuk pas snugger Tarik loop pada tumit dan lidah agar mudah dan mati Sol outsol karet cetakan injeksi menawarkan traksi yang tahan lama Bantalan ortolit untuk kenyamanan");
-                description5.setStyle("-fx-text-fill : #808080; -fx-font-size : 14px");
-                description5.setWrapText(true);
-                VBox.setMargin(description5, new Insets(0, 0, 0, 15));
-
-                Label price5 = new Label("$99.99");
-                price5.setStyle("-fx-text-fill : #008000; -fx-font-size : 16px");
-                VBox.setMargin(price5, new Insets(0, 0, 0, 15));
-
-                vbox5.getChildren().addAll(label5, description5, price5);
-                hbox5.getChildren().add(vbox5);
-                root.getChildren().add(hbox5);
-
-                /* ============================================================ Button Payment ============================================================ */
-                label1.setOnAction(event -> {
-                        Pembayaran1();
+                final int index = i;
+                label.setOnAction(event -> {
+                        handlePayment(index);
                 });
-        
-                label2.setOnAction(event -> {
-                        Pembayaran2();
-                });
-        
-                label3.setOnAction(event -> {
-                        Pembayaran3();
-                });
-        
-                label4.setOnAction(event -> {
-                        Pembayaran4();
-                });
-
-                label5.setOnAction(event -> {
-                        Pembayaran5();
-                });
-                
-                /* ============================================================ Scroll Pane ============================================================ */
-                ScrollPane scrollPane = new ScrollPane(root);
-                scrollPane.setFitToWidth(true);
-                scrollPane.setFitToHeight(true);
-                return scrollPane;
                 }
-        
-         /* ============================================================ Scene Pembayaran ============================================================ */
-        private static void Pembayaran5() {
+
+                ScrollPane scroll = new ScrollPane(root);
+                scroll.setFitToWidth(true);
+                scroll.setFitToHeight(true);
+
+                return scroll;
         }
 
-        private static void Pembayaran4() {
+        private static Button createBackButton() {
+                Button backButton = new Button("BACK");
+                backButton.setStyle("-fx-background-color: #ffffff; -fx-text-fill: #000000; -fx-font-size: 16px");
+                backButton.setOnAction(e -> {
+                Stage stage = (Stage) backButton.getScene().getWindow();
+                App app = new App();
+                Scene sceneTokoAwal = app.SceneTokoAwal();
+                stage.setScene(sceneTokoAwal);
+                });
+                backButton.setOnMouseEntered(event -> {
+                backButton.setCursor(Cursor.HAND);
+                });
+                backButton.setOnMouseExited(event -> {
+                backButton.setCursor(Cursor.DEFAULT);
+                });
+
+                return backButton;
         }
 
-        private static void Pembayaran3() {
+        private static void setShoeDetails(int i, Button label, Label description, Label price) {
+                if (i == 1) {
+                label.setText("Hoka One One Kawana");
+                description.setText("Detail | Colorway : Lunar Rock | Article : (HKE1123163BL) | Brand New in Box (BNIB) / Tag (BNWT) | Material : Pushing The Boundaries On The Traditional Hoka Geometries, The Hoka Kawana Helps Runners Break New Ground. This Neutral Running Shoe Features A Modified Crash Pad With Swallowtail™ Geometry To Provide Smooth Heel Strikes.");
+                price.setText("IDR 2.099.000");
+                } else if (i == 2) {
+                label.setText("Adidas Ultraboost Light");
+                description.setText("Detail | Colorway : Cloud White | Article : (HQ6352) | Brand New in Box (BNIB) / Tag (BNWT) | Material : Experience Epic Energy With The New Ultraboost Light, Our Lightest Ultraboost Ever. The Magic Lies In The Light Boost Midsole, A New Generation Of Adidas Boost. Its Unique Molecule Design Achieves The Lightest Boost Foam To Date.");
+                price.setText("IDR 2.799.000");
+                } else if (i == 3) {
+                label.setText("Nike Zoomx Streakfly Prm");
+                description.setText("Detail | Colorway : White | Article : (DX1626-100) | Brand New in Box (BNIB) / Tag (BNWT) | Material : When Pitted Against The Clock, You Want Shoes That Feel Like Butterflies On Your Feet. The Streakfly Is Our Lightest Racing Shoe, Allowing It To Essentially Disappear On Your Foot. We Left Out All The Unnecessary Frills And Weight");
+                price.setText("IDR 2.799.000");
+                } else if (i == 4) {
+                label.setText("Adidas Ultraboost 22");
+                description.setText("Detail | Colorway : Lucid Blue | Article : (HQ8593) | Brand New in Box (BNIB) / Tag (BNWT) | Material : Yarn In Upper Contains At Least 50% Parley Ocean Plastic  and 50% Recycled Polyester, Regular Fit, Lace Closure, Soft Heel Fit, and Boost Midsole");
+                price.setText("IDR 3.300.000");
+                }
         }
 
-        private static void Pembayaran2() {
+        private static void handlePayment(int i) {
+                // Implementasi pembayaran untuk sepatu yang dipilih
+                switch (i) {
+                case 1:
+                        Pembayaran1();
+                        break;
+                case 2:
+                        Pembayaran2();
+                        break;
+                case 3:
+                        Pembayaran3();
+                        break;
+                case 4:
+                        Pembayaran4();
+                        break;
+                default:
+                        break;
+                }
         }
 
         private static void Pembayaran1() {
+                // Implementasi pembayaran untuk sepatu 1
         }
 
-        /* ============================================================ Image View ============================================================ */        
-        private static ImageView createShoeImageView(String imagePath) {
-                // Membuat ImageView dengan gambar sepatu
-                Image image = new Image(imagePath);
+        private static void Pembayaran2() {
+                // Implementasi pembayaran untuk sepatu 2
+        }
+
+        private static void Pembayaran3() {
+                // Implementasi pembayaran untuk sepatu 3
+        }
+
+        private static void Pembayaran4() {
+                // Implementasi pembayaran untuk sepatu 4
+        }
+
+        private static ImageView CreateImageView(String ImagePath) {
+                Image image = new Image(ImagePath);
                 ImageView imageView = new ImageView(image);
-                imageView.setFitWidth(200); // Mengatur lebar gambar
-                imageView.setPreserveRatio(true); // Menjaga rasio aspek gambar
+                imageView.setFitWidth(200);
+                imageView.setFitHeight(200);
+                imageView.setPreserveRatio(true);
+                imageView.imageProperty().addListener((observable, oldValue, newValue) -> {
+                if (newValue == null) {
+                        System.out.println("Gagal memuat gambar: " + ImagePath);
+                }
+                });
 
                 return imageView;
         }
-}
+        }
