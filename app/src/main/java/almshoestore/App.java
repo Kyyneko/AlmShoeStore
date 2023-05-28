@@ -5,9 +5,7 @@ import almshoestore.SceneToko.SepatuFormal;
 import almshoestore.SceneToko.SepatuFutsal;
 import almshoestore.SceneToko.SepatuLari;
 import almshoestore.SceneToko.SepatuSneakers;
-import javafx.animation.KeyFrame;
 import javafx.animation.PauseTransition;
-import javafx.animation.Timeline;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -24,9 +22,9 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import java.sql.Connection;
-import java.sql.ResultSet;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 public class App extends Application {
 
@@ -163,40 +161,44 @@ public class App extends Application {
             String username = usernameField.getText();
             String password = passwordField.getText();
         
-            if (!username.isEmpty() && !password.isEmpty()) {
-                if (username.matches("^(?=.*[a-zA-Z])(?=.*\\d).+$") && password.matches("^(?=.*[a-zA-Z])(?=.*\\d).{8}$")) {
-                    // Username dan password memenuhi persyaratan
+                if (!username.isEmpty() && !password.isEmpty()) {
+                    // ...
         
-                    // Simpan logika untuk register di sini
+                    try {
+                        // Buat koneksi ke database MySQL
+                        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/db_accountmember", "root", "");
         
-                    // Tampilkan pesan register berhasil
-                    labelerror.setText("Registration Successful!");
+                        // Buat pernyataan SQL untuk menyimpan data ke database
+                        String sql = "INSERT INTO tb_account (username, password) VALUES (?, ?)";
+                        PreparedStatement statement = connection.prepareStatement(sql);
+                        statement.setString(1, username);
+                        statement.setString(2, password);
         
-                    // Kembali ke scene awal setelah beberapa waktu
-                    PauseTransition pause = new PauseTransition(Duration.seconds(2));
-                    pause.setOnFinished(event -> SceneAwal());
-                    pause.play();
+                        // Jalankan pernyataan SQL untuk menyimpan data ke database
+                        int rowsInserted = statement.executeUpdate();
+        
+                        if (rowsInserted > 0) {
+                            // Tampilkan pesan register berhasil
+                            labelerror.setText("Registration Successful!");
+        
+                            // Kembali ke scene awal setelah beberapa waktu
+                            PauseTransition pause = new PauseTransition(Duration.seconds(2));
+                            pause.setOnFinished(event -> SceneAwal());
+                            pause.play();
+                        }
+        
+                        // Tutup koneksi dan statement
+                        statement.close();
+                        connection.close();
+                    } catch (SQLException e) {
+                        // Tangani exception jika terjadi kesalahan koneksi atau eksekusi SQL
+                        e.printStackTrace();
+                        labelerror.setText("Error: Failed to save data to database.");
+                    }
                 } else {
-                    // Username atau password tidak memenuhi persyaratan
-                    labelerror.setText("Username and password must contain at least 1 letter and 1 digit!");
-        
-                    // Hilangkan pesan error setelah 5 detik
-                    Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(3), event -> {
-                        labelerror.setText(" ");
-                    }));
-                    timeline.play();
+                    // ...
                 }
-            } else {
-                // Tampilkan pesan kesalahan jika username atau password kosong
-                labelerror.setText("Please fill in both Username and Password fields!");
-        
-                // Hilangkan pesan error setelah 5 detik
-                Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(3), event -> {
-                    labelerror.setText(" ");
-                }));
-                timeline.play();
-            }
-        });
+            });
         
         
         
