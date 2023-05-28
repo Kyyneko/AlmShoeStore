@@ -23,8 +23,15 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 public class App extends Application {
+
+
+    
     private static Stage stage;
     public void start(Stage primaryStage) throws Exception{
         
@@ -33,8 +40,6 @@ public class App extends Application {
         stage.show();
         stage.getIcons().add(new Image("images/LogoAlm.png"));
     }
-
-
     private void SceneAwal(){
         Label label = new Label("  Welcome To");
         label.setStyle("-fx-font-family: 'Cambria'; -fx-font-size: 25px; -fx-text-color: #000000;");
