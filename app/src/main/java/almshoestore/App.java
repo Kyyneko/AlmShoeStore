@@ -24,12 +24,14 @@ import javafx.util.Duration;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 public class App extends Application {
 
 
-    
+    /* =================================================== PRIMARY STAGE =================================================== */
     private static Stage stage;
     public void start(Stage primaryStage) throws Exception{
         
@@ -38,6 +40,8 @@ public class App extends Application {
         stage.show();
         stage.getIcons().add(new Image("images/LogoAlm.png"));
     }
+
+    /* =================================================== SCENE AWAL =================================================== */
     private void SceneAwal(){
         Label label = new Label("  Welcome To");
         label.setStyle("-fx-font-family: 'Cambria'; -fx-font-size: 25px; -fx-text-color: #000000;");
@@ -57,31 +61,35 @@ public class App extends Application {
         VBox foto = new VBox(0,fotoikon);
         foto.setAlignment(Pos.CENTER);
         
+        /* LOGIN LABEL */
         Label label3 = new Label("Login Member");
         label3.setStyle("-fx-padding: 5px 25px;-fx-font-size: 30px; -fx-font-family: 'Times New Roman'; -fx-text-fill: BLACK;-fx-background-color: #FAEBD7; -fx-border-color: WHITE; -fx-border-width: 1px; -fx-border-radius: 5;");
         Label label4= new Label();
         VBox vbox2 = new VBox(10,label4,label3);
         vbox2.setAlignment(Pos.TOP_CENTER);
 
+        /* USERNAME FIELD */
         TextField usernameField = new TextField();
         usernameField.setStyle("-fx-padding: 1px 32px;-fx-text-fill:#000000;-fx-font-size: 15px;-fx-background-color: WHITE; -fx-border-color: #000000; -fx-border-width: 1px; -fx-border-radius: 3;");
         usernameField.setPromptText("Username...");
         usernameField.setAlignment(Pos.CENTER);
 
+        /* PASSWORD FIELD */
         PasswordField passwordField = new PasswordField();
         passwordField.setStyle("-fx-padding: 1px 32px;-fx-text-fill:#000000;-fx-font-size: 15px;-fx-background-color: WHITE; -fx-border-color: #000000; -fx-border-width: 1px; -fx-border-radius: 3;");
         passwordField.setPromptText("Password...");
         passwordField.setAlignment(Pos.CENTER);
 
+        /* LAYOUT */
         HBox hbox1 = new HBox(usernameField);
         hbox1.setAlignment(Pos.CENTER);
         
         HBox hbox2 = new HBox(passwordField);
         hbox2.setAlignment(Pos.CENTER);
 
-        Button button1 = new Button("SIGN IN");
+        /* BUTTON  */
+        Button button1 = new Button("LOG IN");
         button1.setStyle("-fx-font-family: 'Cambria';-fx-padding: 10px 95px;-fx-text-fill:#FAEBD7;-fx-font-size: 15px;-fx-background-color: #006400; -fx-border-color: WHITE; -fx-border-width: 1px; -fx-border-radius: 2;");
-
 
         Button button4 = new Button("Not Have Account?");
         button4.setStyle("-fx-font-size: 10px; -fx-font-family: 'Times New Roman'; -fx-text-fill: BLACK;-fx-background-color: transparent");
@@ -92,6 +100,7 @@ public class App extends Application {
         Button button3 = new Button("EXIT");
         button3.setStyle("-fx-font-family: 'Cambria';-fx-text-fill:RED;-fx-font-size: 15px;-fx-background-color: #FAEBD7; -fx-border-color: #FAEBD7; -fx-border-width: 1px; -fx-border-radius: 2;");
 
+        /* LAYOUT */
         HBox hbox3 = new HBox(5,button2,button3);
         hbox3.setAlignment(Pos.CENTER);
 
@@ -104,9 +113,53 @@ public class App extends Application {
         stage.setTitle("AlmShoeStore");
         stage.setScene(scene1);
 
+        /* BUTTON SETONACTION */
         passwordField.setOnAction(event -> button1.fire());
-
-        button1.setOnAction(a->{SceneTokoAwal();});
+        /* =================================================== LOG IN LOGIC =================================================== */
+        button1.setOnAction(a -> {
+            String username = usernameField.getText();
+            String password = passwordField.getText();
+        
+            if (!username.isEmpty() && !password.isEmpty()) {
+                try {
+                    // Buat koneksi ke database MySQL
+                    Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/db_accountmember", "root", "");
+        
+                    // Buat pernyataan SQL untuk memeriksa kecocokan username dan password
+                    String sql = "SELECT * FROM tb_account WHERE username = '" + username + "' AND password = '" + password + "'";
+                    Statement statement = connection.createStatement();
+        
+                    // Jalankan pernyataan SQL dan dapatkan hasilnya
+                    ResultSet resultSet = statement.executeQuery(sql);
+        
+                    if (resultSet.next()) {
+                        // Jika hasil query mengembalikan data, tampilkan pesan login berhasil
+                        label4.setText("Login Successful!");
+        
+                        // Kembali ke scene toko setelah beberapa waktu
+                        PauseTransition pause = new PauseTransition(Duration.seconds(2));
+                        pause.setOnFinished(event -> SceneTokoAwal());
+                        pause.play();
+                    } else {
+                        // Jika hasil query tidak mengembalikan data, tampilkan pesan login gagal
+                        label4.setText("Invalid username or password.");
+                    }
+        
+                    // Tutup koneksi, pernyataan, dan hasil query
+                    resultSet.close();
+                    statement.close();
+                    connection.close();
+                } catch (SQLException e) {
+                    // Tangani exception jika terjadi kesalahan koneksi atau eksekusi SQL
+                    e.printStackTrace();
+                    label4.setText("Error: Failed to connect to database.");
+                }
+            } else {
+                // Tampilkan pesan jika username atau password kosong
+                label4.setText("Please enter username and password.");
+            }
+        });
+        
         button2.setOnAction(a->{SceneRegister();});
         button3.setOnAction(a->{SceneExit();});
         button4.setOnAction(a->{SceneRegister();});
@@ -114,6 +167,7 @@ public class App extends Application {
 
     public void SceneKedua(){}
 
+    /* =================================================== SCENE REGISTER =================================================== */
     private void SceneRegister() {
         Label registerLabel = new Label("REGISTER");
         registerLabel.setStyle("-fx-font-size: 30px; -fx-font-family: 'Times New Roman'; -fx-text-fill: BLACK;");
@@ -157,6 +211,7 @@ public class App extends Application {
         vboxasli.setAlignment(Pos.CENTER);
         vboxasli.setStyle("-fx-background-color:#DCDCDC;");
         
+        /* =================================================== LOGIC REGISTER INTO DATABASE =================================================== */
         registerButton.setOnAction(a -> {
             String username = usernameField.getText();
             String password = passwordField.getText();
@@ -217,6 +272,7 @@ public class App extends Application {
         stage.close();
     }
 
+    /* =================================================== SCENE TOKO AWAL =================================================== */
     public Scene SceneTokoAwal() {
         Label judul = new Label("What Type Of Shoes Are You Looking For ?");
         judul.setStyle("-fx-font-size: 20px; -fx-font-family: 'CAMBRIA'; -fx-text-fill: BLACK; -fx-background-color : #0000");
