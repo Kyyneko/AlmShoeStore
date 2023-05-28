@@ -372,11 +372,8 @@ public class App extends Application {
         stage.getScene().setCursor(Cursor.DEFAULT);
     });
 
-    return tokoScene;
-
-    
+    return tokoScene;  
 }
-
 }
 
 /*Label titleLabel = new Label("AlmShoeStore");
