@@ -27,7 +27,6 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 public class App extends Application {
 
@@ -115,60 +114,60 @@ public class App extends Application {
         stage.setScene(scene1);
 
         /* BUTTON SETONACTION */
-passwordField.setOnAction(event -> button1.fire());
+        passwordField.setOnAction(event -> button1.fire());
 
-/* =================================================== LOG IN LOGIC =================================================== */
-button1.setOnAction(a -> {
-    String username = usernameField.getText();
-    String password = passwordField.getText();
+    /* =================================================== LOG IN LOGIC =================================================== */
+    button1.setOnAction(a -> {
+        String username = usernameField.getText();
+        String password = passwordField.getText();
 
-    if (!username.isEmpty() && !password.isEmpty()) {
-        try {
-            // Buat koneksi ke database SQLite
-            Connection connection = DriverManager.getConnection("jdbc:sqlite:userdata.db");
+        if (!username.isEmpty() && !password.isEmpty()) {
+            try {
+                // Buat koneksi ke database SQLite
+                Connection connection = DriverManager.getConnection("jdbc:sqlite:userdata.db");
 
-            // Buat pernyataan SQL untuk memeriksa kecocokan username dan password
-            String sql = "SELECT * FROM tb_account WHERE Username = ? AND Password = ?";
-            PreparedStatement statement = connection.prepareStatement(sql);
-            statement.setString(1, username);
-            statement.setString(2, password);
+                // Buat pernyataan SQL untuk memeriksa kecocokan username dan password
+                String sql = "SELECT * FROM tb_account WHERE Username = ? AND Password = ?";
+                PreparedStatement statement = connection.prepareStatement(sql);
+                statement.setString(1, username);
+                statement.setString(2, password);
 
-            // Jalankan pernyataan SQL dan dapatkan hasilnya
-            ResultSet resultSet = statement.executeQuery();
+                // Jalankan pernyataan SQL dan dapatkan hasilnya
+                ResultSet resultSet = statement.executeQuery();
 
-            if (resultSet.next()) {
-                // Jika hasil query mengembalikan data, tampilkan pesan login berhasil
-                label4.setText("Login Successful!");
+                if (resultSet.next()) {
+                    // Jika hasil query mengembalikan data, tampilkan pesan login berhasil
+                    label4.setText("Login Successful!");
 
-                // Kembali ke scene toko setelah beberapa waktu
-                PauseTransition pause = new PauseTransition(Duration.seconds(2));
-                pause.setOnFinished(event -> SceneTokoAwal());
-                pause.play();
-            } else {
-                // Jika hasil query tidak mengembalikan data, tampilkan pesan login gagal
-                label4.setText("Invalid username or password.");
-                PauseTransition pause2 = new PauseTransition(Duration.seconds(2));
-                pause2.setOnFinished(event -> label4.setText(""));
-                pause2.play();
+                    // Kembali ke scene toko setelah beberapa waktu
+                    PauseTransition pause = new PauseTransition(Duration.seconds(2));
+                    pause.setOnFinished(event -> SceneTokoAwal());
+                    pause.play();
+                } else {
+                    // Jika hasil query tidak mengembalikan data, tampilkan pesan login gagal
+                    label4.setText("Invalid username or password.");
+                    PauseTransition pause2 = new PauseTransition(Duration.seconds(2));
+                    pause2.setOnFinished(event -> label4.setText(""));
+                    pause2.play();
+                }
+
+                // Tutup koneksi, pernyataan, dan hasil query
+                resultSet.close();
+                statement.close();
+                connection.close();
+            } catch (SQLException e) {
+                // Tangani exception jika terjadi kesalahan koneksi atau eksekusi SQL
+                e.printStackTrace();
+                label4.setText("Error: System Maintenance.");
             }
-
-            // Tutup koneksi, pernyataan, dan hasil query
-            resultSet.close();
-            statement.close();
-            connection.close();
-        } catch (SQLException e) {
-            // Tangani exception jika terjadi kesalahan koneksi atau eksekusi SQL
-            e.printStackTrace();
-            label4.setText("Error: System Maintenance.");
+        } else {
+            // Tampilkan pesan jika username atau password kosong
+            label4.setText("Please enter username and password.");
+            PauseTransition pause2 = new PauseTransition(Duration.seconds(2));
+            pause2.setOnFinished(event -> label4.setText(""));
+            pause2.play();
         }
-    } else {
-        // Tampilkan pesan jika username atau password kosong
-        label4.setText("Please enter username and password.");
-        PauseTransition pause2 = new PauseTransition(Duration.seconds(2));
-        pause2.setOnFinished(event -> label4.setText(""));
-        pause2.play();
-    }
-});
+    });
 
         
         button2.setOnAction(a->{SceneRegister();});
@@ -242,7 +241,7 @@ button1.setOnAction(a -> {
                 pause.setOnFinished(event -> SceneAwal());
                 pause.play();
             } else {
-                // ...
+                System.out.println("Sorry! System Failed To Regist");
             }
         });
         
