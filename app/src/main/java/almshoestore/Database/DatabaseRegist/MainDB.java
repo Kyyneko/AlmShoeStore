@@ -2,10 +2,9 @@ package almshoestore.Database.DatabaseRegist;
 
 
 
-public class db {
+public class MainDB {
     public static void main(String[] args) throws Exception {
-        // myConfig.connection();
-        // MyConfig.getDatabase();
-        MyConfig.deleteData();
+        // DatabaseManager.createTable();
+        DatabaseManager.insertData("Mahen", "2108");
     }
 }
