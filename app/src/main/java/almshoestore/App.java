@@ -220,7 +220,7 @@ public class App extends Application {
         VBox vboxasli = new VBox(5,hbox,kosong,hbox5,hbox6,labelerror,hbox2);
         vboxasli.setAlignment(Pos.CENTER);
         vboxasli.setStyle("-fx-background-color:#DCDCDC;");
-        
+        passwordField.setOnAction(event -> registerButton.fire());
         /* =================================================== LOGIC REGISTER INTO DATABASE =================================================== */
         registerButton.setOnAction(a -> {
             String username = usernameField.getText();
@@ -228,7 +228,27 @@ public class App extends Application {
         
             if (!username.isEmpty() && !password.isEmpty()) {
                 // Membuat tabel jika belum ada
-                DatabaseManager.createTable();
+                labelerror.setText("Please Insert Username and Password");
+                PauseTransition pause1 = new PauseTransition(Duration.seconds(2));
+                pause1.play();
+                // DatabaseManager.createTable();
+        
+                // Cek apakah username sudah ada di database
+                if (DatabaseManager.checkUsername(username)) {
+                    labelerror.setText("Username Is Taken");
+                    PauseTransition pause = new PauseTransition(Duration.seconds(2));
+                    pause.play();
+                    return;
+                }
+        
+                // Validasi password
+                if (!validatePassword(password)) {
+                    labelerror.setText("Invalid Password. Password must have minimum 6 characters, maximum \n10 characters, at least 1 digit, 1 letter, 1 uppercase letter, and no spaces");
+                    labelerror.setWrapText(true);
+                    PauseTransition pause = new PauseTransition(Duration.seconds(2));
+                    pause.play();
+                    return;
+                }
         
                 // Menyimpan data registrasi ke dalam database
                 DatabaseManager.insertData(username, password);
@@ -241,24 +261,26 @@ public class App extends Application {
                 pause.setOnFinished(event -> SceneAwal());
                 pause.play();
             } else {
-                System.out.println("Sorry! System Failed To Regist");
+                labelerror.setText("System Maintenance");
             }
         });
+
         
-        
-        
-        
-    
         Scene registerScene = new Scene(vboxasli, 620, 620);
         stage.setScene(registerScene);
 
-        passwordField.setOnAction(event -> registerButton.fire());
-    
         backButton.setOnAction(a -> {
             SceneAwal();
         });
     }
+
+    private boolean validatePassword(String password) {
+        // Memvalidasi password dengan syarat-syarat yang diberikan
+        return password.matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?!.*\\s).{6,10}$");
+    }
     
+        /* =================================================== SCENE EXIT =================================================== */
+
     private void SceneExit(){
         stage.close();
     }
