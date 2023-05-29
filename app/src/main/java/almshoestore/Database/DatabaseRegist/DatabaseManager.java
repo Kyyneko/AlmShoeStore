@@ -8,8 +8,8 @@ import java.sql.SQLException;
 
 public class DatabaseManager {
     public static void createTable() {
-        try (Connection connection = DriverManager.getConnection("jdbc:sqlite:app/userdata.db")) {
-            String createTableSQL = "CREATE TABLE IF NOT EXISTS tb_account (Username VARCHAR(255), Password VARCHAR(255))";
+        try (Connection connection = DriverManager.getConnection("jdbc:sqlite:userdata.db")) {
+            String createTableSQL = "CREATE TABLE IF NOT EXISTS tb_account (Username VARCHAR(255), Password VARCHAR(255), Balance DOUBLE)";
             try (PreparedStatement statement = connection.prepareStatement(createTableSQL)) {
                 statement.execute();
                 System.out.println("Success To Add Table");
@@ -18,13 +18,15 @@ public class DatabaseManager {
             e.printStackTrace();
         }
     }
+    
 
     public static void insertData(String username, String password) {
         try (Connection connection = DriverManager.getConnection("jdbc:sqlite:userdata.db")) {
-            String insertDataSQL = "INSERT INTO tb_account (Username, Password) VALUES (?, ?)";
+            String insertDataSQL = "INSERT INTO tb_account (Username, Password, Balance) VALUES (?, ?, ?)";
             try (PreparedStatement statement = connection.prepareStatement(insertDataSQL)) {
                 statement.setString(1, username);
                 statement.setString(2, password);
+                statement.setDouble(3, 1_000_000_000.0); // Set nilai awal saldo
                 statement.executeUpdate();
                 System.out.println("Success To Add Data");
             }
@@ -32,6 +34,7 @@ public class DatabaseManager {
             e.printStackTrace();
         }
     }
+    
 
     public static void deleteAllData() {
         try (Connection connection = DriverManager.getConnection("jdbc:sqlite:app/userdata.db")) {

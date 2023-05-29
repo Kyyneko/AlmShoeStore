@@ -13,6 +13,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import javafx.scene.control.ChoiceBox;
+
 
 public class SepatuFutsal extends Scene {
 
@@ -116,8 +118,48 @@ public class SepatuFutsal extends Scene {
     }
 
     private static void Pembayaran4() {
-        // Implementasi pembayaran untuk sepatu 4
+        Stage stage = new Stage();
+        VBox root = new VBox();
+        root.setPadding(new Insets(10));
+        root.setSpacing(10);
+        
+        Label titleLabel = new Label("Pembayaran - Nike Zoom Vapor 15 Academy Kylian Mbappe Tf");
+        titleLabel.setStyle("-fx-font-size: 18px; -fx-font-weight: bold");
+        root.getChildren().add(titleLabel);
+        
+        Label descriptionLabel = new Label("Deskripsi sepatu:");
+        descriptionLabel.setStyle("-fx-font-size: 14px");
+        root.getChildren().add(descriptionLabel);
+        
+        Label description = new Label("Detail | Colorway : Dark Red | Article : (DV0708-694) | Brand New in Box (BNIB) / Tag (BNWT) | Material | Kylian Mbappé's Explosiveness, Plus His Twitchy Change Of Direction, Puts Him Firmly In The World Class Of Finishers. With Nods To His Heritage, This Cleat Is Made To Help You Play Just Like Km—with Blinding Pace And Purpose.");
+        description.setStyle("-fx-font-size: 14px");
+        description.setWrapText(true);
+        root.getChildren().add(description);
+        
+        Label priceLabel = new Label("Harga sepatu:");
+        priceLabel.setStyle("-fx-font-size: 14px");
+        root.getChildren().add(priceLabel);
+        
+        Label price = new Label("IDR 1.299.000");
+        price.setStyle("-fx-font-size: 14px; -fx-font-weight: bold");
+        root.getChildren().add(price);
+        
+        Label paymentLabel = new Label("Pilih metode pembayaran:");
+        paymentLabel.setStyle("-fx-font-size: 14px");
+        root.getChildren().add(paymentLabel);
+        
+        ChoiceBox<String> paymentOptions = new ChoiceBox<>();
+        paymentOptions.getItems().addAll("Gopay", "BNI", "BRI", "BCA");
+        root.getChildren().add(paymentOptions);
+        
+        // Tambahkan komponen-komponen lain yang diperlukan untuk pembayaran sepatu 4
+        
+        Scene scene = new Scene(root, 400, 300);
+        stage.setScene(scene);
+        stage.setTitle("Pembayaran");
+        stage.show();
     }
+    
 
     private static void Pembayaran3() {
         // Implementasi pembayaran untuk sepatu 3
