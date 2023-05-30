@@ -8,7 +8,7 @@ import java.sql.SQLException;
 
 public class DatabaseManager {
     public static void createTable() {
-        try (Connection connection = DriverManager.getConnection("jdbc:sqlite:userdata.db")) {
+        try (Connection connection = DriverManager.getConnection("jdbc:sqlite:app\\userdata.db")) {
             String createTableSQL = "CREATE TABLE IF NOT EXISTS tb_account (Username VARCHAR(255), Password VARCHAR(255), Balance DOUBLE)";
             try (PreparedStatement statement = connection.prepareStatement(createTableSQL)) {
                 statement.execute();
@@ -26,7 +26,7 @@ public class DatabaseManager {
             try (PreparedStatement statement = connection.prepareStatement(insertDataSQL)) {
                 statement.setString(1, username);
                 statement.setString(2, password);
-                statement.setDouble(3, 1_000_000_000.0); // Set nilai awal saldo
+                statement.setDouble(3, 2_000_000); // Set nilai awal saldo
                 statement.executeUpdate();
                 System.out.println("Success To Add Data");
             }
@@ -37,7 +37,7 @@ public class DatabaseManager {
     
 
     public static void deleteAllData() {
-        try (Connection connection = DriverManager.getConnection("jdbc:sqlite:app/userdata.db")) {
+        try (Connection connection = DriverManager.getConnection("jdbc:sqlite:app\\userdata.db")) {
             String deleteAllDataSQL = "DELETE FROM tb_account";
             try (PreparedStatement statement = connection.prepareStatement(deleteAllDataSQL)) {
                 int rowsDeleted = statement.executeUpdate();
@@ -50,14 +50,15 @@ public class DatabaseManager {
     }
 
     public static void seeData() {
-        try (Connection connection = DriverManager.getConnection("jdbc:sqlite:app/userdata.db")) {
+        try (Connection connection = DriverManager.getConnection("jdbc:sqlite:app\\userdata.db")) {
             String selectDataSQL = "SELECT * FROM tb_account";
             try (PreparedStatement statement = connection.prepareStatement(selectDataSQL)) {
                 ResultSet resultSet = statement.executeQuery();
                 while (resultSet.next()) {
                     String username = resultSet.getString("Username");
                     String password = resultSet.getString("Password");
-                    System.out.println("Username : " + username +" | " + "Password : " + password);
+                    double balance  = resultSet.getDouble("Balance");
+                    System.out.println("Username : " + username +" | " + "Password : " + password + " | " + "Balance : " + balance);
                 }
             }
         } catch (SQLException e) {
@@ -66,7 +67,7 @@ public class DatabaseManager {
     }
 
     public static boolean checkUsername(String username) {
-        try (Connection connection = DriverManager.getConnection("jdbc:sqlite:userdata.db")) {
+        try (Connection connection = DriverManager.getConnection("jdbc:sqlite:app\\userdata.db")) {
             String checkUsernameSQL = "SELECT COUNT(*) FROM tb_account WHERE Username = ?";
             try (PreparedStatement statement = connection.prepareStatement(checkUsernameSQL)) {
                 statement.setString(1, username);
@@ -83,7 +84,7 @@ public class DatabaseManager {
     }
 
     public static void deleteAllTable() {
-        try (Connection connection = DriverManager.getConnection("jdbc:sqlite:userdata.db")) {
+        try (Connection connection = DriverManager.getConnection("jdbc:sqlite:app\\userdata.db")) {
             String deleteTableSQL = "DROP TABLE IF EXISTS tb_account";
             try (PreparedStatement statement = connection.prepareStatement(deleteTableSQL)) {
                 statement.execute();

@@ -130,7 +130,7 @@ public class SepatuFutsal extends Scene {
         Label descriptionLabel = new Label("Deskripsi sepatu:");
         descriptionLabel.setStyle("-fx-font-size: 14px");
         root.getChildren().add(descriptionLabel);
-        
+
         Label description = new Label("Detail | Colorway : Dark Red | Article : (DV0708-694) | Brand New in Box (BNIB) / Tag (BNWT) | Material | Kylian Mbappé's Explosiveness, Plus His Twitchy Change Of Direction, Puts Him Firmly In The World Class Of Finishers. With Nods To His Heritage, This Cleat Is Made To Help You Play Just Like Km—with Blinding Pace And Purpose.");
         description.setStyle("-fx-font-size: 14px");
         description.setWrapText(true);
@@ -149,7 +149,7 @@ public class SepatuFutsal extends Scene {
         root.getChildren().add(paymentLabel);
         
         ChoiceBox<String> paymentOptions = new ChoiceBox<>();
-        paymentOptions.getItems().addAll("Gopay", "BNI", "BRI", "BCA");
+        paymentOptions.getItems().addAll("Balance");
         root.getChildren().add(paymentOptions);
         
         // Tambahkan komponen-komponen lain yang diperlukan untuk pembayaran sepatu 4
