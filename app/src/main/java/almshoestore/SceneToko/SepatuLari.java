@@ -1,17 +1,10 @@
 package almshoestore.SceneToko;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-
 import almshoestore.App;
 import javafx.geometry.Insets;
 import javafx.scene.Cursor;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
@@ -304,124 +297,15 @@ public class SepatuLari extends Scene {
         paymentOptions.getItems().addAll("Balance");
         root.getChildren().add(paymentOptions);
         
-        Button buyButton = new Button("Beli");
-        buyButton.setOnAction(e -> {
-        String selectedPaymentOption = paymentOptions.getValue();
-        if (selectedPaymentOption != null) {
-            // Lakukan pengecekan saldo dan proses pembelian
-            double priceValue = getPriceValue();
-            double currentBalance = getBalanceFromDatabase(); // Dapatkan saldo pengguna dari database
-            
-            if (currentBalance >= priceValue) {
-                // Saldo cukup, lakukan pembelian
-                double newBalance = currentBalance - priceValue;
-                updateBalanceInDatabase(newBalance); // Perbarui saldo pengguna dalam database
-                
-                // Tampilkan pesan berhasil membeli
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Pembelian Berhasil");
-                alert.setHeaderText(null);
-                alert.setContentText("Pembelian berhasil. Saldo baru: " + newBalance);
-                alert.showAndWait();
-                
-                // Tutup jendela pembayaran
-                stage.close();
-            } else {
-                // Saldo tidak cukup, tampilkan pesan kesalahan
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Kesalahan");
-                alert.setHeaderText(null);
-                alert.setContentText("Saldo tidak mencukupi.");
-                alert.showAndWait();
-            }
-        }
-    });
-    
-    root.getChildren().add(buyButton);
-        
         Scene scene = new Scene(root, 620, 620);
         stage.setScene(scene);
         stage.setTitle("Pembayaran");
         stage.show();
     }
 
-    public static double getBalanceFromDatabase() {
-        double currentBalance = 0.0;
-        
-        // Koneksi ke database SQLite
-        try (Connection connection = DriverManager.getConnection("jdbc:sqlite:D:\\AlmShoeStore\\app\\src\\main\\java\\almshoestore\\Database\\Manager/userdata.db")) {
-            // Membuat pernyataan SQL untuk mengambil saldo pengguna
-            String sql = "SELECT Balance FROM tb_account WHERE Username = ?";
-            
-            // Mengganti 'username_column' dengan nama kolom yang menyimpan username dalam tabel 'user'
-            String username = "MahendraKiranaMB";
-            
-            try (PreparedStatement statement = connection.prepareStatement(sql)) {
-                statement.setString(1, username);
-                
-                // Menjalankan pernyataan SQL
-                try (ResultSet resultSet = statement.executeQuery()) {
-                    if (resultSet.next()) {
-                        currentBalance = resultSet.getDouble("Balance");
-                    }
-                }
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        
-        return currentBalance;
-    }
 
-    public static void updateBalanceInDatabase(double newBalance) {
-        // Mengganti 'username_column' dengan nama kolom yang menyimpan username dalam tabel 'user'
-        String username = "MahendraKiranaMB";
-        
-        // Koneksi ke database SQLite
-        try (Connection connection = DriverManager.getConnection("jdbc:sqlite:D:\\AlmShoeStore\\app\\src\\main\\java\\almshoestore\\Database\\Manager/userdata.db")) {
-            // Membuat pernyataan SQL untuk memperbarui saldo pengguna
-            String sql = "UPDATE tb_account SET Balance = ? WHERE Username = ?";
-            
-            try (PreparedStatement statement = connection.prepareStatement(sql)) {
-                statement.setDouble(1, newBalance);
-                statement.setString(2, username);
-                
-                // Menjalankan pernyataan SQL
-                statement.executeUpdate();
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
 
-    public static double getPriceValue() {
-        // Mendapatkan harga sepatu dari database berdasarkan id atau info lainnya
-        double price = 0.0;
-        
-        // Koneksi ke database SQLite
-        try (Connection connection = DriverManager.getConnection("jdbc:sqlite:D:\\AlmShoeStore\\app\\src\\main\\java\\almshoestore\\Database\\Manager/userdata.db")) {
-            // Mengganti 'shoe_id_column' dengan nama kolom yang menyimpan ID sepatu dalam tabel 'shoes'
-            int shoeId = 04; // ID sepatu yang diinginkan
-            
-            // Membuat pernyataan SQL untuk mendapatkan harga sepatu berdasarkan ID
-            String sql = "SELECT Harga FROM db_barang WHERE tb_lari = ?";
-            
-            try (PreparedStatement statement = connection.prepareStatement(sql)) {
-                statement.setInt(1, shoeId);
-                
-                // Menjalankan pernyataan SQL dan mendapatkan hasil query
-                try (ResultSet resultSet = statement.executeQuery()) {
-                    if (resultSet.next()) {
-                        price = resultSet.getDouble("harga");
-                    }
-                }
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        
-        return price;
-    }
+
 
     
 
