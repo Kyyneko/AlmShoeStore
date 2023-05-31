@@ -94,5 +94,13 @@ public class DatabaseManager {
             e.printStackTrace();
         }
     }
+
+    public static void main(String[] args) throws Exception {
+        // createTable();
+        // insertData("MahendraKiranaMB", "Mahen2108");
+        // deleteAllData();
+        // seeData();
+        // deleteAllTable();
+    }
 }
 
