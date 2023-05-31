@@ -1,7 +1,7 @@
 
 package almshoestore;
 
-import almshoestore.Database.DatabaseRegist.DatabaseManager;
+import almshoestore.Database.Manager.DatabaseManager;
 import almshoestore.SceneToko.SepatuFormal;
 import almshoestore.SceneToko.SepatuFutsal;
 import almshoestore.SceneToko.SepatuLari;
@@ -124,7 +124,7 @@ public class App extends Application {
         if (!username.isEmpty() && !password.isEmpty()) {
             try {
                 // Buat koneksi ke database SQLite
-                Connection connection = DriverManager.getConnection("jdbc:sqlite:userdata.db");
+                Connection connection = DriverManager.getConnection("jdbc:sqlite:D:\\AlmShoeStore\\app\\src\\main\\java\\almshoestore\\Database\\Manager/userdata.db");
 
                 // Buat pernyataan SQL untuk memeriksa kecocokan username dan password
                 String sql = "SELECT * FROM tb_account WHERE Username = ? AND Password = ?";

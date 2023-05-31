@@ -1,4 +1,4 @@
-package almshoestore.Database.DatabaseRegist;
+package almshoestore.Database.Manager;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -8,7 +8,7 @@ import java.sql.SQLException;
 
 public class DatabaseManager {
     public static void createTable() {
-        try (Connection connection = DriverManager.getConnection("jdbc:sqlite:app\\userdata.db")) {
+        try (Connection connection = DriverManager.getConnection("jdbc:sqlite:D:\\AlmShoeStore\\app\\src\\main\\java\\almshoestore\\Database\\Manager/userdata.db")) {
             String createTableSQL = "CREATE TABLE IF NOT EXISTS tb_account (Username VARCHAR(255), Password VARCHAR(255), Balance DOUBLE)";
             try (PreparedStatement statement = connection.prepareStatement(createTableSQL)) {
                 statement.execute();
@@ -21,7 +21,7 @@ public class DatabaseManager {
     
 
     public static void insertData(String username, String password) {
-        try (Connection connection = DriverManager.getConnection("jdbc:sqlite:userdata.db")) {
+        try (Connection connection = DriverManager.getConnection("jdbc:sqlite:D:\\AlmShoeStore\\app\\src\\main\\java\\almshoestore\\Database\\Manager/userdata.db")) {
             String insertDataSQL = "INSERT INTO tb_account (Username, Password, Balance) VALUES (?, ?, ?)";
             try (PreparedStatement statement = connection.prepareStatement(insertDataSQL)) {
                 statement.setString(1, username);
@@ -37,7 +37,7 @@ public class DatabaseManager {
     
 
     public static void deleteAllData() {
-        try (Connection connection = DriverManager.getConnection("jdbc:sqlite:app\\userdata.db")) {
+        try (Connection connection = DriverManager.getConnection("jdbc:sqlite:D:\\AlmShoeStore\\app\\src\\main\\java\\almshoestore\\Database\\Manager/userdata.db")) {
             String deleteAllDataSQL = "DELETE FROM tb_account";
             try (PreparedStatement statement = connection.prepareStatement(deleteAllDataSQL)) {
                 int rowsDeleted = statement.executeUpdate();
@@ -50,7 +50,7 @@ public class DatabaseManager {
     }
 
     public static void seeData() {
-        try (Connection connection = DriverManager.getConnection("jdbc:sqlite:app\\userdata.db")) {
+        try (Connection connection = DriverManager.getConnection("jdbc:sqlite:D:\\AlmShoeStore\\app\\src\\main\\java\\almshoestore\\Database\\Manager/userdata.db")) {
             String selectDataSQL = "SELECT * FROM tb_account";
             try (PreparedStatement statement = connection.prepareStatement(selectDataSQL)) {
                 ResultSet resultSet = statement.executeQuery();
@@ -67,7 +67,7 @@ public class DatabaseManager {
     }
 
     public static boolean checkUsername(String username) {
-        try (Connection connection = DriverManager.getConnection("jdbc:sqlite:app\\userdata.db")) {
+        try (Connection connection = DriverManager.getConnection("jdbc:sqlite:D:\\AlmShoeStore\\app\\src\\main\\java\\almshoestore\\Database\\Manager/userdata.db")) {
             String checkUsernameSQL = "SELECT COUNT(*) FROM tb_account WHERE Username = ?";
             try (PreparedStatement statement = connection.prepareStatement(checkUsernameSQL)) {
                 statement.setString(1, username);
@@ -84,7 +84,7 @@ public class DatabaseManager {
     }
 
     public static void deleteAllTable() {
-        try (Connection connection = DriverManager.getConnection("jdbc:sqlite:app\\userdata.db")) {
+        try (Connection connection = DriverManager.getConnection("jdbc:D:\\AlmShoeStore\\app\\src\\main\\java\\almshoestore\\Database\\Manager/userdata.db")) {
             String deleteTableSQL = "DROP TABLE IF EXISTS tb_account";
             try (PreparedStatement statement = connection.prepareStatement(deleteTableSQL)) {
                 statement.execute();
