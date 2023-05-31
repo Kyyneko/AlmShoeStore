@@ -283,7 +283,7 @@ public class DB_Manager {
         /* Insert Data To Table */
         // insertDataSepatuFormal(null, DB_URL, DB_URL, null, null);
         // insertDataSepatuFutsal(null, DB_URL, DB_URL, null, null);
-        // insertDataSepatuLari(null, DB_URL, DB_URL, null, null);
+        insertDataSepatuLari(04, "NIKE", "BAGUS", 200000, 10);
         // insertDataSepatuSneakers(null, DB_URL, DB_URL, null, null);
 
         /* Delete Data In Table */

@@ -84,7 +84,7 @@ public class DatabaseManager {
     }
 
     public static void deleteAllTable() {
-        try (Connection connection = DriverManager.getConnection("jdbc:D:\\AlmShoeStore\\app\\src\\main\\java\\almshoestore\\Database\\Manager/userdata.db")) {
+        try (Connection connection = DriverManager.getConnection("jdbc:sqlite:D:\\AlmShoeStore\\app\\src\\main\\java\\almshoestore\\Database\\Manager/userdata.db")) {
             String deleteTableSQL = "DROP TABLE IF EXISTS tb_account";
             try (PreparedStatement statement = connection.prepareStatement(deleteTableSQL)) {
                 statement.execute();
@@ -98,12 +98,14 @@ public class DatabaseManager {
     
     
     
+    
+    
 
     public static void main(String[] args) throws Exception {
         // createTable();
         // insertData("MahendraKiranaMB", "Mahen2108");
         // deleteAllData();
-seeData();
+        seeData();
         // deleteAllTable();
     }
 }

@@ -309,7 +309,7 @@ public class SepatuLari extends Scene {
         String selectedPaymentOption = paymentOptions.getValue();
         if (selectedPaymentOption != null) {
             // Lakukan pengecekan saldo dan proses pembelian
-            double priceValue = 20.000000;
+            double priceValue = getPriceValue();
             double currentBalance = getBalanceFromDatabase(); // Dapatkan saldo pengguna dari database
             
             if (currentBalance >= priceValue) {
@@ -349,7 +349,7 @@ public class SepatuLari extends Scene {
         double currentBalance = 0.0;
         
         // Koneksi ke database SQLite
-        try (Connection connection = DriverManager.getConnection("jdbc:D:\\AlmShoeStore\\app\\src\\main\\java\\almshoestore\\Database\\Manager/userdata.db")) {
+        try (Connection connection = DriverManager.getConnection("jdbc:sqlite:D:\\AlmShoeStore\\app\\src\\main\\java\\almshoestore\\Database\\Manager/userdata.db")) {
             // Membuat pernyataan SQL untuk mengambil saldo pengguna
             String sql = "SELECT Balance FROM tb_account WHERE Username = ?";
             
@@ -378,7 +378,7 @@ public class SepatuLari extends Scene {
         String username = "MahendraKiranaMB";
         
         // Koneksi ke database SQLite
-        try (Connection connection = DriverManager.getConnection("jdbc:D:\\AlmShoeStore\\app\\src\\main\\java\\almshoestore\\Database\\Manager/userdata.db")) {
+        try (Connection connection = DriverManager.getConnection("jdbc:sqlite:D:\\AlmShoeStore\\app\\src\\main\\java\\almshoestore\\Database\\Manager/userdata.db")) {
             // Membuat pernyataan SQL untuk memperbarui saldo pengguna
             String sql = "UPDATE tb_account SET Balance = ? WHERE Username = ?";
             
@@ -392,6 +392,35 @@ public class SepatuLari extends Scene {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    public static double getPriceValue() {
+        // Mendapatkan harga sepatu dari database berdasarkan id atau info lainnya
+        double price = 0.0;
+        
+        // Koneksi ke database SQLite
+        try (Connection connection = DriverManager.getConnection("jdbc:sqlite:D:\\AlmShoeStore\\app\\src\\main\\java\\almshoestore\\Database\\Manager/userdata.db")) {
+            // Mengganti 'shoe_id_column' dengan nama kolom yang menyimpan ID sepatu dalam tabel 'shoes'
+            int shoeId = 04; // ID sepatu yang diinginkan
+            
+            // Membuat pernyataan SQL untuk mendapatkan harga sepatu berdasarkan ID
+            String sql = "SELECT Harga FROM db_barang WHERE tb_lari = ?";
+            
+            try (PreparedStatement statement = connection.prepareStatement(sql)) {
+                statement.setInt(1, shoeId);
+                
+                // Menjalankan pernyataan SQL dan mendapatkan hasil query
+                try (ResultSet resultSet = statement.executeQuery()) {
+                    if (resultSet.next()) {
+                        price = resultSet.getDouble("harga");
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        
+        return price;
     }
 
     
