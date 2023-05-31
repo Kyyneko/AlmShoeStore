@@ -1,11 +1,19 @@
 package almshoestore.SceneToko;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 import almshoestore.App;
 import javafx.geometry.Insets;
 import javafx.scene.Cursor;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
@@ -129,20 +137,264 @@ public class SepatuLari extends Scene {
     }
 
     private static void Pembayaran1() {
-        // Implementasi pembayaran untuk sepatu 1
+        Stage stage = new Stage();
+        VBox root = new VBox();
+        root.setPadding(new Insets(10));
+        root.setSpacing(10);
+
+        
+        Label titleLabel = new Label("Pembayaran - Hoka One One Kawana");
+        titleLabel.setStyle("-fx-font-size: 18px; -fx-font-weight: bold");
+        root.getChildren().add(titleLabel);
+        
+        Label descriptionLabel = new Label("Deskripsi sepatu:");
+        descriptionLabel.setStyle("-fx-font-size: 14px");
+        root.getChildren().add(descriptionLabel);
+
+        Label description = new Label("Detail | Colorway : Lucid Blue | Article : (HQ8593) | Brand New in Box (BNIB) / Tag (BNWT) | Material : Yarn In Upper Contains At Least 50% Parley Ocean Plastic  and 50% Recycled Polyester, Regular Fit, Lace Closure, Soft Heel Fit, and Boost Midsole");
+        description.setStyle("-fx-font-size: 14px");
+        description.setWrapText(true);
+        root.getChildren().add(description);
+        
+        Label priceLabel = new Label("Harga sepatu:");
+        priceLabel.setStyle("-fx-font-size: 14px");
+        root.getChildren().add(priceLabel);
+        
+        Label price = new Label("IDR 2.099.000");
+        price.setStyle("-fx-font-size: 14px; -fx-font-weight: bold");
+        root.getChildren().add(price);
+        
+        Label paymentLabel = new Label("Pilih metode pembayaran:");
+        paymentLabel.setStyle("-fx-font-size: 14px");
+        root.getChildren().add(paymentLabel);
+        
+        ChoiceBox<String> paymentOptions = new ChoiceBox<>();
+        paymentOptions.getItems().addAll("Balance");
+        root.getChildren().add(paymentOptions);
+        
+        // Tambahkan komponen-komponen lain yang diperlukan untuk pembayaran sepatu 4
+        
+        Scene scene = new Scene(root, 620, 620);
+        stage.setScene(scene);
+        stage.setTitle("Pembayaran");
+        stage.show();
     }
 
     private static void Pembayaran2() {
-        // Implementasi pembayaran untuk sepatu 2
+        Stage stage = new Stage();
+        VBox root = new VBox();
+        root.setPadding(new Insets(10));
+        root.setSpacing(10);
+
+        
+        Label titleLabel = new Label("Pembayaran - Adidas Ultraboost Light");
+        titleLabel.setStyle("-fx-font-size: 18px; -fx-font-weight: bold");
+        root.getChildren().add(titleLabel);
+        
+        Label descriptionLabel = new Label("Deskripsi sepatu:");
+        descriptionLabel.setStyle("-fx-font-size: 14px");
+        root.getChildren().add(descriptionLabel);
+
+        Label description = new Label("Detail | Colorway : Cloud White | Article : (HQ6352) | Brand New in Box (BNIB) / Tag (BNWT) | Material : Experience Epic Energy With The New Ultraboost Light, Our Lightest Ultraboost Ever. The Magic Lies In The Light Boost Midsole, A New Generation Of Adidas Boost. Its Unique Molecule Design Achieves The Lightest Boost Foam To Date.");
+        description.setStyle("-fx-font-size: 14px");
+        description.setWrapText(true);
+        root.getChildren().add(description);
+        
+        Label priceLabel = new Label("Harga sepatu:");
+        priceLabel.setStyle("-fx-font-size: 14px");
+        root.getChildren().add(priceLabel);
+        
+        Label price = new Label("IDR 2.799.000");
+        price.setStyle("-fx-font-size: 14px; -fx-font-weight: bold");
+        root.getChildren().add(price);
+        
+        Label paymentLabel = new Label("Pilih metode pembayaran:");
+        paymentLabel.setStyle("-fx-font-size: 14px");
+        root.getChildren().add(paymentLabel);
+        
+        ChoiceBox<String> paymentOptions = new ChoiceBox<>();
+        paymentOptions.getItems().addAll("Balance");
+        root.getChildren().add(paymentOptions);
+        
+        // Tambahkan komponen-komponen lain yang diperlukan untuk pembayaran sepatu 4
+        
+        Scene scene = new Scene(root, 620, 620);
+        stage.setScene(scene);
+        stage.setTitle("Pembayaran");
+        stage.show();
     }
 
     private static void Pembayaran3() {
-        // Implementasi pembayaran untuk sepatu 3
+        Stage stage = new Stage();
+        VBox root = new VBox();
+        root.setPadding(new Insets(10));
+        root.setSpacing(10);
+
+        
+        Label titleLabel = new Label("Pembayaran - Nike Zoomx Streakfly Prm");
+        titleLabel.setStyle("-fx-font-size: 18px; -fx-font-weight: bold");
+        root.getChildren().add(titleLabel);
+        
+        Label descriptionLabel = new Label("Deskripsi sepatu:");
+        descriptionLabel.setStyle("-fx-font-size: 14px");
+        root.getChildren().add(descriptionLabel);
+
+        Label description = new Label("Detail | Colorway : White | Article : (DX1626-100) | Brand New in Box (BNIB) / Tag (BNWT) | Material : When Pitted Against The Clock, You Want Shoes That Feel Like Butterflies On Your Feet. The Streakfly Is Our Lightest Racing Shoe, Allowing It To Essentially Disappear On Your Foot. We Left Out All The Unnecessary Frills And Weight");
+        description.setStyle("-fx-font-size: 14px");
+        description.setWrapText(true);
+        root.getChildren().add(description);
+        
+        Label priceLabel = new Label("Harga sepatu:");
+        priceLabel.setStyle("-fx-font-size: 14px");
+        root.getChildren().add(priceLabel);
+        
+        Label price = new Label("IDR 2.799.000");
+        price.setStyle("-fx-font-size: 14px; -fx-font-weight: bold");
+        root.getChildren().add(price);
+        
+        Label paymentLabel = new Label("Pilih metode pembayaran:");
+        paymentLabel.setStyle("-fx-font-size: 14px");
+        root.getChildren().add(paymentLabel);
+        
+        ChoiceBox<String> paymentOptions = new ChoiceBox<>();
+        paymentOptions.getItems().addAll("Balance");
+        root.getChildren().add(paymentOptions);
+        
+        // Tambahkan komponen-komponen lain yang diperlukan untuk pembayaran sepatu 4
+        
+        Scene scene = new Scene(root, 620, 620);
+        stage.setScene(scene);
+        stage.setTitle("Pembayaran");
+        stage.show();
     }
 
     private static void Pembayaran4() {
-        // Implementasi pembayaran untuk sepatu 4
+        Stage stage = new Stage();
+        VBox root = new VBox();
+        root.setPadding(new Insets(10));
+        root.setSpacing(10);
+
+        
+        Label titleLabel = new Label("Pembayaran - Nike Zoom Vapor 15 Academy Kylian Mbappe Tf");
+        titleLabel.setStyle("-fx-font-size: 18px; -fx-font-weight: bold");
+        root.getChildren().add(titleLabel);
+        
+        Label descriptionLabel = new Label("Deskripsi sepatu:");
+        descriptionLabel.setStyle("-fx-font-size: 14px");
+        root.getChildren().add(descriptionLabel);
+
+        Label description = new Label("Detail | Colorway : Dark Red | Article : (DV0708-694) | Brand New in Box (BNIB) / Tag (BNWT) | Material | Kylian Mbappé's Explosiveness, Plus His Twitchy Change Of Direction, Puts Him Firmly In The World Class Of Finishers. With Nods To His Heritage, This Cleat Is Made To Help You Play Just Like Km—with Blinding Pace And Purpose.");
+        description.setStyle("-fx-font-size: 14px");
+        description.setWrapText(true);
+        root.getChildren().add(description);
+        
+        Label priceLabel = new Label("Harga sepatu:");
+        priceLabel.setStyle("-fx-font-size: 14px");
+        root.getChildren().add(priceLabel);
+        
+        Label price = new Label("IDR 3.300.000");
+        price.setStyle("-fx-font-size: 14px; -fx-font-weight: bold");
+        root.getChildren().add(price);
+        
+        Label paymentLabel = new Label("Pilih metode pembayaran:");
+        paymentLabel.setStyle("-fx-font-size: 14px");
+        root.getChildren().add(paymentLabel);
+        
+        ChoiceBox<String> paymentOptions = new ChoiceBox<>();
+        paymentOptions.getItems().addAll("Balance");
+        root.getChildren().add(paymentOptions);
+        
+        Button buyButton = new Button("Beli");
+        buyButton.setOnAction(e -> {
+        String selectedPaymentOption = paymentOptions.getValue();
+        if (selectedPaymentOption != null) {
+            // Lakukan pengecekan saldo dan proses pembelian
+            double priceValue = 20.000000;
+            double currentBalance = getBalanceFromDatabase(); // Dapatkan saldo pengguna dari database
+            
+            if (currentBalance >= priceValue) {
+                // Saldo cukup, lakukan pembelian
+                double newBalance = currentBalance - priceValue;
+                updateBalanceInDatabase(newBalance); // Perbarui saldo pengguna dalam database
+                
+                // Tampilkan pesan berhasil membeli
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Pembelian Berhasil");
+                alert.setHeaderText(null);
+                alert.setContentText("Pembelian berhasil. Saldo baru: " + newBalance);
+                alert.showAndWait();
+                
+                // Tutup jendela pembayaran
+                stage.close();
+            } else {
+                // Saldo tidak cukup, tampilkan pesan kesalahan
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Kesalahan");
+                alert.setHeaderText(null);
+                alert.setContentText("Saldo tidak mencukupi.");
+                alert.showAndWait();
+            }
+        }
+    });
+    
+    root.getChildren().add(buyButton);
+        
+        Scene scene = new Scene(root, 620, 620);
+        stage.setScene(scene);
+        stage.setTitle("Pembayaran");
+        stage.show();
     }
+
+    public static double getBalanceFromDatabase() {
+        double currentBalance = 0.0;
+        
+        // Koneksi ke database SQLite
+        try (Connection connection = DriverManager.getConnection("jdbc:D:\\AlmShoeStore\\app\\src\\main\\java\\almshoestore\\Database\\Manager/userdata.db")) {
+            // Membuat pernyataan SQL untuk mengambil saldo pengguna
+            String sql = "SELECT Balance FROM tb_account WHERE Username = ?";
+            
+            // Mengganti 'username_column' dengan nama kolom yang menyimpan username dalam tabel 'user'
+            String username = "MahendraKiranaMB";
+            
+            try (PreparedStatement statement = connection.prepareStatement(sql)) {
+                statement.setString(1, username);
+                
+                // Menjalankan pernyataan SQL
+                try (ResultSet resultSet = statement.executeQuery()) {
+                    if (resultSet.next()) {
+                        currentBalance = resultSet.getDouble("Balance");
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        
+        return currentBalance;
+    }
+
+    public static void updateBalanceInDatabase(double newBalance) {
+        // Mengganti 'username_column' dengan nama kolom yang menyimpan username dalam tabel 'user'
+        String username = "MahendraKiranaMB";
+        
+        // Koneksi ke database SQLite
+        try (Connection connection = DriverManager.getConnection("jdbc:D:\\AlmShoeStore\\app\\src\\main\\java\\almshoestore\\Database\\Manager/userdata.db")) {
+            // Membuat pernyataan SQL untuk memperbarui saldo pengguna
+            String sql = "UPDATE tb_account SET Balance = ? WHERE Username = ?";
+            
+            try (PreparedStatement statement = connection.prepareStatement(sql)) {
+                statement.setDouble(1, newBalance);
+                statement.setString(2, username);
+                
+                // Menjalankan pernyataan SQL
+                statement.executeUpdate();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    
 
     private static ImageView CreateImageView(String ImagePath) {
         Image image = new Image(ImagePath);

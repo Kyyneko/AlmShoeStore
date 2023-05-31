@@ -13,7 +13,7 @@ public class DB_Manager {
     /* ======================================================== Create Table Sepatu ======================================================== */
     protected static void createTableFormal() {
         try (Connection connection = DriverManager.getConnection(DB_URL)) {
-            String createTableSQL = "CREATE TABLE IF NOT EXISTS tb_formal ( ID INT(11) PRIMARY KEY, Nama VARCHAR(255), Deskripsi VARCHAR(255), Harga DOUBLE, STOK INT(11) )";
+            String createTableSQL = "CREATE TABLE IF NOT EXISTS tb_formal ( ID INT(11) PRIMARY KEY, Nama VARCHAR(255), Deskripsi VARCHAR(255), Harga INT(11), STOK INT(11) )";
             try (PreparedStatement statement = connection.prepareStatement(createTableSQL)) {
                 statement.execute();
                 System.out.println("Success To Add Table Formal");
@@ -25,7 +25,7 @@ public class DB_Manager {
 
     protected static void createTableFutsal() {
         try (Connection connection = DriverManager.getConnection(DB_URL)) {
-            String createTableSQL = "CREATE TABLE IF NOT EXISTS tb_futsal ( ID INT(11) PRIMARY KEY, Nama VARCHAR(255), Deskripsi VARCHAR(255), Harga DOUBLE, STOK INT(11) )";
+            String createTableSQL = "CREATE TABLE IF NOT EXISTS tb_futsal ( ID INT(11) PRIMARY KEY, Nama VARCHAR(255), Deskripsi VARCHAR(255), Harga INT(11), STOK INT(11) )";
             try (PreparedStatement statement = connection.prepareStatement(createTableSQL)) {
                 statement.execute();
                 System.out.println("Success To Add Table Futsal");
@@ -37,7 +37,7 @@ public class DB_Manager {
 
     protected static void createTableLari() {
         try (Connection connection = DriverManager.getConnection(DB_URL)) {
-            String createTableSQL = "CREATE TABLE IF NOT EXISTS tb_lari ( ID INT(11) PRIMARY KEY, Nama VARCHAR(255), Deskripsi VARCHAR(255), Harga DOUBLE, STOK INT(11)  )";
+            String createTableSQL = "CREATE TABLE IF NOT EXISTS tb_lari ( ID INT(11) PRIMARY KEY, Nama VARCHAR(255), Deskripsi VARCHAR(255), Harga INT(11), STOK INT(11)  )";
             try (PreparedStatement statement = connection.prepareStatement(createTableSQL)) {
                 statement.execute();
                 System.out.println("Success To Add Table Lari");
@@ -49,7 +49,7 @@ public class DB_Manager {
 
     protected static void createTableSneakers() {
         try (Connection connection = DriverManager.getConnection(DB_URL)) {
-            String createTableSQL = "CREATE TABLE IF NOT EXISTS tb_sneakers ( ID INT(11) PRIMARY KEY, Nama VARCHAR(255), Deskripsi VARCHAR(255), Harga DOUBLE, STOK INT(11) )";
+            String createTableSQL = "CREATE TABLE IF NOT EXISTS tb_sneakers ( ID INT(11) PRIMARY KEY, Nama VARCHAR(255), Deskripsi VARCHAR(255), Harga INT(11), STOK INT(11) )";
             try (PreparedStatement statement = connection.prepareStatement(createTableSQL)) {
                 statement.execute();
                 System.out.println("Success To Add Table Sneakers");
@@ -61,14 +61,14 @@ public class DB_Manager {
     
 
     /* ======================================================== Insert Data Sepatu ======================================================== */
-    public static void insertDataSepatuFormal(Integer ID, String Nama, String Deskripsi, Double Harga, Integer Stok) {
+    public static void insertDataSepatuFormal(Integer ID, String Nama, String Deskripsi, Integer Harga, Integer Stok) {
         try (Connection connection = DriverManager.getConnection(DB_URL)) {
             String insertDataSQL = "INSERT INTO tb_formal (ID, Nama, Deskripsi, Harga, STOK ) VALUES (?, ?, ?, ?, ?)";
             try (PreparedStatement statement = connection.prepareStatement(insertDataSQL)) {
                 statement.setInt(1, ID);
                 statement.setString(2, Nama);
                 statement.setString(3, Deskripsi);
-                statement.setDouble(4, Harga);
+                statement.setInt(4, Harga);
                 statement.setInt(5, Stok);
                 statement.executeUpdate();
                 System.out.println("Success To Add Data Sepatu Formal");
@@ -78,14 +78,14 @@ public class DB_Manager {
         }
     }
 
-    public static void insertDataSepatuFutsal(Integer ID, String Nama, String Deskripsi, Double Harga, Integer Stok) {
+    public static void insertDataSepatuFutsal(Integer ID, String Nama, String Deskripsi, Integer Harga, Integer Stok) {
         try (Connection connection = DriverManager.getConnection(DB_URL)) {
             String insertDataSQL = "INSERT INTO tb_futsal (ID, Nama, Deskripsi, Harga, STOK ) VALUES (?, ?, ?, ?, ?)";
             try (PreparedStatement statement = connection.prepareStatement(insertDataSQL)) {
                 statement.setInt(1, ID);
                 statement.setString(2, Nama);
                 statement.setString(3, Deskripsi);
-                statement.setDouble(4, Harga);
+                statement.setInt(4, Harga);
                 statement.setInt(5, Stok);
                 statement.executeUpdate();
                 System.out.println("Success To Add Data Sepatu Futsal");
@@ -95,14 +95,14 @@ public class DB_Manager {
         }
     }
 
-    public static void insertDataSepatuLari(Integer ID, String Nama, String Deskripsi, Double Harga, Integer Stok) {
+    public static void insertDataSepatuLari(Integer ID, String Nama, String Deskripsi, Integer Harga, Integer Stok) {
         try (Connection connection = DriverManager.getConnection(DB_URL)) {
             String insertDataSQL = "INSERT INTO tb_lari (ID, Nama, Deskripsi, Harga, STOK ) VALUES (?, ?, ?, ?, ?)";
             try (PreparedStatement statement = connection.prepareStatement(insertDataSQL)) {
                 statement.setInt(1, ID);
                 statement.setString(2, Nama);
                 statement.setString(3, Deskripsi);
-                statement.setDouble(4, Harga);
+                statement.setInt(4, Harga);
                 statement.setInt(5, Stok);
                 statement.executeUpdate();
                 System.out.println("Success To Add Data Sepatu Lari");
@@ -112,14 +112,14 @@ public class DB_Manager {
         }
     }
 
-    public static void insertDataSepatuSneakers(Integer ID, String Nama, String Deskripsi, Double Harga, Integer Stok) {
+    public static void insertDataSepatuSneakers(Integer ID, String Nama, String Deskripsi, Integer Harga, Integer Stok) {
         try (Connection connection = DriverManager.getConnection(DB_URL)) {
             String insertDataSQL = "INSERT INTO tb_sneakers (ID, Nama, Deskripsi, Harga, STOK ) VALUES (?, ?, ?, ?, ?)";
             try (PreparedStatement statement = connection.prepareStatement(insertDataSQL)) {
                 statement.setInt(1, ID);
                 statement.setString(2, Nama);
                 statement.setString(3, Deskripsi);
-                statement.setDouble(4, Harga);
+                statement.setInt(4, Harga);
                 statement.setInt(5, Stok);
                 statement.executeUpdate();
                 System.out.println("Success To Add Data Sepatu Sneakers");
@@ -192,7 +192,7 @@ public class DB_Manager {
                     int id = resultSet.getInt("ID");
                     String nama = resultSet.getString("Nama");
                     String deskripsi = resultSet.getString("Password");
-                    double harga = resultSet.getDouble("Harga");
+                    int harga = resultSet.getInt("Harga");
                     int stok  = resultSet.getInt("Stok");
                     System.out.println("ID : " + id +" | " + "Nama : " + nama + " | " + "Deskripsi : " + deskripsi + " | " + "Harga : " + harga + " | " + "Stok : " + stok);
                 }
@@ -212,7 +212,7 @@ public class DB_Manager {
                     int id = resultSet.getInt("ID");
                     String nama = resultSet.getString("Nama");
                     String deskripsi = resultSet.getString("Password");
-                    double harga = resultSet.getDouble("Harga");
+                    int harga = resultSet.getInt("Harga");
                     int stok  = resultSet.getInt("Stok");
                     System.out.println("ID : " + id +" | " + "Nama : " + nama + " | " + "Deskripsi : " + deskripsi + " | " + "Harga : " + harga + " | " + "Stok : " + stok);
                 }
@@ -231,7 +231,7 @@ public class DB_Manager {
                     int id = resultSet.getInt("ID");
                     String nama = resultSet.getString("Nama");
                     String deskripsi = resultSet.getString("Password");
-                    double harga = resultSet.getDouble("Harga");
+                    int harga = resultSet.getInt("Harga");
                     int stok  = resultSet.getInt("Stok");
                     System.out.println("ID : " + id +" | " + "Nama : " + nama + " | " + "Deskripsi : " + deskripsi + " | " + "Harga : " + harga + " | " + "Stok : " + stok);
                 }
@@ -250,7 +250,7 @@ public class DB_Manager {
                     int id = resultSet.getInt("ID");
                     String nama = resultSet.getString("Nama");
                     String deskripsi = resultSet.getString("Password");
-                    double harga = resultSet.getDouble("Harga");
+                    int harga = resultSet.getInt("Harga");
                     int stok  = resultSet.getInt("Stok");
                     System.out.println("ID : " + id +" | " + "Nama : " + nama + " | " + "Deskripsi : " + deskripsi + " | " + "Harga : " + harga + " | " + "Stok : " + stok);
                 }
@@ -274,10 +274,30 @@ public class DB_Manager {
     }
 
     public static void main(String[] args) throws Exception {
-        // createTable();
-        // insertData("MahendraKiranaMB", "Mahen2108");
-        // deleteAllData();
-        // seeData();
+        /* Create Table */
+        // createTableFormal();
+        // createTableFutsal();
+        // createTableLari();
+        // createTableSneakers();
+
+        /* Insert Data To Table */
+        // insertDataSepatuFormal(null, DB_URL, DB_URL, null, null);
+        // insertDataSepatuFutsal(null, DB_URL, DB_URL, null, null);
+        // insertDataSepatuLari(null, DB_URL, DB_URL, null, null);
+        // insertDataSepatuSneakers(null, DB_URL, DB_URL, null, null);
+
+        /* Delete Data In Table */
+        // deleteAllDataFormal();
+        // deleteAllDataFutsal();
+        // deleteAllDataLari();
+        // deleteAllDataSneakers();
+
+        /* See Data Table */
+        // seeDataFormal();
+        // seeDataFutsal();
+        // seeDataLari();
+        // seeDataSneakers();
+
         // deleteAllTable();
     }
 }
