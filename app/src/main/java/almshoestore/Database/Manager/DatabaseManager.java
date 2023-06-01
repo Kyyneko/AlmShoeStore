@@ -105,7 +105,7 @@ public class DatabaseManager {
         // createTable();
         // insertData("MahendraKiranaMB", "Mahen2108");
         // deleteAllData();
-        seeData();
+        // seeData();
         // deleteAllTable();
     }
 }
