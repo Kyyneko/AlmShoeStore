@@ -105,7 +105,7 @@ public class SepatuLari extends Scene {
             price.setText("IDR 2.799.000");
         } else if (i == 4) {
             label.setText("Adidas Ultraboost 22 - Lucid Blue");
-            description.setText("Benang Di Bagian Atas Mengandung Setidaknya 50% Parley Ocean Plastic dan 50% Poliester Daur Ulang, Regular Fit, Penutupan Renda, Cocok dengan Tumit Lembut, dan Tingkatkan Sol Tengah");
+            description.setText("Benang Di Bagian Atas Mengandung Setidaknya 50% Parley Ocean Plastic dan 50% Poliester Daur Ulang, Regular Fit, Penutupan Renda, Cocok dengan Tumit Lembut, dan Tingkatkan Sol Tengah.");
             price.setText("IDR 3.300.000");
         }
     }
@@ -114,20 +114,20 @@ public class SepatuLari extends Scene {
         // Implementasi pembayaran untuk sepatu yang dipilih
         switch (i) {
             case 1:
-                    Pembayaran1();
-                    break;
+                Pembayaran1();
+                break;
             case 2:
-                    Pembayaran2();
-                    break;
+                Pembayaran2();
+                break;
             case 3:
-                    Pembayaran3();
-                    break;
+                Pembayaran3();
+                break;
             case 4:
-                    Pembayaran4();
-                    break;
+                Pembayaran4();
+                break;
             default:
-                    break;
-            }
+                break;
+        }
     }
 
     private static void Pembayaran1() {
@@ -138,14 +138,15 @@ public class SepatuLari extends Scene {
 
         Label titleLabel = new Label("Pembayaran - Hoka One One Kawana - Lunar Rock");
         titleLabel.setStyle("-fx-font-size: 18px; -fx-font-weight: bold");
-        titleLabel.setWrapText(true);
         root.getChildren().add(titleLabel);
 
         Image sepatuImage = new Image("images/scenetoko/ShoeRun/Lari1.jpg");
         ImageView sepatuImageView = new ImageView(sepatuImage);
+        sepatuImageView.setFitWidth(300);
+        sepatuImageView.setFitHeight(300);
         root.getChildren().add(sepatuImageView);
         root.setAlignment(Pos.CENTER);
-
+        
         Label descriptionLabel = new Label("Deskripsi sepatu:");
         descriptionLabel.setStyle("-fx-font-size: 14px");
         root.getChildren().add(descriptionLabel);
@@ -154,23 +155,24 @@ public class SepatuLari extends Scene {
         description.setStyle("-fx-font-size: 14px");
         description.setWrapText(true);
         root.getChildren().add(description);
-
+        
         Label priceLabel = new Label("Harga sepatu:");
         priceLabel.setStyle("-fx-font-size: 14px");
         root.getChildren().add(priceLabel);
-
+        
         Label price = new Label("IDR 2.099.000");
         price.setStyle("-fx-font-size: 14px; -fx-font-weight: bold");
         root.getChildren().add(price);
-
+        
         Label paymentLabel = new Label("Pilih metode pembayaran:");
         paymentLabel.setStyle("-fx-font-size: 14px");
         root.getChildren().add(paymentLabel);
-
+        
         ChoiceBox<String> paymentOptions = new ChoiceBox<>();
         paymentOptions.getItems().addAll("Balance");
         root.getChildren().add(paymentOptions);
-
+        
+        // Tambahkan komponen-komponen lain yang diperlukan untuk pembayaran sepatu 4
         Button buyButton = new Button("Beli");
         buyButton.setOnAction(e -> {
                 Label successLabel = new Label("Pesan berhasil Membeli");
@@ -178,7 +180,7 @@ public class SepatuLari extends Scene {
                 root.getChildren().add(successLabel);
         });
         root.getChildren().add(buyButton);
-
+        
         Scene scene = new Scene(root, 620, 620);
         stage.setScene(scene);
         stage.setTitle("Pembayaran");
@@ -193,14 +195,15 @@ public class SepatuLari extends Scene {
 
         Label titleLabel = new Label("Pembayaran - Adidas Ultraboost Light - Cloud White");
         titleLabel.setStyle("-fx-font-size: 18px; -fx-font-weight: bold");
-        titleLabel.setWrapText(true);
         root.getChildren().add(titleLabel);
 
         Image sepatuImage = new Image("images/scenetoko/ShoeRun/Lari2.jpg");
         ImageView sepatuImageView = new ImageView(sepatuImage);
+        sepatuImageView.setFitWidth(300);
+        sepatuImageView.setFitHeight(300);
         root.getChildren().add(sepatuImageView);
         root.setAlignment(Pos.CENTER);
-
+        
         Label descriptionLabel = new Label("Deskripsi sepatu:");
         descriptionLabel.setStyle("-fx-font-size: 14px");
         root.getChildren().add(descriptionLabel);
@@ -209,23 +212,24 @@ public class SepatuLari extends Scene {
         description.setStyle("-fx-font-size: 14px");
         description.setWrapText(true);
         root.getChildren().add(description);
-
+        
         Label priceLabel = new Label("Harga sepatu:");
         priceLabel.setStyle("-fx-font-size: 14px");
         root.getChildren().add(priceLabel);
-
+        
         Label price = new Label("IDR 2.799.000");
         price.setStyle("-fx-font-size: 14px; -fx-font-weight: bold");
         root.getChildren().add(price);
-
+        
         Label paymentLabel = new Label("Pilih metode pembayaran:");
         paymentLabel.setStyle("-fx-font-size: 14px");
         root.getChildren().add(paymentLabel);
-
+        
         ChoiceBox<String> paymentOptions = new ChoiceBox<>();
         paymentOptions.getItems().addAll("Balance");
         root.getChildren().add(paymentOptions);
-
+        
+        // Tambahkan komponen-komponen lain yang diperlukan untuk pembayaran sepatu 4
         Button buyButton = new Button("Beli");
         buyButton.setOnAction(e -> {
                 Label successLabel = new Label("Pesan berhasil Membeli");
@@ -233,7 +237,7 @@ public class SepatuLari extends Scene {
                 root.getChildren().add(successLabel);
         });
         root.getChildren().add(buyButton);
-
+        
         Scene scene = new Scene(root, 620, 620);
         stage.setScene(scene);
         stage.setTitle("Pembayaran");
@@ -246,16 +250,18 @@ public class SepatuLari extends Scene {
         root.setPadding(new Insets(10));
         root.setSpacing(10);
 
+        
         Label titleLabel = new Label("Pembayaran - Nike Zoomx Streakfly Prm - White");
         titleLabel.setStyle("-fx-font-size: 18px; -fx-font-weight: bold");
-        titleLabel.setWrapText(true);
         root.getChildren().add(titleLabel);
 
         Image sepatuImage = new Image("images/scenetoko/ShoeRun/Lari3.jpg");
         ImageView sepatuImageView = new ImageView(sepatuImage);
+        sepatuImageView.setFitWidth(300);
+        sepatuImageView.setFitHeight(300);
         root.getChildren().add(sepatuImageView);
         root.setAlignment(Pos.CENTER);
-
+        
         Label descriptionLabel = new Label("Deskripsi sepatu:");
         descriptionLabel.setStyle("-fx-font-size: 14px");
         root.getChildren().add(descriptionLabel);
@@ -264,23 +270,24 @@ public class SepatuLari extends Scene {
         description.setStyle("-fx-font-size: 14px");
         description.setWrapText(true);
         root.getChildren().add(description);
-
+        
         Label priceLabel = new Label("Harga sepatu:");
         priceLabel.setStyle("-fx-font-size: 14px");
         root.getChildren().add(priceLabel);
-
+        
         Label price = new Label("IDR 2.799.000");
         price.setStyle("-fx-font-size: 14px; -fx-font-weight: bold");
         root.getChildren().add(price);
-
+        
         Label paymentLabel = new Label("Pilih metode pembayaran:");
         paymentLabel.setStyle("-fx-font-size: 14px");
         root.getChildren().add(paymentLabel);
-
+        
         ChoiceBox<String> paymentOptions = new ChoiceBox<>();
         paymentOptions.getItems().addAll("Balance");
         root.getChildren().add(paymentOptions);
-
+        
+        // Tambahkan komponen-komponen lain yang diperlukan untuk pembayaran sepatu 4
         Button buyButton = new Button("Beli");
         buyButton.setOnAction(e -> {
                 Label successLabel = new Label("Pesan berhasil Membeli");
@@ -288,7 +295,7 @@ public class SepatuLari extends Scene {
                 root.getChildren().add(successLabel);
         });
         root.getChildren().add(buyButton);
-
+        
         Scene scene = new Scene(root, 620, 620);
         stage.setScene(scene);
         stage.setTitle("Pembayaran");
@@ -301,37 +308,39 @@ public class SepatuLari extends Scene {
         root.setPadding(new Insets(10));
         root.setSpacing(10);
 
+        
         Label titleLabel = new Label("Pembayaran - Adidas Ultraboost 22 - Lucid Blue");
         titleLabel.setStyle("-fx-font-size: 18px; -fx-font-weight: bold");
-        titleLabel.setWrapText(true);
         root.getChildren().add(titleLabel);
 
         Image sepatuImage = new Image("images/scenetoko/ShoeRun/Lari4.jpg");
         ImageView sepatuImageView = new ImageView(sepatuImage);
+        sepatuImageView.setFitWidth(300);
+        sepatuImageView.setFitHeight(300);
         root.getChildren().add(sepatuImageView);
         root.setAlignment(Pos.CENTER);
-
+        
         Label descriptionLabel = new Label("Deskripsi sepatu:");
         descriptionLabel.setStyle("-fx-font-size: 14px");
         root.getChildren().add(descriptionLabel);
 
-        Label description = new Label("Benang Di Bagian Atas Mengandung Setidaknya 50% Parley Ocean Plastic dan 50% Poliester Daur Ulang, Regular Fit, Penutupan Renda, Cocok dengan Tumit Lembut, dan Tingkatkan Sol Tengah");
+        Label description = new Label("Benang Di Bagian Atas Mengandung Setidaknya 50% Parley Ocean Plastic dan 50% Poliester Daur Ulang, Regular Fit, Penutupan Renda, Cocok dengan Tumit Lembut, dan Tingkatkan Sol Tengah.");
         description.setStyle("-fx-font-size: 14px");
         description.setWrapText(true);
         root.getChildren().add(description);
-
+        
         Label priceLabel = new Label("Harga sepatu:");
         priceLabel.setStyle("-fx-font-size: 14px");
         root.getChildren().add(priceLabel);
-
+        
         Label price = new Label("IDR 3.300.000");
         price.setStyle("-fx-font-size: 14px; -fx-font-weight: bold");
         root.getChildren().add(price);
-
+        
         Label paymentLabel = new Label("Pilih metode pembayaran:");
         paymentLabel.setStyle("-fx-font-size: 14px");
         root.getChildren().add(paymentLabel);
-
+        
         ChoiceBox<String> paymentOptions = new ChoiceBox<>();
         paymentOptions.getItems().addAll("Balance");
         root.getChildren().add(paymentOptions);
@@ -343,18 +352,12 @@ public class SepatuLari extends Scene {
                 root.getChildren().add(successLabel);
         });
         root.getChildren().add(buyButton);
-
+        
         Scene scene = new Scene(root, 620, 620);
         stage.setScene(scene);
         stage.setTitle("Pembayaran");
         stage.show();
     }
-
-
-
-
-
-    
 
     private static ImageView CreateImageView(String ImagePath) {
         Image image = new Image(ImagePath);
