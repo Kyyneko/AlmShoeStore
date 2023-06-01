@@ -2,6 +2,7 @@ package almshoestore.SceneToko;
 
 import almshoestore.App;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Cursor;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -91,20 +92,20 @@ public class SepatuLari extends Scene {
 
     private static void setShoeDetails(int i, Button label, Label description, Label price) {
         if (i == 1) {
-            label.setText("Hoka One One Kawana");
-            description.setText("Detail | Colorway : Lunar Rock | Article : (HKE1123163BL) | Brand New in Box (BNIB) / Tag (BNWT) | Material : Pushing The Boundaries On The Traditional Hoka Geometries, The Hoka Kawana Helps Runners Break New Ground. This Neutral Running Shoe Features A Modified Crash Pad With Swallowtail™ Geometry To Provide Smooth Heel Strikes.");
+            label.setText("Hoka One One Kawana - Lunar Rock");
+            description.setText("Mendobrak Batasan Pada Geometri Hoka Tradisional, Hoka Kawana Membantu Para Pelari Membuat Terobosan Baru. Sepatu Lari Netral Ini Menampilkan Crash Pad Yang Dimodifikasi Dengan Geometri Swallowtail™ Untuk Memberikan Serangan Tumit Yang Halus.");
             price.setText("IDR 2.099.000");
         } else if (i == 2) {
-            label.setText("Adidas Ultraboost Light");
-            description.setText("Detail | Colorway : Cloud White | Article : (HQ6352) | Brand New in Box (BNIB) / Tag (BNWT) | Material : Experience Epic Energy With The New Ultraboost Light, Our Lightest Ultraboost Ever. The Magic Lies In The Light Boost Midsole, A New Generation Of Adidas Boost. Its Unique Molecule Design Achieves The Lightest Boost Foam To Date.");
+            label.setText("Adidas Ultraboost Light - Cloud White");
+            description.setText("Alami Energi Epik Dengan Lampu Ultraboost Baru, Ultraboost Teringan Kami. Keajaiban Terletak Pada Light Boost Midsole, Generasi Baru Adidas Boost. Desain Molekul Uniknya Menghasilkan Busa Pendorong Paling Ringan Hingga Saat Ini.");
             price.setText("IDR 2.799.000");
         } else if (i == 3) {
-            label.setText("Nike Zoomx Streakfly Prm");
-            description.setText("Detail | Colorway : White | Article : (DX1626-100) | Brand New in Box (BNIB) / Tag (BNWT) | Material : When Pitted Against The Clock, You Want Shoes That Feel Like Butterflies On Your Feet. The Streakfly Is Our Lightest Racing Shoe, Allowing It To Essentially Disappear On Your Foot. We Left Out All The Unnecessary Frills And Weight");
+            label.setText("Nike Zoomx Streakfly Prm - White");
+            description.setText("Saat Diadu Dengan Jam, Anda Ingin Sepatu Yang Terasa Seperti Kupu-Kupu Di Kaki Anda. Streakfly Adalah Sepatu Balap Teringan Kami, Memungkinkannya Menghilang Secara Esensial Di Kaki Anda. Kami Meninggalkan Semua Embel-embel Dan Berat Yang Tidak Perlu.");
             price.setText("IDR 2.799.000");
         } else if (i == 4) {
-            label.setText("Adidas Ultraboost 22");
-            description.setText("Detail | Colorway : Lucid Blue | Article : (HQ8593) | Brand New in Box (BNIB) / Tag (BNWT) | Material : Yarn In Upper Contains At Least 50% Parley Ocean Plastic  and 50% Recycled Polyester, Regular Fit, Lace Closure, Soft Heel Fit, and Boost Midsole");
+            label.setText("Adidas Ultraboost 22 - Lucid Blue");
+            description.setText("Benang Di Bagian Atas Mengandung Setidaknya 50% Parley Ocean Plastic dan 50% Poliester Daur Ulang, Regular Fit, Penutupan Renda, Cocok dengan Tumit Lembut, dan Tingkatkan Sol Tengah");
             price.setText("IDR 3.300.000");
         }
     }
@@ -113,20 +114,20 @@ public class SepatuLari extends Scene {
         // Implementasi pembayaran untuk sepatu yang dipilih
         switch (i) {
             case 1:
-                Pembayaran1();
-                break;
+                    Pembayaran1();
+                    break;
             case 2:
-                Pembayaran2();
-                break;
+                    Pembayaran2();
+                    break;
             case 3:
-                Pembayaran3();
-                break;
+                    Pembayaran3();
+                    break;
             case 4:
-                Pembayaran4();
-                break;
+                    Pembayaran4();
+                    break;
             default:
-                break;
-        }
+                    break;
+            }
     }
 
     private static void Pembayaran1() {
@@ -135,38 +136,49 @@ public class SepatuLari extends Scene {
         root.setPadding(new Insets(10));
         root.setSpacing(10);
 
-        
-        Label titleLabel = new Label("Pembayaran - Hoka One One Kawana");
+        Label titleLabel = new Label("Pembayaran - Hoka One One Kawana - Lunar Rock");
         titleLabel.setStyle("-fx-font-size: 18px; -fx-font-weight: bold");
+        titleLabel.setWrapText(true);
         root.getChildren().add(titleLabel);
-        
+
+        Image sepatuImage = new Image("images/scenetoko/ShoeRun/Lari1.jpg");
+        ImageView sepatuImageView = new ImageView(sepatuImage);
+        root.getChildren().add(sepatuImageView);
+        root.setAlignment(Pos.CENTER);
+
         Label descriptionLabel = new Label("Deskripsi sepatu:");
         descriptionLabel.setStyle("-fx-font-size: 14px");
         root.getChildren().add(descriptionLabel);
 
-        Label description = new Label("Detail | Colorway : Lucid Blue | Article : (HQ8593) | Brand New in Box (BNIB) / Tag (BNWT) | Material : Yarn In Upper Contains At Least 50% Parley Ocean Plastic  and 50% Recycled Polyester, Regular Fit, Lace Closure, Soft Heel Fit, and Boost Midsole");
+        Label description = new Label("Mendobrak Batasan Pada Geometri Hoka Tradisional, Hoka Kawana Membantu Para Pelari Membuat Terobosan Baru. Sepatu Lari Netral Ini Menampilkan Crash Pad Yang Dimodifikasi Dengan Geometri Swallowtail™ Untuk Memberikan Serangan Tumit Yang Halus.");
         description.setStyle("-fx-font-size: 14px");
         description.setWrapText(true);
         root.getChildren().add(description);
-        
+
         Label priceLabel = new Label("Harga sepatu:");
         priceLabel.setStyle("-fx-font-size: 14px");
         root.getChildren().add(priceLabel);
-        
+
         Label price = new Label("IDR 2.099.000");
         price.setStyle("-fx-font-size: 14px; -fx-font-weight: bold");
         root.getChildren().add(price);
-        
+
         Label paymentLabel = new Label("Pilih metode pembayaran:");
         paymentLabel.setStyle("-fx-font-size: 14px");
         root.getChildren().add(paymentLabel);
-        
+
         ChoiceBox<String> paymentOptions = new ChoiceBox<>();
         paymentOptions.getItems().addAll("Balance");
         root.getChildren().add(paymentOptions);
-        
-        // Tambahkan komponen-komponen lain yang diperlukan untuk pembayaran sepatu 4
-        
+
+        Button buyButton = new Button("Beli");
+        buyButton.setOnAction(e -> {
+                Label successLabel = new Label("Pesan berhasil Membeli");
+                successLabel.setStyle("-fx-font-size: 14px; -fx-text-fill: green");
+                root.getChildren().add(successLabel);
+        });
+        root.getChildren().add(buyButton);
+
         Scene scene = new Scene(root, 620, 620);
         stage.setScene(scene);
         stage.setTitle("Pembayaran");
@@ -179,38 +191,49 @@ public class SepatuLari extends Scene {
         root.setPadding(new Insets(10));
         root.setSpacing(10);
 
-        
-        Label titleLabel = new Label("Pembayaran - Adidas Ultraboost Light");
+        Label titleLabel = new Label("Pembayaran - Adidas Ultraboost Light - Cloud White");
         titleLabel.setStyle("-fx-font-size: 18px; -fx-font-weight: bold");
+        titleLabel.setWrapText(true);
         root.getChildren().add(titleLabel);
-        
+
+        Image sepatuImage = new Image("images/scenetoko/ShoeRun/Lari2.jpg");
+        ImageView sepatuImageView = new ImageView(sepatuImage);
+        root.getChildren().add(sepatuImageView);
+        root.setAlignment(Pos.CENTER);
+
         Label descriptionLabel = new Label("Deskripsi sepatu:");
         descriptionLabel.setStyle("-fx-font-size: 14px");
         root.getChildren().add(descriptionLabel);
 
-        Label description = new Label("Detail | Colorway : Cloud White | Article : (HQ6352) | Brand New in Box (BNIB) / Tag (BNWT) | Material : Experience Epic Energy With The New Ultraboost Light, Our Lightest Ultraboost Ever. The Magic Lies In The Light Boost Midsole, A New Generation Of Adidas Boost. Its Unique Molecule Design Achieves The Lightest Boost Foam To Date.");
+        Label description = new Label("Alami Energi Epik Dengan Lampu Ultraboost Baru, Ultraboost Teringan Kami. Keajaiban Terletak Pada Light Boost Midsole, Generasi Baru Adidas Boost. Desain Molekul Uniknya Menghasilkan Busa Pendorong Paling Ringan Hingga Saat Ini.");
         description.setStyle("-fx-font-size: 14px");
         description.setWrapText(true);
         root.getChildren().add(description);
-        
+
         Label priceLabel = new Label("Harga sepatu:");
         priceLabel.setStyle("-fx-font-size: 14px");
         root.getChildren().add(priceLabel);
-        
+
         Label price = new Label("IDR 2.799.000");
         price.setStyle("-fx-font-size: 14px; -fx-font-weight: bold");
         root.getChildren().add(price);
-        
+
         Label paymentLabel = new Label("Pilih metode pembayaran:");
         paymentLabel.setStyle("-fx-font-size: 14px");
         root.getChildren().add(paymentLabel);
-        
+
         ChoiceBox<String> paymentOptions = new ChoiceBox<>();
         paymentOptions.getItems().addAll("Balance");
         root.getChildren().add(paymentOptions);
-        
-        // Tambahkan komponen-komponen lain yang diperlukan untuk pembayaran sepatu 4
-        
+
+        Button buyButton = new Button("Beli");
+        buyButton.setOnAction(e -> {
+                Label successLabel = new Label("Pesan berhasil Membeli");
+                successLabel.setStyle("-fx-font-size: 14px; -fx-text-fill: green");
+                root.getChildren().add(successLabel);
+        });
+        root.getChildren().add(buyButton);
+
         Scene scene = new Scene(root, 620, 620);
         stage.setScene(scene);
         stage.setTitle("Pembayaran");
@@ -223,38 +246,49 @@ public class SepatuLari extends Scene {
         root.setPadding(new Insets(10));
         root.setSpacing(10);
 
-        
-        Label titleLabel = new Label("Pembayaran - Nike Zoomx Streakfly Prm");
+        Label titleLabel = new Label("Pembayaran - Nike Zoomx Streakfly Prm - White");
         titleLabel.setStyle("-fx-font-size: 18px; -fx-font-weight: bold");
+        titleLabel.setWrapText(true);
         root.getChildren().add(titleLabel);
-        
+
+        Image sepatuImage = new Image("images/scenetoko/ShoeRun/Lari3.jpg");
+        ImageView sepatuImageView = new ImageView(sepatuImage);
+        root.getChildren().add(sepatuImageView);
+        root.setAlignment(Pos.CENTER);
+
         Label descriptionLabel = new Label("Deskripsi sepatu:");
         descriptionLabel.setStyle("-fx-font-size: 14px");
         root.getChildren().add(descriptionLabel);
 
-        Label description = new Label("Detail | Colorway : White | Article : (DX1626-100) | Brand New in Box (BNIB) / Tag (BNWT) | Material : When Pitted Against The Clock, You Want Shoes That Feel Like Butterflies On Your Feet. The Streakfly Is Our Lightest Racing Shoe, Allowing It To Essentially Disappear On Your Foot. We Left Out All The Unnecessary Frills And Weight");
+        Label description = new Label("Saat Diadu Dengan Jam, Anda Ingin Sepatu Yang Terasa Seperti Kupu-Kupu Di Kaki Anda. Streakfly Adalah Sepatu Balap Teringan Kami, Memungkinkannya Menghilang Secara Esensial Di Kaki Anda. Kami Meninggalkan Semua Embel-embel Dan Berat Yang Tidak Perlu.");
         description.setStyle("-fx-font-size: 14px");
         description.setWrapText(true);
         root.getChildren().add(description);
-        
+
         Label priceLabel = new Label("Harga sepatu:");
         priceLabel.setStyle("-fx-font-size: 14px");
         root.getChildren().add(priceLabel);
-        
+
         Label price = new Label("IDR 2.799.000");
         price.setStyle("-fx-font-size: 14px; -fx-font-weight: bold");
         root.getChildren().add(price);
-        
+
         Label paymentLabel = new Label("Pilih metode pembayaran:");
         paymentLabel.setStyle("-fx-font-size: 14px");
         root.getChildren().add(paymentLabel);
-        
+
         ChoiceBox<String> paymentOptions = new ChoiceBox<>();
         paymentOptions.getItems().addAll("Balance");
         root.getChildren().add(paymentOptions);
-        
-        // Tambahkan komponen-komponen lain yang diperlukan untuk pembayaran sepatu 4
-        
+
+        Button buyButton = new Button("Beli");
+        buyButton.setOnAction(e -> {
+                Label successLabel = new Label("Pesan berhasil Membeli");
+                successLabel.setStyle("-fx-font-size: 14px; -fx-text-fill: green");
+                root.getChildren().add(successLabel);
+        });
+        root.getChildren().add(buyButton);
+
         Scene scene = new Scene(root, 620, 620);
         stage.setScene(scene);
         stage.setTitle("Pembayaran");
@@ -267,36 +301,49 @@ public class SepatuLari extends Scene {
         root.setPadding(new Insets(10));
         root.setSpacing(10);
 
-        
-        Label titleLabel = new Label("Pembayaran - Nike Zoom Vapor 15 Academy Kylian Mbappe Tf");
+        Label titleLabel = new Label("Pembayaran - Adidas Ultraboost 22 - Lucid Blue");
         titleLabel.setStyle("-fx-font-size: 18px; -fx-font-weight: bold");
+        titleLabel.setWrapText(true);
         root.getChildren().add(titleLabel);
-        
+
+        Image sepatuImage = new Image("images/scenetoko/ShoeRun/Lari4.jpg");
+        ImageView sepatuImageView = new ImageView(sepatuImage);
+        root.getChildren().add(sepatuImageView);
+        root.setAlignment(Pos.CENTER);
+
         Label descriptionLabel = new Label("Deskripsi sepatu:");
         descriptionLabel.setStyle("-fx-font-size: 14px");
         root.getChildren().add(descriptionLabel);
 
-        Label description = new Label("Detail | Colorway : Dark Red | Article : (DV0708-694) | Brand New in Box (BNIB) / Tag (BNWT) | Material | Kylian Mbappé's Explosiveness, Plus His Twitchy Change Of Direction, Puts Him Firmly In The World Class Of Finishers. With Nods To His Heritage, This Cleat Is Made To Help You Play Just Like Km—with Blinding Pace And Purpose.");
+        Label description = new Label("Benang Di Bagian Atas Mengandung Setidaknya 50% Parley Ocean Plastic dan 50% Poliester Daur Ulang, Regular Fit, Penutupan Renda, Cocok dengan Tumit Lembut, dan Tingkatkan Sol Tengah");
         description.setStyle("-fx-font-size: 14px");
         description.setWrapText(true);
         root.getChildren().add(description);
-        
+
         Label priceLabel = new Label("Harga sepatu:");
         priceLabel.setStyle("-fx-font-size: 14px");
         root.getChildren().add(priceLabel);
-        
+
         Label price = new Label("IDR 3.300.000");
         price.setStyle("-fx-font-size: 14px; -fx-font-weight: bold");
         root.getChildren().add(price);
-        
+
         Label paymentLabel = new Label("Pilih metode pembayaran:");
         paymentLabel.setStyle("-fx-font-size: 14px");
         root.getChildren().add(paymentLabel);
-        
+
         ChoiceBox<String> paymentOptions = new ChoiceBox<>();
         paymentOptions.getItems().addAll("Balance");
         root.getChildren().add(paymentOptions);
-        
+
+        Button buyButton = new Button("Beli");
+        buyButton.setOnAction(e -> {
+                Label successLabel = new Label("Pesan berhasil Membeli");
+                successLabel.setStyle("-fx-font-size: 14px; -fx-text-fill: green");
+                root.getChildren().add(successLabel);
+        });
+        root.getChildren().add(buyButton);
+
         Scene scene = new Scene(root, 620, 620);
         stage.setScene(scene);
         stage.setTitle("Pembayaran");
