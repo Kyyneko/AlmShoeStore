@@ -90,21 +90,21 @@ public class SepatuFormal extends Scene {
 
     private static void setShoeDetails(int i, Button label, Label description, Label price) {
         if (i == 1) {
-            label.setText("Hoka One One Kawana");
-            description.setText("Detail | Colorway : Lunar Rock | Article : (HKE1123163BL) | Brand New in Box (BNIB) / Tag (BNWT) | Material : Pushing The Boundaries On The Traditional Hoka Geometries, The Hoka Kawana Helps Runners Break New Ground. This Neutral Running Shoe Features A Modified Crash Pad With Swallowtail™ Geometry To Provide Smooth Heel Strikes.");
-            price.setText("IDR 2.099.000");
+            label.setText("Allander BLACK");
+            description.setText("Detail | Colorway : Black | Article : (ROCK70975) | Brand New in Box (BNIB) / Tag (BNWT) | Material : Mesh Lining (Provides enhanced breathability and drying), PU Footbed (Provides durable cushioning to help reduce localised foot pressure), EVA Midsole (Provides lightweight shock absorption), Rubber Outsole (Provides a durable grip on a variety of surfaces), Full grain leather upper, Rubber sole.");
+            price.setText("IDR 1.999.000");
         } else if (i == 2) {
-            label.setText("Adidas Ultraboost Light");
-            description.setText("Detail | Colorway : Cloud White | Article : (HQ6352) | Brand New in Box (BNIB) / Tag (BNWT) | Material : Experience Epic Energy With The New Ultraboost Light, Our Lightest Ultraboost Ever. The Magic Lies In The Light Boost Midsole, A New Generation Of Adidas Boost. Its Unique Molecule Design Achieves The Lightest Boost Foam To Date.");
-            price.setText("IDR 2.799.000");
+            label.setText("CLARKS Tilden Plain (M) Black Leather");
+            description.setText("Detail | Colorway : Black | Article : (CKS26110350) | Brand New in Box (BNIB) / Tag (BNWT) | Material : Upper Material (Leather), Lining Material (Cloth), Sole Material (TPR), Strap Type (Strap), Removable Insole (No)");
+            price.setText("IDR 1.399.000");
         } else if (i == 3) {
-            label.setText("Nike Zoomx Streakfly Prm");
-            description.setText("Detail | Colorway : White | Article : (DX1626-100) | Brand New in Box (BNIB) / Tag (BNWT) | Material : When Pitted Against The Clock, You Want Shoes That Feel Like Butterflies On Your Feet. The Streakfly Is Our Lightest Racing Shoe, Allowing It To Essentially Disappear On Your Foot. We Left Out All The Unnecessary Frills And Weight");
-            price.setText("IDR 2.799.000");
+            label.setText("DSP Cap Toe");
+            description.setText("Detail | Colorway : Tan | Article : (ROCCJ0092) | Brand New in Box (BNIB) / Tag (BNWT) | Material : Leather Lining, Leather Footbed Cover, Hydro-Shield™ Waterproof (Provides a Seam-Sealed Waterproof Construction using Waterproof Materials), PU Outsole, Rubber Outsole Pods (Provides Long Wear Durability)");
+            price.setText("IDR 1.439.400");
         } else if (i == 4) {
-            label.setText("Adidas Ultraboost 22");
-            description.setText("Detail | Colorway : Lucid Blue | Article : (HQ8593) | Brand New in Box (BNIB) / Tag (BNWT) | Material : Yarn In Upper Contains At Least 50% Parley Ocean Plastic  and 50% Recycled Polyester, Regular Fit, Lace Closure, Soft Heel Fit, and Boost Midsole");
-            price.setText("IDR 3.300.000");
+            label.setText("DSH Plain Toe Dark Brown");
+            description.setText("Detail | Colorway : Dark Brown | Article : (ROCCI9749) | Brand New in Box (BNIB) / Tag (BNWT) | Material : Leather Lining (Provides a Soft Flexible Touch and is Breathable), EVA Midsole, Vibram® MOREFLEX Rubber Outsole (Provides Flexible Lightweight Durability)");
+            price.setText("IDR 1.149.500");
         }
     }
 
