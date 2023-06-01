@@ -8,7 +8,7 @@ import java.sql.SQLException;
 
 public class DB_Manager {
 
-    private static final String DB_URL = "jdbc:sqlite:D:\\AlmShoeStore\\app\\src\\main\\java\\almshoestore\\Database\\DatabaseBarang\\Manager/db_barang.db";
+    private static final String DB_URL = "jdbc:sqlite:app\\src\\main\\java\\almshoestore\\Database\\DatabaseBarang\\Manager/db_barang.db";
 
     /* ======================================================== Create Table Sepatu ======================================================== */
     protected static void createTableFormal() {
