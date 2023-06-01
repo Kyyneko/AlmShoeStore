@@ -124,7 +124,7 @@ public class App extends Application {
         if (!username.isEmpty() && !password.isEmpty()) {
             try {
                 // Buat koneksi ke database SQLite
-                Connection connection = DriverManager.getConnection("jdbc:sqlite:app\\src\\main\\java\\almshoestore\\Database\\Manager/userdata.db");
+                Connection connection = DriverManager.getConnection("jdbc:sqlite:src\\main\\java\\almshoestore\\Database\\Manager/userdata.db");
 
                 // Buat pernyataan SQL untuk memeriksa kecocokan username dan password
                 String sql = "SELECT * FROM tb_account WHERE Username = ? AND Password = ?";

@@ -21,7 +21,7 @@ public class DatabaseManager {
     
 
     public static void insertData(String username, String password) {
-        try (Connection connection = DriverManager.getConnection("jdbc:sqlite:D:app\\src\\main\\java\\almshoestore\\Database\\Manager/userdata.db")) {
+        try (Connection connection = DriverManager.getConnection("jdbc:sqlite:src\\main\\java\\almshoestore\\Database\\Manager/userdata.db")) {
             String insertDataSQL = "INSERT INTO tb_account (Username, Password, Balance) VALUES (?, ?, ?)";
             try (PreparedStatement statement = connection.prepareStatement(insertDataSQL)) {
                 statement.setString(1, username);
@@ -37,7 +37,7 @@ public class DatabaseManager {
     
 
     public static void deleteAllData() {
-        try (Connection connection = DriverManager.getConnection("jdbc:sqlite:D:app\\src\\main\\java\\almshoestore\\Database\\Manager/userdata.db")) {
+        try (Connection connection = DriverManager.getConnection("jdbc:sqlite:app\\src\\main\\java\\almshoestore\\Database\\Manager/userdata.db")) {
             String deleteAllDataSQL = "DELETE FROM tb_account";
             try (PreparedStatement statement = connection.prepareStatement(deleteAllDataSQL)) {
                 int rowsDeleted = statement.executeUpdate();
