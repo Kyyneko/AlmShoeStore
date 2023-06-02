@@ -294,7 +294,7 @@ public class App extends Application {
 
         /* ============================================================ SEPATU SNEAKERS ============================================================ */
         Label label1 = new Label("Sepatu Sneakers");
-        label1.setStyle("-fx-padding: 5px 25px;-fx-font-size: 20px; -fx-font-family: 'Times New Roman'; -fx-text-fill: BLACK;-fx-background-color: #23c7f0; -fx-border-color: WHITE; -fx-border-width: 1px; -fx-border-radius: 5;");
+        label1.setStyle("-fx-padding: 5px 20px;-fx-font-size: 20px; -fx-font-family: 'Times New Roman'; -fx-text-fill: BLACK;-fx-background-color: #23c7f0; -fx-border-color: WHITE; -fx-border-width: 1px; -fx-border-radius: 5;");
         
         ImageView sepatu1ImageView = new ImageView(new Image("images/scenetoko/Sneakers.jpg")); 
         sepatu1ImageView.setFitHeight(140);
@@ -309,6 +309,8 @@ public class App extends Application {
         VBox vbox1 = new VBox(5,label1,sepatu1ImageView,label11,button1);
         vbox1.setAlignment(Pos.CENTER);
         vbox1.setStyle("-fx-background-color: #dcdcdca5;-fx-padding: 10px 10px;");
+        vbox1.setPrefSize(250, 300);
+        vbox1.setMaxSize(250, 300);
 
         /* ============================================================ SEPATU FORMAL ============================================================ */
         Label label2 = new Label("  Sepatu Formal  ");
@@ -325,10 +327,13 @@ public class App extends Application {
         VBox vbox2 = new VBox(5,label2,sepatu2ImageView,label12,button2);
         vbox2.setAlignment(Pos.CENTER);
         vbox2.setStyle("-fx-background-color: #dcdcdca5;-fx-padding: 10px 10px;");
+        vbox2.setPrefSize(250, 300);
+        vbox2.setMaxSize(250, 300);
+        
 
         /* ============================================================ SEPATU LARI ============================================================ */
         Label label3 = new Label("   Sepatu Lari   ");
-        label3.setStyle("-fx-padding: 5px 25px;-fx-font-size: 20px; -fx-font-family: 'Times New Roman'; -fx-text-fill: BLACK;-fx-background-color: #23c7f0; -fx-border-color: WHITE; -fx-border-width: 2px; -fx-border-radius: 5;");
+        label3.setStyle("-fx-padding: 5px 20px;-fx-font-size: 20px; -fx-font-family: 'Times New Roman'; -fx-text-fill: BLACK;-fx-background-color: #23c7f0; -fx-border-color: WHITE; -fx-border-width: 2px; -fx-border-radius: 5;");
         
         ImageView sepatu3ImageView = new ImageView(new Image("images/scenetoko/Lari1.jpg")); 
         sepatu3ImageView.setFitHeight(140);
@@ -343,10 +348,12 @@ public class App extends Application {
         VBox vbox3 = new VBox(5,label3,sepatu3ImageView,label13,button3);
         vbox3.setAlignment(Pos.CENTER);
         vbox3.setStyle("-fx-background-color: #dcdcdca5;-fx-padding: 10px 10px;");
+        vbox3.setPrefSize(250, 300);
+        vbox3.setMaxSize(250, 300);
 
         /* ============================================================ SEPATU FUTSAL ============================================================ */
         Label label4 = new Label("   Sepatu Futsal   ");
-        label4.setStyle("-fx-padding: 5px 25px;-fx-font-size: 20px; -fx-font-family: 'Times New Roman'; -fx-text-fill: BLACK;-fx-background-color: #23c7f0; -fx-border-color: WHITE; -fx-border-width: 2px; -fx-border-radius: 5;");
+        label4.setStyle("-fx-padding: 5px 20px;-fx-font-size: 20px; -fx-font-family: 'Times New Roman'; -fx-text-fill: BLACK;-fx-background-color: #23c7f0; -fx-border-color: WHITE; -fx-border-width: 2px; -fx-border-radius: 5;");
         
         ImageView sepatu4ImageView = new ImageView(new Image("images/scenetoko/Futsal.jpg")); 
         sepatu4ImageView.setFitHeight(140);
@@ -361,6 +368,8 @@ public class App extends Application {
         VBox vbox4 = new VBox(5,label4,sepatu4ImageView,label14,button4);
         vbox4.setAlignment(Pos.CENTER);
         vbox4.setStyle("-fx-background-color: #dcdcdca5;-fx-padding: 10px 10px;");
+        vbox4.setPrefSize(250, 300);
+        vbox4.setMaxSize(250, 300);
 
         /* ============================================================ LAYOUT ============================================================ */
         VBox vbox5 = new VBox();
