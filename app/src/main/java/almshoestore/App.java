@@ -1,11 +1,11 @@
 
 package almshoestore;
 
-import almshoestore.Database.Manager.DatabaseManager;
-import almshoestore.SceneToko.SepatuFormal;
-import almshoestore.SceneToko.SepatuFutsal;
-import almshoestore.SceneToko.SepatuLari;
-import almshoestore.SceneToko.SepatuSneakers;
+import almshoestore.Model.SepatuFormal;
+import almshoestore.Model.SepatuFutsal;
+import almshoestore.Model.SepatuLari;
+import almshoestore.Model.SepatuSneakers;
+import almshoestore.utils.Manager.DatabaseManager;
 import javafx.animation.PauseTransition;
 import javafx.application.Application;
 import javafx.geometry.Insets;

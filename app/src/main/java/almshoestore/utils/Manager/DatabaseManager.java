@@ -1,4 +1,4 @@
-package almshoestore.Database.Manager;
+package almshoestore.utils.Manager;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -9,7 +9,7 @@ import java.sql.SQLException;
 public class DatabaseManager {
     public static void createTable() {
         try (Connection connection = DriverManager.getConnection("jdbc:sqlite:app\\src\\main\\java\\almshoestore\\Database\\Manager/userdata.db")) {
-            String createTableSQL = "CREATE TABLE IF NOT EXISTS tb_account (Username VARCHAR(255), Password VARCHAR(255), Balance DOUBLE)";
+            String createTableSQL = "CREATE TABLE IF NOT EXISTS tb_account (Username VARCHAR(255), Password VARCHAR(255))";
             try (PreparedStatement statement = connection.prepareStatement(createTableSQL)) {
                 statement.execute();
                 System.out.println("Success To Add Table");
@@ -22,11 +22,10 @@ public class DatabaseManager {
 
     public static void insertData(String username, String password) {
         try (Connection connection = DriverManager.getConnection("jdbc:sqlite:src\\main\\java\\almshoestore\\Database\\Manager/userdata.db")) {
-            String insertDataSQL = "INSERT INTO tb_account (Username, Password, Balance) VALUES (?, ?, ?)";
+            String insertDataSQL = "INSERT INTO tb_account (Username, Password) VALUES (?, ?)";
             try (PreparedStatement statement = connection.prepareStatement(insertDataSQL)) {
                 statement.setString(1, username);
                 statement.setString(2, password);
-                statement.setDouble(3, 2_000_000); // Set nilai awal saldo
                 statement.executeUpdate();
                 System.out.println("Success To Add Data");
             }
@@ -49,22 +48,6 @@ public class DatabaseManager {
         }
     }
 
-    public static void seeData() {
-        try (Connection connection = DriverManager.getConnection("jdbc:sqlite:app\\src\\main\\java\\almshoestore\\Database\\Manager/userdata.db")) {
-            String selectDataSQL = "SELECT * FROM tb_account";
-            try (PreparedStatement statement = connection.prepareStatement(selectDataSQL)) {
-                ResultSet resultSet = statement.executeQuery();
-                while (resultSet.next()) {
-                    String username = resultSet.getString("Username");
-                    String password = resultSet.getString("Password");
-                    double balance  = resultSet.getDouble("Balance");
-                    System.out.println("Username : " + username +" | " + "Password : " + password + " | " + "Balance : " + balance);
-                }
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
 
     public static boolean checkUsername(String username) {
         try (Connection connection = DriverManager.getConnection("jdbc:sqlite:app\\src\\main\\java\\almshoestore\\Database\\Manager/userdata.db")) {
@@ -102,10 +85,9 @@ public class DatabaseManager {
     
 
     public static void main(String[] args) throws Exception {
-        // createTable();
+        createTable();
         // insertData("MahendraKiranaMB", "Mahen2108");
         // deleteAllData();
-        seeData();
         // deleteAllTable();
     }
 }

@@ -1,4 +1,4 @@
-package almshoestore.SceneToko;
+package almshoestore.Model;
 
 import almshoestore.App;
 import javafx.geometry.Insets;

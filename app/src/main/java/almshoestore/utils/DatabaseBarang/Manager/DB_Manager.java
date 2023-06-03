@@ -1,4 +1,4 @@
-package almshoestore.Database.DatabaseBarang.Manager;
+package almshoestore.utils.DatabaseBarang.Manager;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
