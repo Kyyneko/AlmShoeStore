@@ -186,6 +186,7 @@
                 App.balance = App.balance - 759_000;
                 Label saldo = new Label("Sisa Saldo Anda Sebanyak Rp." + App.balance);
                 saldo.setStyle("-fx-font-size: 14px; -fx-text-fill: BLACK");
+                App.sepatubeli.add("Converse Chuck Taylor All Star Low Top Unisex Sneakers - Black");
                 root.getChildren().addAll(successLabel,saldo);
         });
                 root.getChildren().add(buyButton);
@@ -244,6 +245,7 @@
                 App.balance = App.balance - 1_199_000;
                 Label saldo = new Label("Sisa Saldo Anda Sebanyak Rp." + App.balance);
                 saldo.setStyle("-fx-font-size: 14px; -fx-text-fill: BLACK");
+                App.sepatubeli.add("Converse Star Player 76 Premium Canvas Men's Sneakers - Black");
                 root.getChildren().addAll(successLabel,saldo);
         });
                 root.getChildren().add(buyButton);
@@ -302,6 +304,7 @@
                 App.balance = App.balance - 1_199_000;
                 Label saldo = new Label("Sisa Saldo Anda Sebanyak Rp." + App.balance);
                 saldo.setStyle("-fx-font-size: 14px; -fx-text-fill: BLACK");
+                App.sepatubeli.add("Converse Star Player 76 Premium Canvas Men's Sneakers - White");
                 root.getChildren().addAll(successLabel,saldo);
         });
                 root.getChildren().add(buyButton);
@@ -358,6 +361,7 @@
                 App.balance = App.balance - 2_199_000;
                 Label saldo = new Label("Sisa Saldo Anda Sebanyak Rp." + App.balance);
                 saldo.setStyle("-fx-font-size: 14px; -fx-text-fill: BLACK");
+                App.sepatubeli.add("Converse Chuck 70 Spring Color Unisex Sneakers - Green");
                 root.getChildren().addAll(successLabel,saldo);
         });
                 root.getChildren().add(buyButton);
@@ -415,6 +419,7 @@
                 App.balance = App.balance - 999_000;
                 Label saldo = new Label("Sisa Saldo Anda Sebanyak Rp." + App.balance);
                 saldo.setStyle("-fx-font-size: 14px; -fx-text-fill: BLACK");
+                App.sepatubeli.add("Converse Chuck Taylor All Star Seasonal Color Unisex Sneakers - Orange");
                 root.getChildren().addAll(successLabel,saldo);
         });
                 root.getChildren().add(buyButton);

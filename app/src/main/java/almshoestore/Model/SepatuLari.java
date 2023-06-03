@@ -180,6 +180,7 @@ public class SepatuLari extends Scene {
                 App.balance = App.balance - 2_099_000;
                 Label saldo = new Label("Sisa Saldo Anda Sebanyak Rp." + App.balance);
                 saldo.setStyle("-fx-font-size: 14px; -fx-text-fill: BLACK");
+                App.sepatubeli.add("Hoka One One Kawana - Lunar Rock");
                 root.getChildren().addAll(successLabel,saldo);
         });
         root.getChildren().add(buyButton);
@@ -240,6 +241,7 @@ public class SepatuLari extends Scene {
                 App.balance = App.balance - 2_799_000;
                 Label saldo = new Label("Sisa Saldo Anda Sebanyak Rp." + App.balance);
                 saldo.setStyle("-fx-font-size: 14px; -fx-text-fill: BLACK");
+                App.sepatubeli.add("Adidas Ultraboost Light - Cloud White");
                 root.getChildren().addAll(successLabel,saldo);
         });
         root.getChildren().add(buyButton);
@@ -301,6 +303,7 @@ public class SepatuLari extends Scene {
                 App.balance = App.balance - 2_799_000;
                 Label saldo = new Label("Sisa Saldo Anda Sebanyak Rp." + App.balance);
                 saldo.setStyle("-fx-font-size: 14px; -fx-text-fill: BLACK");
+                App.sepatubeli.add("Nike Zoomx Streakfly Prm - White");
                 root.getChildren().addAll(successLabel,saldo);
         });
         root.getChildren().add(buyButton);
@@ -361,6 +364,7 @@ public class SepatuLari extends Scene {
                 App.balance = App.balance - 3_300_000;
                 Label saldo = new Label("Sisa Saldo Anda Sebanyak Rp." + App.balance);
                 saldo.setStyle("-fx-font-size: 14px; -fx-text-fill: BLACK");
+                App.sepatubeli.add("Adidas Ultraboost 22 - Lucid Blue");
                 root.getChildren().addAll(successLabel,saldo);
         });
         root.getChildren().add(buyButton);

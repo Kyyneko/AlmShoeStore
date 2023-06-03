@@ -169,6 +169,7 @@ public class SepatuFutsal extends Scene {
                 App.balance = App.balance - 899_000;
                 Label saldo = new Label("Sisa Saldo Anda Sebanyak Rp." + App.balance);
                 saldo.setStyle("-fx-font-size: 14px; -fx-text-fill: BLACK");
+                App.sepatubeli.add("Nike Mercurial Superfly 8 Club Tf - Black");
                 root.getChildren().addAll(successLabel,saldo);
         });
         root.getChildren().add(buyButton);
@@ -229,6 +230,7 @@ public class SepatuFutsal extends Scene {
                 App.balance = App.balance - 1_199_000;
                 Label saldo = new Label("Sisa Saldo Anda Sebanyak Rp." + App.balance);
                 saldo.setStyle("-fx-font-size: 14px; -fx-text-fill: BLACK");
+                App.sepatubeli.add("Nike Phantom Gt2 Academy Ic Indoor - Blue");
                 root.getChildren().addAll(successLabel,saldo);
         });
         root.getChildren().add(buyButton);
@@ -290,6 +292,7 @@ public class SepatuFutsal extends Scene {
                 App.balance = App.balance - 999_000;
                 Label saldo = new Label("Sisa Saldo Anda Sebanyak Rp." + App.balance);
                 saldo.setStyle("-fx-font-size: 14px; -fx-text-fill: BLACK");
+                App.sepatubeli.add("Nike Phantom Gt2 Academy Tf - Black");
                 root.getChildren().addAll(successLabel,saldo);
         });
         root.getChildren().add(buyButton);
@@ -351,6 +354,7 @@ public class SepatuFutsal extends Scene {
                 App.balance = App.balance - 1_299_000;
                 Label saldo = new Label("Sisa Saldo Anda Sebanyak Rp." + App.balance);
                 saldo.setStyle("-fx-font-size: 14px; -fx-text-fill: BLACK");
+                App.sepatubeli.add("Nike Zoom Vapor 15 Academy Kylian Mbappe Tf - Dark Red");
                 root.getChildren().addAll(successLabel,saldo);
         });
         root.getChildren().add(buyButton);
