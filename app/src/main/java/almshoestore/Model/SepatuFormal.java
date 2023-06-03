@@ -180,6 +180,7 @@ public class SepatuFormal extends Scene {
                 Label saldo = new Label("Sisa Saldo Anda Sebanyak Rp." + App.balance);
                 saldo.setStyle("-fx-font-size: 14px; -fx-text-fill: BLACK");
                 root.getChildren().addAll(successLabel,saldo);
+                App.sepatubeli.add("Dressports2 Allander");
         });
         root.getChildren().add(buyButton);
 

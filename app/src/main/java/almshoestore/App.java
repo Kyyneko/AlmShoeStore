@@ -8,6 +8,8 @@ import almshoestore.Model.SepatuSneakers;
 import almshoestore.utils.Manager.DatabaseManager;
 import javafx.animation.PauseTransition;
 import javafx.application.Application;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Cursor;
@@ -38,6 +40,7 @@ public class App extends Application {
     private static Stage    stage;
     public  static String   nama    = "a";
     public  static int      balance = 100000000;
+    public static ObservableList<String> sepatubeli = FXCollections.observableArrayList();
 
     public void start(Stage primaryStage) throws Exception{
         
@@ -319,14 +322,14 @@ public class App extends Application {
         vbox1.setAlignment(Pos.CENTER);
         HBox bjir = new HBox(10, hbox, vbox1);
         bjir.setAlignment(Pos.CENTER);
+
+
         VBox vboxexit = new VBox(10, exit);
         vboxexit.setAlignment(Pos.BOTTOM_CENTER);
-     // Tambahkan item-item yang ingin ditampilkan di ListView
 
-        // ListView<String> sepatuNa = new ListView<>();
-        // sepatuNa.getItems().addAll("");
+        ListView<String> lispiu = new ListView<>(sepatubeli);
 
-        VBox akhir = new VBox(150, bjir, vboxexit);
+        VBox akhir = new VBox(150, bjir,lispiu, vboxexit);
         akhir.setAlignment(Pos.CENTER);
         akhir.setStyle("-fx-background-color:#DCDCDC;");
         Scene anjay = new Scene(akhir, 620, 620);
