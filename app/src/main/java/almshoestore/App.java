@@ -36,6 +36,22 @@ public class App extends Application {
 
     /* =================================================== PRIMARY STAGE =================================================== */
     private static Stage stage;
+    public String nama = "a";
+    public int balance=100000000;
+    public String getNama() {
+        return nama;
+    }
+    public void setNama(String nama) {
+        this.nama = nama;
+    }
+    public int getBalance() {
+        return balance;
+    }
+
+    public void setBalance(int balance) {
+        this.balance = balance;
+    }
+
     public void start(Stage primaryStage) throws Exception{
         
         stage = primaryStage;     
@@ -153,6 +169,7 @@ public class App extends Application {
                     // Kembali ke scene toko setelah beberapa waktu
                     PauseTransition pause = new PauseTransition(Duration.seconds(2));
                     pause.setOnFinished(event -> SceneTokoAwal());
+                    nama=usernameField.getText();
                     pause.play();
                 } else {
                     // Jika hasil query tidak mengembalikan data, tampilkan pesan login gagal
@@ -297,12 +314,27 @@ public class App extends Application {
     private void SceneExit(){
         stage.close();
     }
+    public void profil(){
 
+    }
     /* =================================================== SCENE TOKO AWAL =================================================== */
     public Scene SceneTokoAwal() {
         Label judul = new Label("What Type Of Shoes Are You Looking For ?");
         judul.setStyle("-fx-font-size: 20px; -fx-font-family: 'CAMBRIA'; -fx-text-fill: BLACK; -fx-background-color : #0000");
-        VBox vboxjudul = new VBox(0, judul);
+        
+        Image profil = new Image("images/profilcuy.png");
+        ImageView uy = new ImageView(profil);
+        uy.setFitHeight(30);
+        uy.setFitWidth(30);
+        Button buttonprofil = new Button();
+        buttonprofil.setGraphic(uy);
+        buttonprofil.setStyle("-fx-background-color: transparent");
+        buttonprofil.setOnAction(a->{profil();});
+        buttonprofil.setAlignment(Pos.CENTER_LEFT);
+        HBox profilna = new HBox(0, buttonprofil);
+        profilna.setAlignment(Pos.TOP_LEFT);
+
+        HBox vboxjudul = new HBox(0,profilna, judul);
         vboxjudul.setAlignment(Pos.CENTER);
 
         /* ============================================================ SEPATU SNEAKERS ============================================================ */
