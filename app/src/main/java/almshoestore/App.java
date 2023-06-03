@@ -36,21 +36,9 @@ public class App extends Application {
 
     /* =================================================== PRIMARY STAGE =================================================== */
     private static Stage stage;
-    public String nama = "a";
-    public int balance=100000000;
-    public String getNama() {
-        return nama;
-    }
-    public void setNama(String nama) {
-        this.nama = nama;
-    }
-    public int getBalance() {
-        return balance;
-    }
+    public static String nama = "a";
+    public static int balance=100000000;
 
-    public void setBalance(int balance) {
-        this.balance = balance;
-    }
 
     public void start(Stage primaryStage) throws Exception{
         
@@ -315,8 +303,35 @@ public class App extends Application {
         stage.close();
     }
     public void profil(){
+        Label label = new Label("Nama : "+nama);
+        Label label2 = new Label("Balance : "+balance);
+        label.setStyle("-fx-padding: 5px 20px;-fx-font-size: 30px; -fx-font-family: 'Times New Roman'; -fx-text-fill: BLACK;-fx-background-color: #23c7f0; -fx-border-color: WHITE; -fx-border-width: 1px; -fx-border-radius: 5;");
+        label2.setStyle("-fx-padding: 5px 20px;-fx-font-size: 30px; -fx-font-family: 'Times New Roman'; -fx-text-fill: BLACK;-fx-background-color: #23c7f0; -fx-border-color: WHITE; -fx-border-width: 1px; -fx-border-radius: 5;");
+        Button exit = new Button("Back");
+        exit.setAlignment(Pos.BOTTOM_CENTER);
+        exit.setStyle("-fx-padding: 3px 25px;-fx-font-family: 'Cambria';-fx-text-fill:BLACK;-fx-font-size: 10px;-fx-background-color: #f89a0c; -fx-border-color: #FAEBD7; -fx-border-width: 1px; -fx-border-radius: 2;");
+        exit.setOnAction(a->{SceneTokoAwal();});
+        ImageView profilku = new ImageView(new Image("images/profilcuy2.png")); 
+        profilku.setFitHeight(200);
+        profilku.setFitWidth(200);
+        HBox hbox = new HBox(0, profilku);
+        hbox.setAlignment(Pos.CENTER);
+        VBox vbox1 = new VBox(10,label,label2);
+        vbox1.setAlignment(Pos.CENTER);
+        HBox bjir = new HBox(10, hbox,vbox1);
+        bjir.setAlignment(Pos.CENTER);
+        VBox vboxexit = new VBox(10, exit);
+        vboxexit.setAlignment(Pos.BOTTOM_CENTER);
 
-    }
+        VBox akhir = new VBox(150, bjir,vboxexit);
+        akhir.setAlignment(Pos.CENTER);
+        // akhir.setSpacing(40);
+        
+        akhir.setStyle("-fx-background-color:#DCDCDC;");
+        Scene anjay = new Scene(akhir, 620, 620);
+        stage.setScene(anjay);
+
+        }
     /* =================================================== SCENE TOKO AWAL =================================================== */
     public Scene SceneTokoAwal() {
         Label judul = new Label("What Type Of Shoes Are You Looking For ?");
@@ -329,10 +344,11 @@ public class App extends Application {
         Button buttonprofil = new Button();
         buttonprofil.setGraphic(uy);
         buttonprofil.setStyle("-fx-background-color: transparent");
-        buttonprofil.setOnAction(a->{profil();});
+  
         buttonprofil.setAlignment(Pos.CENTER_LEFT);
         HBox profilna = new HBox(0, buttonprofil);
         profilna.setAlignment(Pos.TOP_LEFT);
+        buttonprofil.setOnAction(a->{profil();});
 
         HBox vboxjudul = new HBox(0,profilna, judul);
         vboxjudul.setAlignment(Pos.CENTER);

@@ -176,6 +176,7 @@ public class SepatuFormal extends Scene {
         buyButton.setOnAction(e -> {
                 Label successLabel = new Label("Pesan berhasil Membeli");
                 successLabel.setStyle("-fx-font-size: 14px; -fx-text-fill: green");
+                App.balance=App.balance-1999000;
                 root.getChildren().add(successLabel);
         });
         root.getChildren().add(buyButton);
