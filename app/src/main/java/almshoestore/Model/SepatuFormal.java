@@ -1,5 +1,7 @@
 package almshoestore.Model;
 
+import java.text.DecimalFormat;
+
 import almshoestore.App;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -175,21 +177,22 @@ public class SepatuFormal extends Scene {
 
         Button buyButton = new Button("Beli");
         buyButton.setOnAction(e -> {
-        int shoePrice = 1_999_400;
-            if (App.balance >= shoePrice) {
+        int harga = 1_999_400;
+        DecimalFormat decimalFormat = new DecimalFormat("#,###");
+        String formatHarga = decimalFormat.format(harga);
+            if (App.balance >= harga) {
                 Label successLabel = new Label("Berhasil Membeli");
                 successLabel.setStyle("-fx-font-size: 14px; -fx-text-fill: green");
-                App.balance -= shoePrice;
+                App.balance -= harga;
                 Label saldo = new Label("Sisa Saldo Anda Sebanyak Rp." + App.balance);
                 saldo.setStyle("-fx-font-size: 14px; -fx-text-fill: BLACK");
-                App.sepatubeli.add(sepatu);
+                App.sepatubeli.add(sepatu + " | Rp." + formatHarga);
                 root.getChildren().addAll(successLabel, saldo);
-        }   else {
+            }   else {
                 Label errorLabel = new Label("Saldo tidak mencukupi");
                 errorLabel.setStyle("-fx-font-size: 14px; -fx-text-fill: red");
                 root.getChildren().add(errorLabel);
-        }
-        });
+            }});
         root.getChildren().add(buyButton);
 
         Scene scene = new Scene(root, 620, 620);
@@ -242,21 +245,22 @@ public class SepatuFormal extends Scene {
 
         Button buyButton = new Button("Beli");
         buyButton.setOnAction(e -> {
-        int shoePrice = 1_399_400;
-            if (App.balance >= shoePrice) {
+        int harga = 1_399_400;
+        DecimalFormat decimalFormat = new DecimalFormat("#,###");
+        String formatHarga = decimalFormat.format(harga);
+            if (App.balance >= harga) {
                 Label successLabel = new Label("Berhasil Membeli");
                 successLabel.setStyle("-fx-font-size: 14px; -fx-text-fill: green");
-                App.balance -= shoePrice;
+                App.balance -= harga;
                 Label saldo = new Label("Sisa Saldo Anda Sebanyak Rp." + App.balance);
                 saldo.setStyle("-fx-font-size: 14px; -fx-text-fill: BLACK");
-                App.sepatubeli.add(sepatu);
+                App.sepatubeli.add(sepatu + " | Rp." + formatHarga);
                 root.getChildren().addAll(successLabel, saldo);
-        }   else {
+            }   else {
                 Label errorLabel = new Label("Saldo tidak mencukupi");
                 errorLabel.setStyle("-fx-font-size: 14px; -fx-text-fill: red");
                 root.getChildren().add(errorLabel);
-        }
-        });
+            }});
         root.getChildren().add(buyButton);
 
         Scene scene = new Scene(root, 620, 620);
@@ -310,21 +314,22 @@ public class SepatuFormal extends Scene {
 
         Button buyButton = new Button("Beli");
         buyButton.setOnAction(e -> {
-        int shoePrice = 1_439_400;
-            if (App.balance >= shoePrice) {
+        int harga = 1_439_400;
+        DecimalFormat decimalFormat = new DecimalFormat("#,###");
+        String formatHarga = decimalFormat.format(harga);
+            if (App.balance >= harga) {
                 Label successLabel = new Label("Berhasil Membeli");
                 successLabel.setStyle("-fx-font-size: 14px; -fx-text-fill: green");
-                App.balance -= shoePrice;
+                App.balance -= harga;
                 Label saldo = new Label("Sisa Saldo Anda Sebanyak Rp." + App.balance);
                 saldo.setStyle("-fx-font-size: 14px; -fx-text-fill: BLACK");
-                App.sepatubeli.add(sepatu);
+                App.sepatubeli.add(sepatu + " | Rp." + formatHarga);
                 root.getChildren().addAll(successLabel, saldo);
-        }   else {
+            }   else {
                 Label errorLabel = new Label("Saldo tidak mencukupi");
                 errorLabel.setStyle("-fx-font-size: 14px; -fx-text-fill: red");
                 root.getChildren().add(errorLabel);
-        }
-        });
+            }});
         root.getChildren().add(buyButton);
 
         Scene scene = new Scene(root, 620, 620);
@@ -378,21 +383,22 @@ public class SepatuFormal extends Scene {
 
         Button buyButton = new Button("Beli");
         buyButton.setOnAction(e -> {
-        int shoePrice = 1_149_500;
-            if (App.balance >= shoePrice) {
+        int harga = 1_149_500;
+        DecimalFormat decimalFormat = new DecimalFormat("#,###");
+        String formatHarga = decimalFormat.format(harga);
+            if (App.balance >= harga) {
                 Label successLabel = new Label("Berhasil Membeli");
                 successLabel.setStyle("-fx-font-size: 14px; -fx-text-fill: green");
-                App.balance -= shoePrice;
+                App.balance -= harga;
                 Label saldo = new Label("Sisa Saldo Anda Sebanyak Rp." + App.balance);
                 saldo.setStyle("-fx-font-size: 14px; -fx-text-fill: BLACK");
-                App.sepatubeli.add(sepatu);
+                App.sepatubeli.add(sepatu + " | Rp." + formatHarga);
                 root.getChildren().addAll(successLabel, saldo);
-        }   else {
+            }   else {
                 Label errorLabel = new Label("Saldo tidak mencukupi");
                 errorLabel.setStyle("-fx-font-size: 14px; -fx-text-fill: red");
                 root.getChildren().add(errorLabel);
-        }
-    });
+            }});
         root.getChildren().add(buyButton);
 
         Scene scene = new Scene(root, 620, 620);

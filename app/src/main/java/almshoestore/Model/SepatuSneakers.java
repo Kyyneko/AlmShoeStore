@@ -1,6 +1,8 @@
         package almshoestore.Model;
 
-        import almshoestore.App;
+        import java.text.DecimalFormat;
+
+import almshoestore.App;
         import javafx.geometry.Insets;
         import javafx.geometry.Pos;
         import javafx.scene.Cursor;
@@ -138,13 +140,14 @@
         }
 
         private static void Pembayaran1() {
+                String sepatu = "Converse Chucky Taylor All Star Low Top Unisex Sneakers - Black";
                 Stage stage = new Stage();
                 VBox root = new VBox();
                 root.setPadding(new Insets(10));
                 root.setSpacing(10);
         
                 
-                Label titleLabel = new Label("Pembayaran - Converse Chuck Taylor All Star Low Top Unisex Sneakers - Black");
+                Label titleLabel = new Label("Pembayaran - " + sepatu);
                 titleLabel.setStyle("-fx-font-size: 18px; -fx-font-weight: bold");
                 titleLabel.setWrapText(true);
                 root.getChildren().add(titleLabel);
@@ -181,14 +184,22 @@
                 
                 Button buyButton = new Button("Beli");
                 buyButton.setOnAction(e -> {
-                Label successLabel = new Label("Berhasil Membeli");
-                successLabel.setStyle("-fx-font-size: 14px; -fx-text-fill: green");
-                App.balance = App.balance - 759_000;
-                Label saldo = new Label("Sisa Saldo Anda Sebanyak Rp." + App.balance);
-                saldo.setStyle("-fx-font-size: 14px; -fx-text-fill: BLACK");
-                App.sepatubeli.add("Converse Chuck Taylor All Star Low Top Unisex Sneakers - Black");
-                root.getChildren().addAll(successLabel,saldo);
-        });
+                int harga = 759_000;
+                DecimalFormat decimalFormat = new DecimalFormat("#,###");
+                String formatHarga = decimalFormat.format(harga);
+                if (App.balance >= harga) {
+                        Label successLabel = new Label("Berhasil Membeli");
+                        successLabel.setStyle("-fx-font-size: 14px; -fx-text-fill: green");
+                        App.balance -= harga;
+                        Label saldo = new Label("Sisa Saldo Anda Sebanyak Rp." + App.balance);
+                        saldo.setStyle("-fx-font-size: 14px; -fx-text-fill: BLACK");
+                        App.sepatubeli.add(sepatu + " | Rp." + formatHarga);
+                        root.getChildren().addAll(successLabel, saldo);
+                }   else {
+                        Label errorLabel = new Label("Saldo tidak mencukupi");
+                        errorLabel.setStyle("-fx-font-size: 14px; -fx-text-fill: red");
+                        root.getChildren().add(errorLabel);
+                }});
                 root.getChildren().add(buyButton);
                 
                 Scene scene = new Scene(root, 620, 620);
@@ -198,13 +209,14 @@
         }
 
         private static void Pembayaran2() {
+                String sepatu = "Converse Star Player 76 Premium Canvas Men's Sneakers - Black";
                 Stage stage = new Stage();
                 VBox root = new VBox();
                 root.setPadding(new Insets(10));
                 root.setSpacing(10);
         
                 
-                Label titleLabel = new Label("Pembayaran - Converse Star Player 76 Premium Canvas Men's Sneakers - Black");
+                Label titleLabel = new Label("Pembayaran - " + sepatu);
                 titleLabel.setStyle("-fx-font-size: 18px; -fx-font-weight: bold");
                 root.getChildren().add(titleLabel);
 
@@ -240,14 +252,22 @@
                 
                 Button buyButton = new Button("Beli");
                 buyButton.setOnAction(e -> {
-                Label successLabel = new Label("Berhasil Membeli");
-                successLabel.setStyle("-fx-font-size: 14px; -fx-text-fill: green");
-                App.balance = App.balance - 1_199_000;
-                Label saldo = new Label("Sisa Saldo Anda Sebanyak Rp." + App.balance);
-                saldo.setStyle("-fx-font-size: 14px; -fx-text-fill: BLACK");
-                App.sepatubeli.add("Converse Star Player 76 Premium Canvas Men's Sneakers - Black");
-                root.getChildren().addAll(successLabel,saldo);
-        });
+                int harga = 1_199_000;
+                DecimalFormat decimalFormat = new DecimalFormat("#,###");
+                String formatHarga = decimalFormat.format(harga);
+                if (App.balance >= harga) {
+                        Label successLabel = new Label("Berhasil Membeli");
+                        successLabel.setStyle("-fx-font-size: 14px; -fx-text-fill: green");
+                        App.balance -= harga;
+                        Label saldo = new Label("Sisa Saldo Anda Sebanyak Rp." + App.balance);
+                        saldo.setStyle("-fx-font-size: 14px; -fx-text-fill: BLACK");
+                        App.sepatubeli.add(sepatu + " | Rp." + formatHarga);
+                        root.getChildren().addAll(successLabel, saldo);
+                }   else {
+                        Label errorLabel = new Label("Saldo tidak mencukupi");
+                        errorLabel.setStyle("-fx-font-size: 14px; -fx-text-fill: red");
+                        root.getChildren().add(errorLabel);
+                }});
                 root.getChildren().add(buyButton);
                 
                 Scene scene = new Scene(root, 620, 620);
@@ -257,13 +277,14 @@
         }
 
         private static void Pembayaran3() {
+                String sepatu = "Converse Star Player 76 Premium Canvas Men's Sneakers - White";
                 Stage stage = new Stage();
                 VBox root = new VBox();
                 root.setPadding(new Insets(10));
                 root.setSpacing(10);
         
                 
-                Label titleLabel = new Label("Pembayaran - Converse Star Player 76 Premium Canvas Men's Sneakers - White");
+                Label titleLabel = new Label("Pembayaran - " + sepatu);
                 titleLabel.setStyle("-fx-font-size: 18px; -fx-font-weight: bold");
                 root.getChildren().add(titleLabel);
                 
@@ -299,14 +320,22 @@
         
                 Button buyButton = new Button("Beli");
                 buyButton.setOnAction(e -> {
-                Label successLabel = new Label("Berhasil Membeli");
-                successLabel.setStyle("-fx-font-size: 14px; -fx-text-fill: green");
-                App.balance = App.balance - 1_199_000;
-                Label saldo = new Label("Sisa Saldo Anda Sebanyak Rp." + App.balance);
-                saldo.setStyle("-fx-font-size: 14px; -fx-text-fill: BLACK");
-                App.sepatubeli.add("Converse Star Player 76 Premium Canvas Men's Sneakers - White");
-                root.getChildren().addAll(successLabel,saldo);
-        });
+                int harga = 1_199_000;
+                DecimalFormat decimalFormat = new DecimalFormat("#,###");
+                String formatHarga = decimalFormat.format(harga);
+                if (App.balance >= harga) {
+                        Label successLabel = new Label("Berhasil Membeli");
+                        successLabel.setStyle("-fx-font-size: 14px; -fx-text-fill: green");
+                        App.balance -= harga;
+                        Label saldo = new Label("Sisa Saldo Anda Sebanyak Rp." + App.balance);
+                        saldo.setStyle("-fx-font-size: 14px; -fx-text-fill: BLACK");
+                        App.sepatubeli.add(sepatu + " | Rp." + formatHarga);
+                        root.getChildren().addAll(successLabel, saldo);
+                }   else {
+                        Label errorLabel = new Label("Saldo tidak mencukupi");
+                        errorLabel.setStyle("-fx-font-size: 14px; -fx-text-fill: red");
+                        root.getChildren().add(errorLabel);
+                }});
                 root.getChildren().add(buyButton);
                 Scene scene = new Scene(root, 620, 620);
                 stage.setScene(scene);
@@ -315,12 +344,13 @@
         }
 
         private static void Pembayaran4() {
+                String sepatu = "Converse Chuck 70 Spring Color Unisex Sneakers - Green";
                 Stage stage = new Stage();
                 VBox root = new VBox();
                 root.setPadding(new Insets(10));
                 root.setSpacing(10);
                 
-                Label titleLabel = new Label("Pembayaran - Converse Chuck 70 Spring Color Unisex Sneakers - Green");
+                Label titleLabel = new Label("Pembayaran - " + sepatu);
                 titleLabel.setStyle("-fx-font-size: 18px; -fx-font-weight: bold");
                 root.getChildren().add(titleLabel);
 
@@ -356,14 +386,22 @@
 
                 Button buyButton = new Button("Beli");
                 buyButton.setOnAction(e -> {
-                Label successLabel = new Label("Berhasil Membeli");
-                successLabel.setStyle("-fx-font-size: 14px; -fx-text-fill: green");
-                App.balance = App.balance - 2_199_000;
-                Label saldo = new Label("Sisa Saldo Anda Sebanyak Rp." + App.balance);
-                saldo.setStyle("-fx-font-size: 14px; -fx-text-fill: BLACK");
-                App.sepatubeli.add("Converse Chuck 70 Spring Color Unisex Sneakers - Green");
-                root.getChildren().addAll(successLabel,saldo);
-        });
+                int harga = 2_199_000;
+                DecimalFormat decimalFormat = new DecimalFormat("#,###");
+                String formatHarga = decimalFormat.format(harga);
+                if (App.balance >= harga) {
+                        Label successLabel = new Label("Berhasil Membeli");
+                        successLabel.setStyle("-fx-font-size: 14px; -fx-text-fill: green");
+                        App.balance -= harga;
+                        Label saldo = new Label("Sisa Saldo Anda Sebanyak Rp." + App.balance);
+                        saldo.setStyle("-fx-font-size: 14px; -fx-text-fill: BLACK");
+                        App.sepatubeli.add(sepatu + " | Rp." + formatHarga);
+                        root.getChildren().addAll(successLabel, saldo);
+                }   else {
+                        Label errorLabel = new Label("Saldo tidak mencukupi");
+                        errorLabel.setStyle("-fx-font-size: 14px; -fx-text-fill: red");
+                        root.getChildren().add(errorLabel);
+                }});
                 root.getChildren().add(buyButton);
 
                 Scene scene = new Scene(root, 620, 620);
@@ -373,12 +411,13 @@
         }
 
         private static void Pembayaran5() {
+                String sepatu = "Converse Chuck Taylor All Star Seasonal Color Unisex Sneakers - Orange";
                 Stage stage = new Stage();
                 VBox root = new VBox();
                 root.setPadding(new Insets(10));
                 root.setSpacing(10);
 
-                Label titleLabel = new Label("Pembayaran - Converse Chuck Taylor All Star Seasonal Color Unisex Sneakers - Orange");
+                Label titleLabel = new Label("Pembayaran - ");
                 titleLabel.setStyle("-fx-font-size: 18px; -fx-font-weight: bold");
                 root.getChildren().add(titleLabel);
 
@@ -414,14 +453,22 @@
 
                 Button buyButton = new Button("Beli");
                 buyButton.setOnAction(e -> {
-                Label successLabel = new Label("Berhasil Membeli");
-                successLabel.setStyle("-fx-font-size: 14px; -fx-text-fill: green");
-                App.balance = App.balance - 999_000;
-                Label saldo = new Label("Sisa Saldo Anda Sebanyak Rp." + App.balance);
-                saldo.setStyle("-fx-font-size: 14px; -fx-text-fill: BLACK");
-                App.sepatubeli.add("Converse Chuck Taylor All Star Seasonal Color Unisex Sneakers - Orange");
-                root.getChildren().addAll(successLabel,saldo);
-        });
+                int harga = 999_000;
+                DecimalFormat decimalFormat = new DecimalFormat("#,###");
+                String formatHarga = decimalFormat.format(harga);
+                if (App.balance >= harga) {
+                        Label successLabel = new Label("Berhasil Membeli");
+                        successLabel.setStyle("-fx-font-size: 14px; -fx-text-fill: green");
+                        App.balance -= harga;
+                        Label saldo = new Label("Sisa Saldo Anda Sebanyak Rp." + App.balance);
+                        saldo.setStyle("-fx-font-size: 14px; -fx-text-fill: BLACK");
+                        App.sepatubeli.add(sepatu + " | Rp." + formatHarga);
+                        root.getChildren().addAll(successLabel, saldo);
+                }   else {
+                        Label errorLabel = new Label("Saldo tidak mencukupi");
+                        errorLabel.setStyle("-fx-font-size: 14px; -fx-text-fill: red");
+                        root.getChildren().add(errorLabel);
+                }});
                 root.getChildren().add(buyButton);
         
                 // Tambahkan komponen-komponen lain yang diperlukan untuk pembayaran sepatu 4

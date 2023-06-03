@@ -1,5 +1,7 @@
 package almshoestore.Model;
 
+import java.text.DecimalFormat;
+
 import almshoestore.App;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -131,12 +133,13 @@ public class SepatuLari extends Scene {
     }
 
     private static void Pembayaran1() {
+        String sepatu = "Hoka One One Kawan - Lunar Rock";
         Stage stage = new Stage();
         VBox root = new VBox();
         root.setPadding(new Insets(10));
         root.setSpacing(10);
 
-        Label titleLabel = new Label("Pembayaran - Hoka One One Kawana - Lunar Rock");
+        Label titleLabel = new Label("Pembayaran - " + sepatu);
         titleLabel.setStyle("-fx-font-size: 18px; -fx-font-weight: bold");
         root.getChildren().add(titleLabel);
 
@@ -175,14 +178,23 @@ public class SepatuLari extends Scene {
         // Tambahkan komponen-komponen lain yang diperlukan untuk pembayaran sepatu 4
         Button buyButton = new Button("Beli");
         buyButton.setOnAction(e -> {
+        int harga = 2_099_000;
+        DecimalFormat decimalFormat = new DecimalFormat("#,###");
+        String formatHarga = decimalFormat.format(harga);
+            if (App.balance >= harga) {
                 Label successLabel = new Label("Berhasil Membeli");
                 successLabel.setStyle("-fx-font-size: 14px; -fx-text-fill: green");
-                App.balance = App.balance - 2_099_000;
+                App.balance -= harga;
                 Label saldo = new Label("Sisa Saldo Anda Sebanyak Rp." + App.balance);
                 saldo.setStyle("-fx-font-size: 14px; -fx-text-fill: BLACK");
-                App.sepatubeli.add("Hoka One One Kawana - Lunar Rock");
-                root.getChildren().addAll(successLabel,saldo);
-        });
+                App.sepatubeli.add(sepatu + " | Rp." + formatHarga);
+                root.getChildren().addAll(successLabel, saldo);
+            }   else {
+                Label errorLabel = new Label("Saldo tidak mencukupi");
+                errorLabel.setStyle("-fx-font-size: 14px; -fx-text-fill: red");
+                root.getChildren().add(errorLabel);
+            }});
+
         root.getChildren().add(buyButton);
         
         Scene scene = new Scene(root, 620, 620);
@@ -192,12 +204,13 @@ public class SepatuLari extends Scene {
     }
 
     private static void Pembayaran2() {
+        String sepatu = "Adidas Ultraboost Light - Cloud White";
         Stage stage = new Stage();
         VBox root = new VBox();
         root.setPadding(new Insets(10));
         root.setSpacing(10);
 
-        Label titleLabel = new Label("Pembayaran - Adidas Ultraboost Light - Cloud White");
+        Label titleLabel = new Label("Pembayaran - " + sepatu);
         titleLabel.setStyle("-fx-font-size: 18px; -fx-font-weight: bold");
         root.getChildren().add(titleLabel);
 
@@ -236,14 +249,23 @@ public class SepatuLari extends Scene {
         // Tambahkan komponen-komponen lain yang diperlukan untuk pembayaran sepatu 4
         Button buyButton = new Button("Beli");
         buyButton.setOnAction(e -> {
+        int harga = 2_799_000;
+        DecimalFormat decimalFormat = new DecimalFormat("#,###");
+        String formatHarga = decimalFormat.format(harga);
+            if (App.balance >= harga) {
                 Label successLabel = new Label("Berhasil Membeli");
                 successLabel.setStyle("-fx-font-size: 14px; -fx-text-fill: green");
-                App.balance = App.balance - 2_799_000;
+                App.balance -= harga;
                 Label saldo = new Label("Sisa Saldo Anda Sebanyak Rp." + App.balance);
                 saldo.setStyle("-fx-font-size: 14px; -fx-text-fill: BLACK");
-                App.sepatubeli.add("Adidas Ultraboost Light - Cloud White");
-                root.getChildren().addAll(successLabel,saldo);
-        });
+                App.sepatubeli.add(sepatu + " | Rp." + formatHarga);
+                root.getChildren().addAll(successLabel, saldo);
+            }   else {
+                Label errorLabel = new Label("Saldo tidak mencukupi");
+                errorLabel.setStyle("-fx-font-size: 14px; -fx-text-fill: red");
+                root.getChildren().add(errorLabel);
+            }});
+
         root.getChildren().add(buyButton);
         
         Scene scene = new Scene(root, 620, 620);
@@ -253,13 +275,14 @@ public class SepatuLari extends Scene {
     }
 
     private static void Pembayaran3() {
+        String sepatu = "Nike Zoomx Streakfly Prm - White";
         Stage stage = new Stage();
         VBox root = new VBox();
         root.setPadding(new Insets(10));
         root.setSpacing(10);
 
         
-        Label titleLabel = new Label("Pembayaran - Nike Zoomx Streakfly Prm - White");
+        Label titleLabel = new Label("Pembayaran - " + sepatu);
         titleLabel.setStyle("-fx-font-size: 18px; -fx-font-weight: bold");
         root.getChildren().add(titleLabel);
 
@@ -298,14 +321,23 @@ public class SepatuLari extends Scene {
         // Tambahkan komponen-komponen lain yang diperlukan untuk pembayaran sepatu 4
         Button buyButton = new Button("Beli");
         buyButton.setOnAction(e -> {
+        int harga = 2_799_000;
+        DecimalFormat decimalFormat = new DecimalFormat("#,###");
+        String formatHarga = decimalFormat.format(harga);
+            if (App.balance >= harga) {
                 Label successLabel = new Label("Berhasil Membeli");
                 successLabel.setStyle("-fx-font-size: 14px; -fx-text-fill: green");
-                App.balance = App.balance - 2_799_000;
+                App.balance -= harga;
                 Label saldo = new Label("Sisa Saldo Anda Sebanyak Rp." + App.balance);
                 saldo.setStyle("-fx-font-size: 14px; -fx-text-fill: BLACK");
-                App.sepatubeli.add("Nike Zoomx Streakfly Prm - White");
-                root.getChildren().addAll(successLabel,saldo);
-        });
+                App.sepatubeli.add(sepatu + " | Rp." + formatHarga);
+                root.getChildren().addAll(successLabel, saldo);
+            }   else {
+                Label errorLabel = new Label("Saldo tidak mencukupi");
+                errorLabel.setStyle("-fx-font-size: 14px; -fx-text-fill: red");
+                root.getChildren().add(errorLabel);
+            }});
+
         root.getChildren().add(buyButton);
         
         Scene scene = new Scene(root, 620, 620);
@@ -315,6 +347,7 @@ public class SepatuLari extends Scene {
     }
 
     private static void Pembayaran4() {
+        String sepatu = "Adidas Ultraboost 22 - Lucid Blue";
         Stage stage = new Stage();
         VBox root = new VBox();
         root.setPadding(new Insets(10));
@@ -359,14 +392,23 @@ public class SepatuLari extends Scene {
 
         Button buyButton = new Button("Beli");
         buyButton.setOnAction(e -> {
+        int harga = 3_300_000;
+        DecimalFormat decimalFormat = new DecimalFormat("#,###");
+        String formatHarga = decimalFormat.format(harga);
+            if (App.balance >= harga) {
                 Label successLabel = new Label("Berhasil Membeli");
                 successLabel.setStyle("-fx-font-size: 14px; -fx-text-fill: green");
-                App.balance = App.balance - 3_300_000;
+                App.balance -= harga;
                 Label saldo = new Label("Sisa Saldo Anda Sebanyak Rp." + App.balance);
                 saldo.setStyle("-fx-font-size: 14px; -fx-text-fill: BLACK");
-                App.sepatubeli.add("Adidas Ultraboost 22 - Lucid Blue");
-                root.getChildren().addAll(successLabel,saldo);
-        });
+                App.sepatubeli.add(sepatu + " | Rp." + formatHarga);
+                root.getChildren().addAll(successLabel, saldo);
+            }   else {
+                Label errorLabel = new Label("Saldo tidak mencukupi");
+                errorLabel.setStyle("-fx-font-size: 14px; -fx-text-fill: red");
+                root.getChildren().add(errorLabel);
+            }});
+
         root.getChildren().add(buyButton);
         
         Scene scene = new Scene(root, 620, 620);

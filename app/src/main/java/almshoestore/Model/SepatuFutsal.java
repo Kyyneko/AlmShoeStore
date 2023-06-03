@@ -1,5 +1,7 @@
 package almshoestore.Model;
 
+import java.text.DecimalFormat;
+
 import almshoestore.App;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -119,12 +121,13 @@ public class SepatuFutsal extends Scene {
     }
 
     private static void Pembayaran1() {
+        String sepatu = "Nike Mercurial Superfly 8 Club Tf - Black";
         Stage stage = new Stage();
         VBox root = new VBox();
         root.setPadding(new Insets(10));
         root.setSpacing(10);
 
-        Label titleLabel = new Label("Pembayaran - Nike Mercurial Superfly 8 Club Tf - Black");
+        Label titleLabel = new Label("Pembayaran - " + sepatu);
         titleLabel.setStyle("-fx-font-size: 18px; -fx-font-weight: bold");
         titleLabel.setWrapText(true);
         root.getChildren().add(titleLabel);
@@ -164,14 +167,22 @@ public class SepatuFutsal extends Scene {
         // Tambahkan komponen-komponen lain yang diperlukan untuk pembayaran sepatu 4
         Button buyButton = new Button("Beli");
         buyButton.setOnAction(e -> {
+        int harga = 899_400;
+        DecimalFormat decimalFormat = new DecimalFormat("#,###");
+        String formatHarga = decimalFormat.format(harga);
+            if (App.balance >= harga) {
                 Label successLabel = new Label("Berhasil Membeli");
                 successLabel.setStyle("-fx-font-size: 14px; -fx-text-fill: green");
-                App.balance = App.balance - 899_000;
+                App.balance -= harga;
                 Label saldo = new Label("Sisa Saldo Anda Sebanyak Rp." + App.balance);
                 saldo.setStyle("-fx-font-size: 14px; -fx-text-fill: BLACK");
-                App.sepatubeli.add("Nike Mercurial Superfly 8 Club Tf - Black");
-                root.getChildren().addAll(successLabel,saldo);
-        });
+                App.sepatubeli.add(sepatu + " | Rp." + formatHarga);
+                root.getChildren().addAll(successLabel, saldo);
+            }   else {
+                Label errorLabel = new Label("Saldo tidak mencukupi");
+                errorLabel.setStyle("-fx-font-size: 14px; -fx-text-fill: red");
+                root.getChildren().add(errorLabel);
+            }});
         root.getChildren().add(buyButton);
         
         Scene scene = new Scene(root, 620, 620);
@@ -181,12 +192,13 @@ public class SepatuFutsal extends Scene {
     }
 
     private static void Pembayaran2() {
+        String sepatu = "Nike Phantom Gt2 Academy Ic Indoor - Blue";
         Stage stage = new Stage();
         VBox root = new VBox();
         root.setPadding(new Insets(10));
         root.setSpacing(10);
 
-        Label titleLabel = new Label("Pembayaran - Nike Phantom Gt2 Academy Ic Indoor - Blue");
+        Label titleLabel = new Label("Pembayaran - " + sepatu);
         titleLabel.setStyle("-fx-font-size: 18px; -fx-font-weight: bold");
         root.getChildren().add(titleLabel);
 
@@ -225,14 +237,22 @@ public class SepatuFutsal extends Scene {
         // Tambahkan komponen-komponen lain yang diperlukan untuk pembayaran sepatu 4
         Button buyButton = new Button("Beli");
         buyButton.setOnAction(e -> {
+        int harga = 1_199_400;
+        DecimalFormat decimalFormat = new DecimalFormat("#,###");
+        String formatHarga = decimalFormat.format(harga);
+            if (App.balance >= harga) {
                 Label successLabel = new Label("Berhasil Membeli");
                 successLabel.setStyle("-fx-font-size: 14px; -fx-text-fill: green");
-                App.balance = App.balance - 1_199_000;
+                App.balance -= harga;
                 Label saldo = new Label("Sisa Saldo Anda Sebanyak Rp." + App.balance);
                 saldo.setStyle("-fx-font-size: 14px; -fx-text-fill: BLACK");
-                App.sepatubeli.add("Nike Phantom Gt2 Academy Ic Indoor - Blue");
-                root.getChildren().addAll(successLabel,saldo);
-        });
+                App.sepatubeli.add(sepatu + " | Rp." + formatHarga);
+                root.getChildren().addAll(successLabel, saldo);
+            }   else {
+                Label errorLabel = new Label("Saldo tidak mencukupi");
+                errorLabel.setStyle("-fx-font-size: 14px; -fx-text-fill: red");
+                root.getChildren().add(errorLabel);
+            }});
         root.getChildren().add(buyButton);
         
         Scene scene = new Scene(root, 620, 620);
@@ -242,6 +262,7 @@ public class SepatuFutsal extends Scene {
     }
 
     private static void Pembayaran3() {
+        String sepatu = "Nike Phantom Gt2 Academy Tf - Black";
         Stage stage = new Stage();
         VBox root = new VBox();
         root.setPadding(new Insets(10));
@@ -287,14 +308,23 @@ public class SepatuFutsal extends Scene {
         // Tambahkan komponen-komponen lain yang diperlukan untuk pembayaran sepatu 4
         Button buyButton = new Button("Beli");
         buyButton.setOnAction(e -> {
+        int harga = 999_000;
+        DecimalFormat decimalFormat = new DecimalFormat("#,###");
+        String formatHarga = decimalFormat.format(harga);
+            if (App.balance >= harga) {
                 Label successLabel = new Label("Berhasil Membeli");
                 successLabel.setStyle("-fx-font-size: 14px; -fx-text-fill: green");
-                App.balance = App.balance - 999_000;
+                App.balance -= harga;
                 Label saldo = new Label("Sisa Saldo Anda Sebanyak Rp." + App.balance);
                 saldo.setStyle("-fx-font-size: 14px; -fx-text-fill: BLACK");
-                App.sepatubeli.add("Nike Phantom Gt2 Academy Tf - Black");
-                root.getChildren().addAll(successLabel,saldo);
-        });
+                App.sepatubeli.add(sepatu + " | Rp." + formatHarga);
+                root.getChildren().addAll(successLabel, saldo);
+            }   else {
+                Label errorLabel = new Label("Saldo tidak mencukupi");
+                errorLabel.setStyle("-fx-font-size: 14px; -fx-text-fill: red");
+                root.getChildren().add(errorLabel);
+            }});
+
         root.getChildren().add(buyButton);
         
         Scene scene = new Scene(root, 620, 620);
@@ -304,13 +334,14 @@ public class SepatuFutsal extends Scene {
     }
 
     private static void Pembayaran4() {
+        String sepatu = "Nike Zoom Vapor 15 Academy Kylian Mbappe Tf - Dark Red";
         Stage stage = new Stage();
         VBox root = new VBox();
         root.setPadding(new Insets(10));
         root.setSpacing(10);
 
         
-        Label titleLabel = new Label("Pembayaran - Nike Zoom Vapor 15 Academy Kylian Mbappe Tf - Dark Red");
+        Label titleLabel = new Label("Pembayaran - " + sepatu);
         titleLabel.setStyle("-fx-font-size: 18px; -fx-font-weight: bold");
         root.getChildren().add(titleLabel);
 
@@ -349,14 +380,23 @@ public class SepatuFutsal extends Scene {
         // Tambahkan komponen-komponen lain yang diperlukan untuk pembayaran sepatu 4
         Button buyButton = new Button("Beli");
         buyButton.setOnAction(e -> {
+        int harga = 1_299_400;
+        DecimalFormat decimalFormat = new DecimalFormat("#,###");
+        String formatHarga = decimalFormat.format(harga);
+            if (App.balance >= harga) {
                 Label successLabel = new Label("Berhasil Membeli");
                 successLabel.setStyle("-fx-font-size: 14px; -fx-text-fill: green");
-                App.balance = App.balance - 1_299_000;
+                App.balance -= harga;
                 Label saldo = new Label("Sisa Saldo Anda Sebanyak Rp." + App.balance);
                 saldo.setStyle("-fx-font-size: 14px; -fx-text-fill: BLACK");
-                App.sepatubeli.add("Nike Zoom Vapor 15 Academy Kylian Mbappe Tf - Dark Red");
-                root.getChildren().addAll(successLabel,saldo);
-        });
+                App.sepatubeli.add(sepatu + " | Rp." + formatHarga);
+                root.getChildren().addAll(successLabel, saldo);
+            }   else {
+                Label errorLabel = new Label("Saldo tidak mencukupi");
+                errorLabel.setStyle("-fx-font-size: 14px; -fx-text-fill: red");
+                root.getChildren().add(errorLabel);
+            }});
+
         root.getChildren().add(buyButton);
         
         Scene scene = new Scene(root, 620, 620);
