@@ -31,6 +31,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.DecimalFormat;
 
 
 public class App extends Application {
@@ -39,7 +40,7 @@ public class App extends Application {
     /* =================================================== PRIMARY STAGE =================================================== */
     private static Stage    stage;
     public  static String   nama    = "a";
-    public  static int      balance = 100000000;
+    public  static int      balance = 5_000_000;
     public static ObservableList<String> sepatubeli = FXCollections.observableArrayList();
 
     public void start(Stage primaryStage) throws Exception{
@@ -303,44 +304,50 @@ public class App extends Application {
         stage.close();
     }
     public void profil() {
-        Label label = new Label("Nama : " + nama);
-        Label label2 = new Label("Balance : " + balance);
-        label.setStyle("-fx-padding: 5px 20px;-fx-font-size: 30px; -fx-font-family: 'Times New Roman'; -fx-text-fill: BLACK;-fx-background-color: #23c7f0; -fx-border-color: WHITE; -fx-border-width: 1px; -fx-border-radius: 5;");
-        label2.setStyle("-fx-padding: 5px 20px;-fx-font-size: 30px; -fx-font-family: 'Times New Roman'; -fx-text-fill: BLACK;-fx-background-color: #23c7f0; -fx-border-color: WHITE; -fx-border-width: 1px; -fx-border-radius: 5;");
+        Label labelNama     = new Label("Nama    : " + nama);
+        labelNama.setStyle("-fx-font-size: 16px; -fx-font-family: 'CAMBRIA'; -fx-text-fill: BLACK;");
+        
+        DecimalFormat decimalFormat = new DecimalFormat("#,###");
+        String pakeKoma = decimalFormat.format(balance);
+        Label labelBalance = new Label("Balance: " + pakeKoma);
+
+        labelBalance.setStyle("-fx-font-size: 16px; -fx-font-family: 'CAMBRIA'; -fx-text-fill: BLACK;");
+        
+        VBox vboxNIch = new VBox(labelNama,labelBalance);
+        vboxNIch.setAlignment(Pos.CENTER_LEFT);
+        
         Button exit = new Button("Back");
         exit.setAlignment(Pos.BOTTOM_CENTER);
-        exit.setStyle("-fx-padding: 3px 25px;-fx-font-family: 'Cambria';-fx-text-fill:BLACK;-fx-font-size: 10px;-fx-background-color: #f89a0c; -fx-border-color: #FAEBD7; -fx-border-width: 1px; -fx-border-radius: 2;");
+        exit.setStyle("-fx-font-family: 'Cambria'; -fx-font-size: 14px; -fx-text-fill: BLACK; -fx-background-color: #f89a0c; -fx-border-color: #FAEBD7; -fx-border-width: 1px; -fx-border-radius: 2;");
         exit.setOnAction(a -> {
             SceneTokoAwal();
         });
+        
         ImageView profilku = new ImageView(new Image("images/profilcuy2.png"));
         profilku.setFitHeight(200);
         profilku.setFitWidth(200);
-        HBox hbox = new HBox(0, profilku);
+        
+        HBox hbox = new HBox(20, profilku, vboxNIch);
         hbox.setAlignment(Pos.CENTER);
-        VBox vbox1 = new VBox(10, label, label2);
-        vbox1.setAlignment(Pos.CENTER);
-        HBox bjir = new HBox(10, hbox, vbox1);
-        bjir.setAlignment(Pos.CENTER);
-
-
+        hbox.setSpacing(50);
+        
+        ListView<String> lispiu = new ListView<>(sepatubeli);
+        lispiu.setStyle("-fx-font-size: 15px; -fx-font-family: 'Times New Roman'; -fx-text-fill: BLACK;");
+        
         VBox vboxexit = new VBox(10, exit);
         vboxexit.setAlignment(Pos.BOTTOM_CENTER);
-
-        ListView<String> lispiu = new ListView<>(sepatubeli);
-        lispiu.setStyle("-fx-background-color: #000000;");
-        lispiu.setStyle("-fx-font-family : CAMBRIA");
-        lispiu.setStyle("-fx-control-inner-background: #ffffff;");
-        lispiu.setStyle("-fx-border-color: #dddddd;");
-        lispiu.setStyle("-fx-selection-bar: #000000;");
-        lispiu.setStyle("-fx-selection-bar-text: #ffffff;");
-
-        VBox akhir = new VBox(150, bjir,lispiu, vboxexit);
+        
+        VBox akhir = new VBox(30, hbox, lispiu, vboxexit);
         akhir.setAlignment(Pos.CENTER);
-        akhir.setStyle("-fx-background-color:#DCDCDC;");
+        akhir.setSpacing(20);
+        akhir.setPadding(new Insets(20));
+        akhir.setStyle("-fx-background-color: #DCDCDC;");
+        
         Scene anjay = new Scene(akhir, 620, 620);
         stage.setScene(anjay);
     }
+    
+    
     
     /* =================================================== SCENE TOKO AWAL =================================================== */
     public Scene SceneTokoAwal() {

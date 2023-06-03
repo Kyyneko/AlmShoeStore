@@ -131,13 +131,14 @@ public class SepatuFormal extends Scene {
     }
 
     private static void Pembayaran1() {
+        String sepatu = "Allander BLACK - Black";
         // Implementasi pembayaran untuk sepatu 1
         Stage stage = new Stage();
         VBox root = new VBox();
         root.setPadding(new Insets(10));
         root.setSpacing(10);
 
-        Label titleLabel = new Label("Pembayaran - Allander BLACK - Black");
+        Label titleLabel = new Label("Pembayaran - " + sepatu);
         titleLabel.setStyle("-fx-font-size: 18px; -fx-font-weight: bold");
         titleLabel.setWrapText(true);
         root.getChildren().add(titleLabel);
@@ -174,13 +175,20 @@ public class SepatuFormal extends Scene {
 
         Button buyButton = new Button("Beli");
         buyButton.setOnAction(e -> {
+        int shoePrice = 1_999_400;
+            if (App.balance >= shoePrice) {
                 Label successLabel = new Label("Berhasil Membeli");
                 successLabel.setStyle("-fx-font-size: 14px; -fx-text-fill: green");
-                App.balance = App.balance - 1_999_000;
+                App.balance -= shoePrice;
                 Label saldo = new Label("Sisa Saldo Anda Sebanyak Rp." + App.balance);
                 saldo.setStyle("-fx-font-size: 14px; -fx-text-fill: BLACK");
-                root.getChildren().addAll(successLabel,saldo);
-                App.sepatubeli.add("Allander BLACK - Black");
+                App.sepatubeli.add(sepatu);
+                root.getChildren().addAll(successLabel, saldo);
+        }   else {
+                Label errorLabel = new Label("Saldo tidak mencukupi");
+                errorLabel.setStyle("-fx-font-size: 14px; -fx-text-fill: red");
+                root.getChildren().add(errorLabel);
+        }
         });
         root.getChildren().add(buyButton);
 
@@ -191,13 +199,13 @@ public class SepatuFormal extends Scene {
     }
 
     private static void Pembayaran2() {
-        // Implementasi pembayaran untuk sepatu 2
+        String sepatu = "CLARKS Tilden Plain (M) Black Leather - Black";        // Implementasi pembayaran untuk sepatu 2
         Stage stage = new Stage();
         VBox root = new VBox();
         root.setPadding(new Insets(10));
         root.setSpacing(10);
 
-        Label titleLabel = new Label("Pembayaran - CLARKS Tilden Plain (M) Black Leather - Black");
+        Label titleLabel = new Label("Pembayaran - " + sepatu);
         titleLabel.setStyle("-fx-font-size: 18px; -fx-font-weight: bold");
         titleLabel.setWrapText(true);
         root.getChildren().add(titleLabel);
@@ -234,13 +242,20 @@ public class SepatuFormal extends Scene {
 
         Button buyButton = new Button("Beli");
         buyButton.setOnAction(e -> {
+        int shoePrice = 1_399_400;
+            if (App.balance >= shoePrice) {
                 Label successLabel = new Label("Berhasil Membeli");
                 successLabel.setStyle("-fx-font-size: 14px; -fx-text-fill: green");
-                App.balance = App.balance - 1_399_000;
+                App.balance -= shoePrice;
                 Label saldo = new Label("Sisa Saldo Anda Sebanyak Rp." + App.balance);
                 saldo.setStyle("-fx-font-size: 14px; -fx-text-fill: BLACK");
-                App.sepatubeli.add("CLARKS Tilden Plain (M) Black Leather - Black");
-                root.getChildren().addAll(successLabel,saldo);
+                App.sepatubeli.add(sepatu);
+                root.getChildren().addAll(successLabel, saldo);
+        }   else {
+                Label errorLabel = new Label("Saldo tidak mencukupi");
+                errorLabel.setStyle("-fx-font-size: 14px; -fx-text-fill: red");
+                root.getChildren().add(errorLabel);
+        }
         });
         root.getChildren().add(buyButton);
 
@@ -251,13 +266,14 @@ public class SepatuFormal extends Scene {
     }
 
     private static void Pembayaran3() {
+        String sepatu = "DSP Cap Toe - Tan";
         // Implementasi pembayaran untuk sepatu 3
         Stage stage = new Stage();
         VBox root = new VBox();
         root.setPadding(new Insets(10));
         root.setSpacing(10);
 
-        Label titleLabel = new Label("Pembayaran - DSP Cap Toe - Tan");
+        Label titleLabel = new Label("Pembayaran - " + sepatu);
         titleLabel.setStyle("-fx-font-size: 18px; -fx-font-weight: bold");
         titleLabel.setWrapText(true);
         root.getChildren().add(titleLabel);
@@ -294,13 +310,20 @@ public class SepatuFormal extends Scene {
 
         Button buyButton = new Button("Beli");
         buyButton.setOnAction(e -> {
+        int shoePrice = 1_439_400;
+            if (App.balance >= shoePrice) {
                 Label successLabel = new Label("Berhasil Membeli");
                 successLabel.setStyle("-fx-font-size: 14px; -fx-text-fill: green");
-                App.balance = App.balance - 1_439_000;
+                App.balance -= shoePrice;
                 Label saldo = new Label("Sisa Saldo Anda Sebanyak Rp." + App.balance);
                 saldo.setStyle("-fx-font-size: 14px; -fx-text-fill: BLACK");
-                App.sepatubeli.add("DSP Cap Toe - Tan");
-                root.getChildren().addAll(successLabel,saldo);
+                App.sepatubeli.add(sepatu);
+                root.getChildren().addAll(successLabel, saldo);
+        }   else {
+                Label errorLabel = new Label("Saldo tidak mencukupi");
+                errorLabel.setStyle("-fx-font-size: 14px; -fx-text-fill: red");
+                root.getChildren().add(errorLabel);
+        }
         });
         root.getChildren().add(buyButton);
 
@@ -311,13 +334,14 @@ public class SepatuFormal extends Scene {
     }
 
     private static void Pembayaran4() {
+        String sepatu = "DSH Plain Toe Dark Brown";
         // Implementasi pembayaran untuk sepatu 4
         Stage stage = new Stage();
         VBox root = new VBox();
         root.setPadding(new Insets(10));
         root.setSpacing(10);
 
-        Label titleLabel = new Label("Pembayaran - DSH Plain Toe Dark Brown - Dark Brown");
+        Label titleLabel = new Label("Pembayaran - " + sepatu);
         titleLabel.setStyle("-fx-font-size: 18px; -fx-font-weight: bold");
         titleLabel.setWrapText(true);
         root.getChildren().add(titleLabel);
@@ -354,14 +378,21 @@ public class SepatuFormal extends Scene {
 
         Button buyButton = new Button("Beli");
         buyButton.setOnAction(e -> {
+        int shoePrice = 1_149_500;
+            if (App.balance >= shoePrice) {
                 Label successLabel = new Label("Berhasil Membeli");
                 successLabel.setStyle("-fx-font-size: 14px; -fx-text-fill: green");
-                App.balance = App.balance - 1_149_500;
+                App.balance -= shoePrice;
                 Label saldo = new Label("Sisa Saldo Anda Sebanyak Rp." + App.balance);
                 saldo.setStyle("-fx-font-size: 14px; -fx-text-fill: BLACK");
-                App.sepatubeli.add("DSH Plain Toe Dark Brown - Dark Brown");
-                root.getChildren().addAll(successLabel,saldo);
-        });
+                App.sepatubeli.add(sepatu);
+                root.getChildren().addAll(successLabel, saldo);
+        }   else {
+                Label errorLabel = new Label("Saldo tidak mencukupi");
+                errorLabel.setStyle("-fx-font-size: 14px; -fx-text-fill: red");
+                root.getChildren().add(errorLabel);
+        }
+    });
         root.getChildren().add(buyButton);
 
         Scene scene = new Scene(root, 620, 620);
