@@ -1,8 +1,5 @@
 package almshoestore.SceneToko;
 
-
-import com.mysql.cj.protocol.a.NativePacketHeader;
-
 import almshoestore.App;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
