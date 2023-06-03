@@ -181,10 +181,13 @@
                 
                 Button buyButton = new Button("Beli");
                 buyButton.setOnAction(e -> {
-                        Label successLabel = new Label("Pesan berhasil Membeli");
-                        successLabel.setStyle("-fx-font-size: 14px; -fx-text-fill: green");
-                        root.getChildren().add(successLabel);
-                });
+                Label successLabel = new Label("Berhasil Membeli");
+                successLabel.setStyle("-fx-font-size: 14px; -fx-text-fill: green");
+                App.balance = App.balance - 759_000;
+                Label saldo = new Label("Sisa Saldo Anda Sebanyak Rp." + App.balance);
+                saldo.setStyle("-fx-font-size: 14px; -fx-text-fill: BLACK");
+                root.getChildren().addAll(successLabel,saldo);
+        });
                 root.getChildren().add(buyButton);
                 
                 Scene scene = new Scene(root, 620, 620);
@@ -236,10 +239,13 @@
                 
                 Button buyButton = new Button("Beli");
                 buyButton.setOnAction(e -> {
-                        Label successLabel = new Label("Pesan berhasil Membeli");
-                        successLabel.setStyle("-fx-font-size: 14px; -fx-text-fill: green");
-                        root.getChildren().add(successLabel);
-                });
+                Label successLabel = new Label("Berhasil Membeli");
+                successLabel.setStyle("-fx-font-size: 14px; -fx-text-fill: green");
+                App.balance = App.balance - 1_199_000;
+                Label saldo = new Label("Sisa Saldo Anda Sebanyak Rp." + App.balance);
+                saldo.setStyle("-fx-font-size: 14px; -fx-text-fill: BLACK");
+                root.getChildren().addAll(successLabel,saldo);
+        });
                 root.getChildren().add(buyButton);
                 
                 Scene scene = new Scene(root, 620, 620);
@@ -291,12 +297,14 @@
         
                 Button buyButton = new Button("Beli");
                 buyButton.setOnAction(e -> {
-                        Label successLabel = new Label("Pesan berhasil Membeli");
-                        successLabel.setStyle("-fx-font-size: 14px; -fx-text-fill: green");
-                        root.getChildren().add(successLabel);
-                });
+                Label successLabel = new Label("Berhasil Membeli");
+                successLabel.setStyle("-fx-font-size: 14px; -fx-text-fill: green");
+                App.balance = App.balance - 1_199_000;
+                Label saldo = new Label("Sisa Saldo Anda Sebanyak Rp." + App.balance);
+                saldo.setStyle("-fx-font-size: 14px; -fx-text-fill: BLACK");
+                root.getChildren().addAll(successLabel,saldo);
+        });
                 root.getChildren().add(buyButton);
-        
                 Scene scene = new Scene(root, 620, 620);
                 stage.setScene(scene);
                 stage.setTitle("Pembayaran");
@@ -345,10 +353,13 @@
 
                 Button buyButton = new Button("Beli");
                 buyButton.setOnAction(e -> {
-                        Label successLabel = new Label("Pesan berhasil Membeli");
-                        successLabel.setStyle("-fx-font-size: 14px; -fx-text-fill: green");
-                        root.getChildren().add(successLabel);
-                });
+                Label successLabel = new Label("Berhasil Membeli");
+                successLabel.setStyle("-fx-font-size: 14px; -fx-text-fill: green");
+                App.balance = App.balance - 2_199_000;
+                Label saldo = new Label("Sisa Saldo Anda Sebanyak Rp." + App.balance);
+                saldo.setStyle("-fx-font-size: 14px; -fx-text-fill: BLACK");
+                root.getChildren().addAll(successLabel,saldo);
+        });
                 root.getChildren().add(buyButton);
 
                 Scene scene = new Scene(root, 620, 620);
@@ -399,10 +410,13 @@
 
                 Button buyButton = new Button("Beli");
                 buyButton.setOnAction(e -> {
-                        Label successLabel = new Label("Pesan berhasil Membeli");
-                        successLabel.setStyle("-fx-font-size: 14px; -fx-text-fill: green");
-                        root.getChildren().add(successLabel);
-                });
+                Label successLabel = new Label("Berhasil Membeli");
+                successLabel.setStyle("-fx-font-size: 14px; -fx-text-fill: green");
+                App.balance = App.balance - 999_000;
+                Label saldo = new Label("Sisa Saldo Anda Sebanyak Rp." + App.balance);
+                saldo.setStyle("-fx-font-size: 14px; -fx-text-fill: BLACK");
+                root.getChildren().addAll(successLabel,saldo);
+        });
                 root.getChildren().add(buyButton);
         
                 // Tambahkan komponen-komponen lain yang diperlukan untuk pembayaran sepatu 4

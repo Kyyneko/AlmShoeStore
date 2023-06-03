@@ -12,7 +12,6 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Cursor;
 import javafx.scene.ImageCursor;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -35,16 +34,13 @@ public class App extends Application {
 
 
     /* =================================================== PRIMARY STAGE =================================================== */
-    private static Stage stage;
-    public static String nama = "a";
-    public static int balance=100000000;
-
+    private static Stage    stage;
+    public  static String   nama    = "a";
+    public  static int      balance = 100000000;
 
     public void start(Stage primaryStage) throws Exception{
         
         stage = primaryStage;     
-        
-
         
         SceneAwal();
         stage.show();
@@ -54,13 +50,13 @@ public class App extends Application {
 
     /* =================================================== SCENE AWAL =================================================== */
     private void SceneAwal(){
-        Label label = new Label("  Welcome To");
-        label.setStyle("-fx-font-family: 'Cambria'; -fx-font-size: 25px; -fx-text-color: #000000;");
-        Label label2 = new Label("AlmShoeStore");
-        label2.setStyle("-fx-font-family: 'Cambria'; -fx-font-size: 35px; -fx-text-color: #000000;");
+        Label wlcome = new Label("  Welcome To");
+        wlcome.setStyle("-fx-font-family: 'Cambria'; -fx-font-size: 25px; -fx-text-color: #000000;");
+        Label namaToko = new Label("AlmShoeStore");
+        namaToko.setStyle("-fx-font-family: 'Cambria'; -fx-font-size: 35px; -fx-text-color: #000000;");
 
-        VBox vbox1 =new VBox(label,label2);
-        vbox1.setAlignment(Pos.TOP_CENTER);
+        VBox vbox1nich =new VBox(wlcome,namaToko);
+        vbox1nich.setAlignment(Pos.TOP_CENTER);
 
         ImageView fotoikon = new ImageView();
         String foto3 = "images/LogoAlm.png";
@@ -115,7 +111,7 @@ public class App extends Application {
         HBox hbox3 = new HBox(5,button2,button3);
         hbox3.setAlignment(Pos.CENTER);
 
-        VBox asli = new VBox(10,vbox1,foto,vbox2,hbox1,hbox2,button1,button4,hbox3);
+        VBox asli = new VBox(10,vbox1nich,foto,vbox2,hbox1,hbox2,button1,button4,hbox3);
         asli.setAlignment(Pos.CENTER);
         asli.setStyle("-fx-background-color:#DCDCDC;");
         // asli.getChildren().addAll(vbox1,vbox2,vbox3);
@@ -344,7 +340,7 @@ public class App extends Application {
         Button buttonprofil = new Button();
         buttonprofil.setGraphic(uy);
         buttonprofil.setStyle("-fx-background-color: transparent");
-  
+
         buttonprofil.setAlignment(Pos.CENTER_LEFT);
         HBox profilna = new HBox(0, buttonprofil);
         profilna.setAlignment(Pos.TOP_LEFT);

@@ -174,10 +174,12 @@ public class SepatuFormal extends Scene {
 
         Button buyButton = new Button("Beli");
         buyButton.setOnAction(e -> {
-                Label successLabel = new Label("Pesan berhasil Membeli");
+                Label successLabel = new Label("Berhasil Membeli");
                 successLabel.setStyle("-fx-font-size: 14px; -fx-text-fill: green");
-                App.balance=App.balance-1999000;
-                root.getChildren().add(successLabel);
+                App.balance = App.balance - 1_999_000;
+                Label saldo = new Label("Sisa Saldo Anda Sebanyak Rp." + App.balance);
+                saldo.setStyle("-fx-font-size: 14px; -fx-text-fill: BLACK");
+                root.getChildren().addAll(successLabel,saldo);
         });
         root.getChildren().add(buyButton);
 
@@ -231,9 +233,12 @@ public class SepatuFormal extends Scene {
 
         Button buyButton = new Button("Beli");
         buyButton.setOnAction(e -> {
-                Label successLabel = new Label("Pesan berhasil Membeli");
+                Label successLabel = new Label("Berhasil Membeli");
                 successLabel.setStyle("-fx-font-size: 14px; -fx-text-fill: green");
-                root.getChildren().add(successLabel);
+                App.balance = App.balance - 1_399_000;
+                Label saldo = new Label("Sisa Saldo Anda Sebanyak Rp." + App.balance);
+                saldo.setStyle("-fx-font-size: 14px; -fx-text-fill: BLACK");
+                root.getChildren().addAll(successLabel,saldo);
         });
         root.getChildren().add(buyButton);
 
@@ -287,9 +292,12 @@ public class SepatuFormal extends Scene {
 
         Button buyButton = new Button("Beli");
         buyButton.setOnAction(e -> {
-                Label successLabel = new Label("Pesan berhasil Membeli");
+                Label successLabel = new Label("Berhasil Membeli");
                 successLabel.setStyle("-fx-font-size: 14px; -fx-text-fill: green");
-                root.getChildren().add(successLabel);
+                App.balance = App.balance - 1_439_000;
+                Label saldo = new Label("Sisa Saldo Anda Sebanyak Rp." + App.balance);
+                saldo.setStyle("-fx-font-size: 14px; -fx-text-fill: BLACK");
+                root.getChildren().addAll(successLabel,saldo);
         });
         root.getChildren().add(buyButton);
 
@@ -343,9 +351,12 @@ public class SepatuFormal extends Scene {
 
         Button buyButton = new Button("Beli");
         buyButton.setOnAction(e -> {
-                Label successLabel = new Label("Pesan berhasil Membeli");
+                Label successLabel = new Label("Berhasil Membeli");
                 successLabel.setStyle("-fx-font-size: 14px; -fx-text-fill: green");
-                root.getChildren().add(successLabel);
+                App.balance = App.balance - 1_149_500;
+                Label saldo = new Label("Sisa Saldo Anda Sebanyak Rp." + App.balance);
+                saldo.setStyle("-fx-font-size: 14px; -fx-text-fill: BLACK");
+                root.getChildren().addAll(successLabel,saldo);
         });
         root.getChildren().add(buyButton);
 
