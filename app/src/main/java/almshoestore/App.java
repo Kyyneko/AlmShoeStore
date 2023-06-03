@@ -328,6 +328,12 @@ public class App extends Application {
         vboxexit.setAlignment(Pos.BOTTOM_CENTER);
 
         ListView<String> lispiu = new ListView<>(sepatubeli);
+        lispiu.setStyle("-fx-background-color: #000000;");
+        lispiu.setStyle("-fx-font-family : CAMBRIA");
+        lispiu.setStyle("-fx-control-inner-background: #ffffff;");
+        lispiu.setStyle("-fx-border-color: #dddddd;");
+        lispiu.setStyle("-fx-selection-bar: #000000;");
+        lispiu.setStyle("-fx-selection-bar-text: #ffffff;");
 
         VBox akhir = new VBox(150, bjir,lispiu, vboxexit);
         akhir.setAlignment(Pos.CENTER);

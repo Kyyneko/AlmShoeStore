@@ -239,6 +239,7 @@ public class SepatuFormal extends Scene {
                 App.balance = App.balance - 1_399_000;
                 Label saldo = new Label("Sisa Saldo Anda Sebanyak Rp." + App.balance);
                 saldo.setStyle("-fx-font-size: 14px; -fx-text-fill: BLACK");
+                App.sepatubeli.add("CLARKS Tilden Plain (M) Black Leather - Black");
                 root.getChildren().addAll(successLabel,saldo);
         });
         root.getChildren().add(buyButton);
@@ -298,6 +299,7 @@ public class SepatuFormal extends Scene {
                 App.balance = App.balance - 1_439_000;
                 Label saldo = new Label("Sisa Saldo Anda Sebanyak Rp." + App.balance);
                 saldo.setStyle("-fx-font-size: 14px; -fx-text-fill: BLACK");
+                App.sepatubeli.add("DSP Cap Toe - Tan");
                 root.getChildren().addAll(successLabel,saldo);
         });
         root.getChildren().add(buyButton);
@@ -357,6 +359,7 @@ public class SepatuFormal extends Scene {
                 App.balance = App.balance - 1_149_500;
                 Label saldo = new Label("Sisa Saldo Anda Sebanyak Rp." + App.balance);
                 saldo.setStyle("-fx-font-size: 14px; -fx-text-fill: BLACK");
+                App.sepatubeli.add("DSH Plain Toe Dark Brown - Dark Brown");
                 root.getChildren().addAll(successLabel,saldo);
         });
         root.getChildren().add(buyButton);
