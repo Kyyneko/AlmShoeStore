@@ -321,12 +321,12 @@ public class App extends Application {
         bjir.setAlignment(Pos.CENTER);
         VBox vboxexit = new VBox(10, exit);
         vboxexit.setAlignment(Pos.BOTTOM_CENTER);
-    
-        ListView<String> listView = new ListView<>();
-        listView.setStyle("-fx-background-color : transparent");
-        listView.getItems().addAll("Item 1", "Item 2", "Item 3"); // Tambahkan item-item yang ingin ditampilkan di ListView
-    
-        VBox akhir = new VBox(150, bjir, listView, vboxexit);
+     // Tambahkan item-item yang ingin ditampilkan di ListView
+
+        // ListView<String> sepatuNa = new ListView<>();
+        // sepatuNa.getItems().addAll("");
+
+        VBox akhir = new VBox(150, bjir, vboxexit);
         akhir.setAlignment(Pos.CENTER);
         akhir.setStyle("-fx-background-color:#DCDCDC;");
         Scene anjay = new Scene(akhir, 620, 620);
