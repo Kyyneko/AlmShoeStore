@@ -15,6 +15,7 @@ import javafx.scene.ImageCursor;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
@@ -116,9 +117,9 @@ public class App extends Application {
         asli.setStyle("-fx-background-color:#DCDCDC;");
         // asli.getChildren().addAll(vbox1,vbox2,vbox3);
         
-        Scene scene1 = new Scene(asli,620,620);
-        Image cursorImage = new Image("images/mousecuy.png");
-        ImageCursor customCursor = new ImageCursor(cursorImage);
+        Scene scene1                = new Scene(asli,620,620);
+        Image cursorImage           = new Image("images/mousecuy.png");
+        ImageCursor customCursor    = new ImageCursor(cursorImage);
         scene1.setCursor(customCursor);
         stage.setTitle("AlmShoeStore");
         stage.setScene(scene1);
@@ -135,7 +136,7 @@ public class App extends Application {
         if (!username.isEmpty() && !password.isEmpty()) {
             try {
                 // Buat koneksi ke database SQLite
-                Connection connection = DriverManager.getConnection("jdbc:sqlite:src\\main\\java\\almshoestore\\Database\\Manager/userdata.db");
+                Connection connection = DriverManager.getConnection("jdbc:sqlite:src\\main\\java\\almshoestore\\utils\\Manager/userdata.db");
 
                 // Buat pernyataan SQL untuk memeriksa kecocokan username dan password
                 String sql = "SELECT * FROM tb_account WHERE Username = ? AND Password = ?";
@@ -298,36 +299,40 @@ public class App extends Application {
     private void SceneExit(){
         stage.close();
     }
-    public void profil(){
-        Label label = new Label("Nama : "+nama);
-        Label label2 = new Label("Balance : "+balance);
+    public void profil() {
+        Label label = new Label("Nama : " + nama);
+        Label label2 = new Label("Balance : " + balance);
         label.setStyle("-fx-padding: 5px 20px;-fx-font-size: 30px; -fx-font-family: 'Times New Roman'; -fx-text-fill: BLACK;-fx-background-color: #23c7f0; -fx-border-color: WHITE; -fx-border-width: 1px; -fx-border-radius: 5;");
         label2.setStyle("-fx-padding: 5px 20px;-fx-font-size: 30px; -fx-font-family: 'Times New Roman'; -fx-text-fill: BLACK;-fx-background-color: #23c7f0; -fx-border-color: WHITE; -fx-border-width: 1px; -fx-border-radius: 5;");
         Button exit = new Button("Back");
         exit.setAlignment(Pos.BOTTOM_CENTER);
         exit.setStyle("-fx-padding: 3px 25px;-fx-font-family: 'Cambria';-fx-text-fill:BLACK;-fx-font-size: 10px;-fx-background-color: #f89a0c; -fx-border-color: #FAEBD7; -fx-border-width: 1px; -fx-border-radius: 2;");
-        exit.setOnAction(a->{SceneTokoAwal();});
-        ImageView profilku = new ImageView(new Image("images/profilcuy2.png")); 
+        exit.setOnAction(a -> {
+            SceneTokoAwal();
+        });
+        ImageView profilku = new ImageView(new Image("images/profilcuy2.png"));
         profilku.setFitHeight(200);
         profilku.setFitWidth(200);
         HBox hbox = new HBox(0, profilku);
         hbox.setAlignment(Pos.CENTER);
-        VBox vbox1 = new VBox(10,label,label2);
+        VBox vbox1 = new VBox(10, label, label2);
         vbox1.setAlignment(Pos.CENTER);
-        HBox bjir = new HBox(10, hbox,vbox1);
+        HBox bjir = new HBox(10, hbox, vbox1);
         bjir.setAlignment(Pos.CENTER);
         VBox vboxexit = new VBox(10, exit);
         vboxexit.setAlignment(Pos.BOTTOM_CENTER);
-
-        VBox akhir = new VBox(150, bjir,vboxexit);
+    
+        ListView<String> listView = new ListView<>();
+        listView.setStyle("-fx-background-color : transparent");
+        listView.getItems().addAll("Item 1", "Item 2", "Item 3"); // Tambahkan item-item yang ingin ditampilkan di ListView
+    
+        VBox akhir = new VBox(150, bjir, listView, vboxexit);
         akhir.setAlignment(Pos.CENTER);
-        // akhir.setSpacing(40);
-        
         akhir.setStyle("-fx-background-color:#DCDCDC;");
         Scene anjay = new Scene(akhir, 620, 620);
         stage.setScene(anjay);
-
-        }
+    }
+    
     /* =================================================== SCENE TOKO AWAL =================================================== */
     public Scene SceneTokoAwal() {
         Label judul = new Label("What Type Of Shoes Are You Looking For ?");
@@ -346,8 +351,8 @@ public class App extends Application {
         profilna.setAlignment(Pos.TOP_LEFT);
         buttonprofil.setOnAction(a->{profil();});
 
-        HBox vboxjudul = new HBox(0,profilna, judul);
-        vboxjudul.setAlignment(Pos.CENTER);
+        HBox vboxjudulna = new HBox(0,profilna, judul);
+        vboxjudulna.setAlignment(Pos.CENTER);
 
         /* ============================================================ SEPATU SNEAKERS ============================================================ */
         Label label1 = new Label("Sepatu Sneakers");
@@ -443,7 +448,7 @@ public class App extends Application {
         HBox hbox2 = new HBox(15, vbox3,vbox4);
         hbox2.setAlignment(Pos.CENTER);
 
-        VBox utama = new VBox(10, vboxjudul,hbox1,hbox2,vbox5);
+        VBox utama = new VBox(10, vboxjudulna,hbox1,hbox2,vbox5);
         // utama.setStyle("-fx-background-color:#DCDCDC;");
         
         Scene tokoScene = new Scene(utama, 620, 620);
