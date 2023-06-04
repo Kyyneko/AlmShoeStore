@@ -274,7 +274,7 @@ public class SepatuLari extends SceneMain {
     }
 
     private static void Pembayaran3() {
-        String sepatu = "Nike Zoomx Streakfly Prm - White";
+        final String sepatu = "Nike Zoomx Streakfly Prm - White";
         Stage stage = new Stage();
         VBox root = new VBox();
         root.setPadding(new Insets(10));
@@ -346,7 +346,7 @@ public class SepatuLari extends SceneMain {
     }
 
     private static void Pembayaran4() {
-        String sepatu = "Adidas Ultraboost 22 - Lucid Blue";
+        final String sepatu = "Adidas Ultraboost 22 - Lucid Blue";
         Stage stage = new Stage();
         VBox root = new VBox();
         root.setPadding(new Insets(10));

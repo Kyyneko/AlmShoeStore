@@ -5,7 +5,7 @@ import almshoestore.Model.SepatuFormal;
 import almshoestore.Model.SepatuFutsal;
 import almshoestore.Model.SepatuLari;
 import almshoestore.Model.SepatuSneakers;
-import almshoestore.utils.Manager.DatabaseManager;
+import almshoestore.utils.DatabaseManager;
 import javafx.animation.PauseTransition;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
@@ -140,7 +140,7 @@ public class App extends Application {
         if (!username.isEmpty() && !password.isEmpty()) {
             try {
                 // Buat koneksi ke database SQLite
-                Connection connection = DriverManager.getConnection("jdbc:sqlite:src\\main\\java\\almshoestore\\utils\\Manager/userdata.db");
+                Connection connection = DriverManager.getConnection("jdbc:sqlite:src\\main\\java\\almshoestore\\utils\\userdata.db");
 
                 // Buat pernyataan SQL untuk memeriksa kecocokan username dan password
                 String sql = "SELECT * FROM tb_account WHERE Username = ? AND Password = ?";
