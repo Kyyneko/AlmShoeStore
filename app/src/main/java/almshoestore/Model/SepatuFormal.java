@@ -18,7 +18,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-public class SepatuFormal extends Scene {
+public class SepatuFormal extends SceneMain {
 
     public SepatuFormal(Parent root, double width, double height) {
         super(root(), width, height);
@@ -92,7 +92,7 @@ public class SepatuFormal extends Scene {
         return backButton;
     }
 
-    private static void setShoeDetails(int i, Button label, Label description, Label price) {
+    private static  void setShoeDetails(int i, Button label, Label description, Label price) {
         if (i == 1) {
             label.setText("Allander BLACK - Black");
             description.setText("Dressports2 Allander adalah anggota terlaris dari koleksi Heritage kami. Teruji maraton. Rapat bisnis disetujui. Rockport's Allander memiliki berat kurang dari rata-rata sepatu lari dan mereka telah diuji di dua New York City Marathon untuk membuktikan kenyamanan dan daya tahan sepatu tersebut. Kulit full-grain tidak hanya terlihat profesional, tetapi juga mudah dibersihkan untuk pemakaian jangka panjang. Di sisi performa, DressSports 2 memungkinkan Anda bergerak dalam kenyamanan modern. Lapisan jala membantu Anda tetap sejuk sementara alas kaki PU membantu mengurangi tekanan dari kaki Anda, EVA midsole memberikan peredam kejut yang ringan, dan rubber outsole memberikan cengkeraman di hampir semua permukaan. Fitur kenyamanan tambahan termasuk lidah dan kerah yang empuk untuk membantu melindungi dari gesekan yang berlebihan dan mencegah lecet. Kami telah mendefinisikan kembali seperti apa sepatu formal: lebih ringan dari sepatu lari, serbaguna seperti cross-trainer, disesuaikan untuk maraton harian Anda.");
@@ -116,7 +116,7 @@ public class SepatuFormal extends Scene {
         // Implementasi pembayaran untuk sepatu yang dipilih
         switch (i) {
             case 1:
-                    Pembayaran1();
+                    SepatuFormal.Pembayaran1();
                     break;
             case 2:
                     Pembayaran2();
@@ -132,7 +132,7 @@ public class SepatuFormal extends Scene {
             }
     }
 
-    private static void Pembayaran1() {
+    public static void Pembayaran1() {
         String sepatu = "Allander BLACK - Black";
         // Implementasi pembayaran untuk sepatu 1
         Stage stage = new Stage();

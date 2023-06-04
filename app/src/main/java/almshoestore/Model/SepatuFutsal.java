@@ -1,7 +1,6 @@
 package almshoestore.Model;
 
 import java.text.DecimalFormat;
-
 import almshoestore.App;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -19,7 +18,7 @@ import javafx.stage.Stage;
 import javafx.scene.control.ChoiceBox;
 
 
-public class SepatuFutsal extends Scene {
+public class SepatuFutsal extends SceneMain {
 
     public SepatuFutsal(Parent root, double width, double height) {
         super(root(), width, height);

@@ -1,8 +1,7 @@
         package almshoestore.Model;
 
         import java.text.DecimalFormat;
-
-import almshoestore.App;
+        import almshoestore.App;
         import javafx.geometry.Insets;
         import javafx.geometry.Pos;
         import javafx.scene.Cursor;
@@ -18,7 +17,7 @@ import almshoestore.App;
         import javafx.scene.layout.VBox;
         import javafx.stage.Stage;
 
-        public class SepatuSneakers extends Scene {
+        public class SepatuSneakers extends SceneMain {
 
         public SepatuSneakers(Parent root, double width, double height) {
                 super(root(), width, height);
