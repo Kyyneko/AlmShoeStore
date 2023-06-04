@@ -132,7 +132,7 @@ public class SepatuLari extends SceneMain {
     }
 
     private static void Pembayaran1() {
-        String sepatu = "Hoka One One Kawan - Lunar Rock";
+        final String sepatu = "Hoka One One Kawan - Lunar Rock";
         Stage stage = new Stage();
         VBox root = new VBox();
         root.setPadding(new Insets(10));
@@ -203,7 +203,7 @@ public class SepatuLari extends SceneMain {
     }
 
     private static void Pembayaran2() {
-        String sepatu = "Adidas Ultraboost Light - Cloud White";
+        final String sepatu = "Adidas Ultraboost Light - Cloud White";
         Stage stage = new Stage();
         VBox root = new VBox();
         root.setPadding(new Insets(10));

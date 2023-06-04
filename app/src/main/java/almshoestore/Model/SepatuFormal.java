@@ -133,7 +133,7 @@ public class SepatuFormal extends SceneMain {
     }
 
     public static void Pembayaran1() {
-        String sepatu = "Allander BLACK - Black";
+        final String sepatu = "Allander BLACK - Black";
         // Implementasi pembayaran untuk sepatu 1
         Stage stage = new Stage();
         VBox root = new VBox();
@@ -202,7 +202,7 @@ public class SepatuFormal extends SceneMain {
     }
 
     private static void Pembayaran2() {
-        String sepatu = "CLARKS Tilden Plain (M) Black Leather - Black";        // Implementasi pembayaran untuk sepatu 2
+        final String sepatu = "CLARKS Tilden Plain (M) Black Leather - Black";        // Implementasi pembayaran untuk sepatu 2
         Stage stage = new Stage();
         VBox root = new VBox();
         root.setPadding(new Insets(10));
@@ -270,7 +270,7 @@ public class SepatuFormal extends SceneMain {
     }
 
     private static void Pembayaran3() {
-        String sepatu = "DSP Cap Toe - Tan";
+        final String sepatu = "DSP Cap Toe - Tan";
         // Implementasi pembayaran untuk sepatu 3
         Stage stage = new Stage();
         VBox root = new VBox();
@@ -339,7 +339,7 @@ public class SepatuFormal extends SceneMain {
     }
 
     private static void Pembayaran4() {
-        String sepatu = "DSH Plain Toe Dark Brown";
+        final String sepatu = "DSH Plain Toe Dark Brown";
         // Implementasi pembayaran untuk sepatu 4
         Stage stage = new Stage();
         VBox root = new VBox();

@@ -120,7 +120,7 @@ public class SepatuFutsal extends SceneMain {
     }
 
     private static void Pembayaran1() {
-        String sepatu = "Nike Mercurial Superfly 8 Club Tf - Black";
+        final String sepatu = "Nike Mercurial Superfly 8 Club Tf - Black";
         Stage stage = new Stage();
         VBox root = new VBox();
         root.setPadding(new Insets(10));
@@ -191,7 +191,7 @@ public class SepatuFutsal extends SceneMain {
     }
 
     private static void Pembayaran2() {
-        String sepatu = "Nike Phantom Gt2 Academy Ic Indoor - Blue";
+        final String sepatu = "Nike Phantom Gt2 Academy Ic Indoor - Blue";
         Stage stage = new Stage();
         VBox root = new VBox();
         root.setPadding(new Insets(10));
@@ -261,7 +261,7 @@ public class SepatuFutsal extends SceneMain {
     }
 
     private static void Pembayaran3() {
-        String sepatu = "Nike Phantom Gt2 Academy Tf - Black";
+        final String sepatu = "Nike Phantom Gt2 Academy Tf - Black";
         Stage stage = new Stage();
         VBox root = new VBox();
         root.setPadding(new Insets(10));
@@ -333,7 +333,7 @@ public class SepatuFutsal extends SceneMain {
     }
 
     private static void Pembayaran4() {
-        String sepatu = "Nike Zoom Vapor 15 Academy Kylian Mbappe Tf - Dark Red";
+        final String sepatu = "Nike Zoom Vapor 15 Academy Kylian Mbappe Tf - Dark Red";
         Stage stage = new Stage();
         VBox root = new VBox();
         root.setPadding(new Insets(10));

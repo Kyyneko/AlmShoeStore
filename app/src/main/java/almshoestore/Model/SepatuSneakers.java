@@ -139,7 +139,7 @@
         }
 
         private static void Pembayaran1() {
-                String sepatu = "Converse Chucky Taylor All Star Low Top Unisex Sneakers - Black";
+                final String sepatu = "Converse Chucky Taylor All Star Low Top Unisex Sneakers - Black";
                 Stage stage = new Stage();
                 VBox root = new VBox();
                 root.setPadding(new Insets(10));
@@ -208,7 +208,7 @@
         }
 
         private static void Pembayaran2() {
-                String sepatu = "Converse Star Player 76 Premium Canvas Men's Sneakers - Black";
+                final String sepatu = "Converse Star Player 76 Premium Canvas Men's Sneakers - Black";
                 Stage stage = new Stage();
                 VBox root = new VBox();
                 root.setPadding(new Insets(10));
@@ -276,7 +276,7 @@
         }
 
         private static void Pembayaran3() {
-                String sepatu = "Converse Star Player 76 Premium Canvas Men's Sneakers - White";
+                final String sepatu = "Converse Star Player 76 Premium Canvas Men's Sneakers - White";
                 Stage stage = new Stage();
                 VBox root = new VBox();
                 root.setPadding(new Insets(10));
@@ -343,7 +343,7 @@
         }
 
         private static void Pembayaran4() {
-                String sepatu = "Converse Chuck 70 Spring Color Unisex Sneakers - Green";
+                final String sepatu = "Converse Chuck 70 Spring Color Unisex Sneakers - Green";
                 Stage stage = new Stage();
                 VBox root = new VBox();
                 root.setPadding(new Insets(10));
@@ -410,7 +410,7 @@
         }
 
         private static void Pembayaran5() {
-                String sepatu = "Converse Chuck Taylor All Star Seasonal Color Unisex Sneakers - Orange";
+                final String sepatu = "Converse Chuck Taylor All Star Seasonal Color Unisex Sneakers - Orange";
                 Stage stage = new Stage();
                 VBox root = new VBox();
                 root.setPadding(new Insets(10));
