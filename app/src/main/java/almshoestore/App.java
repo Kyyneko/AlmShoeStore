@@ -336,8 +336,10 @@ public class App extends Application {
         
         VBox vboxexit = new VBox(10, exit);
         vboxexit.setAlignment(Pos.BOTTOM_CENTER);
-        
-        VBox akhir = new VBox(30, hbox, lispiu, vboxexit);
+        Label label123 = new Label("History Pembelian");
+        label123.setStyle("-fx-font-size: 20px; -fx-font-family: 'Times New Roman'; -fx-text-fill: BLACK;");
+        label123.setAlignment(Pos.CENTER);
+        VBox akhir = new VBox(30, hbox,label123, lispiu, vboxexit);
         akhir.setAlignment(Pos.CENTER);
         akhir.setSpacing(20);
         akhir.setPadding(new Insets(20));
